@@ -99,21 +99,29 @@
         <!-- Main Toolbar -->
         <paper-toolbar id="mainToolbar" class="tall">
           <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-          <span class="flex"></span>
-
-          <!-- Toolbar icons -->
-          <hi9-login role="{{role}}" hidden$="{{!show_model}}" show_model="{{show_model}}" user="{{user}}"></hi9-login>
 					
           <!-- Application name -->
-          <div class="middle middle-container center horizontal layout">
-            <div class="app-name">Hi9 - Digital Portal for All</div>
+					
+          <div class="top top-container center horizontal layout">
+            <div class="app-name"><img src="images/hi9-logo/Hi9.png" alt="Hi9 Logo"></div>
           </div>
+					<span class="flex"></span>
+					
+					<!-- Toolbar icons -->
+          <hi9-login role="{{role}}" hidden$="{{!show_model}}" show_model="{{show_model}}" user="{{user}}"></hi9-login>
 
           <!-- Application sub title -->
          <template is="dom-if" if="{{!user}}">
-					  <div class="bottom bottom-container center horizontal layout">
-						  <div class="bottom-title paper-font-subhead">Please Login or For New Accounts goto <a href="/#!/newaccount">New Account Page</a></div>
-					  </div>
+					  <div class="middle middle-container center horizontal layout">
+						  <div class="middle-title paper-font-subhead">
+								Digital Portal for All
+							</div>
+							<span class="flex"></span>
+							<div class="newaccount" style="float:right;">
+								<a href="/#!/newaccount"><paper-button raised>NEW ACCOUNT</paper-button></a>
+							</div>	
+					 </div>
+					 
 					</template>
 				</paper-toolbar>
 

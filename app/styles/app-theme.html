@@ -1,27 +1,33 @@
 <style is="custom-style">
 
 	:root {
-    --dark-primary-color:       #0097A7;
-    --default-primary-color:    #00BCD4;
-    --light-primary-color:      #B2EBF2;
-    --text-primary-color:       #FFFFFF;
-    --accent-color:             #FF5722;
-    --primary-background-color: #B2EBF2;
+    --dark-primary-color:       #F57C00;
+    --default-primary-color:    #FF9800;
+    --light-primary-color:      #FFE0B2;
+    --text-primary-color:       #212121;
+    --accent-color:             #E040FB;
+    --primary-background-color: #FFE0B2;
     --primary-text-color:       #212121;
     --secondary-text-color:     #727272;
     --disabled-text-color:      #BDBDBD;
     --divider-color:            #B6B6B6;
 
+
     /* Components */
 
     /* paper-drawer-panel */
-    --drawer-menu-color: #ffffff;
-    --drawer-border-color: 1px solid #ccc;
+    --drawer-menu-color:           #ffffff;
+    --drawer-border-color:         1px solid #ccc;
     --drawer-toolbar-border-color: 1px solid rgba(0, 0, 0, 0.22);
 
     /* paper-menu */
     --paper-menu-background-color: #fff;
-    --menu-link-color: #111111;
+    --menu-link-color:             #111111;
+
+    /* paper-input */
+   --paper-input-container-color:       rgba(255, 255, 255, 0.64);
+   --paper-input-container-focus-color: rgba(255, 255, 255, 1);
+   --paper-input-container-input-color: #fff;
   }
 
   /* General styles */
@@ -31,6 +37,11 @@
     background-color: var(--drawer-menu-color);
     border-bottom: var(--drawer-toolbar-border-color);
   }
+	
+	paper-button {
+		color: #0097A7;
+		background-color: #FFF;
+	}
 
   paper-scroll-header-panel {
     height: 100%;
@@ -77,16 +88,20 @@
   }
 
   paper-toolbar.tall .app-name {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 300;
     /* Required for main area's paper-scroll-header-panel custom condensing transformation */
     -webkit-transform-origin: left center;
     transform-origin: left center;
+		margin-top: 30px;
   }
 
   #mainToolbar .middle-container  {
     height: 100%;
-    margin-left: 48px;
+    margin-left: 110px;
+		width: 95%;
+		margin-top: -30px;
+		color: #fff;
   }
 
   #mainToolbar:not(.tall) .middle {
@@ -95,7 +110,7 @@
   }
 
   #mainToolbar .bottom {
-    margin-left: 48px;
+    margin-left: 100px;
     /* Required for main area's paper-scroll-header-panel custom condensing transformation */
     -webkit-transform-origin: left center;
     transform-origin: left center;
@@ -119,8 +134,9 @@
     }
 
     paper-toolbar.tall .app-name {
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 400;
+			max-width: 100px;
     }
 
     #drawer .paper-toolbar {
