@@ -79,6 +79,13 @@
               <span>New Account</span>
             </a>
           </template>
+          
+          <template is="dom-if" if="{{admin}}">
+            <a data-route="userAdmin" href="/useradmin" on-click="onDataRouteClick">
+              <iron-icon icon="info"></iron-icon>
+              <span>New Account</span>
+            </a>
+          </template>
 
           <template is="dom-if" if="{{user}}">
             <a data-route="account" href="/account" on-click="onDataRouteClick">
