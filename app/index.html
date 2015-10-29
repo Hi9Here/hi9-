@@ -99,21 +99,21 @@
         <!-- Main Toolbar -->
         <paper-toolbar id="mainToolbar" class="tall">
           <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-					
-          <!-- Application name -->
-					
-          <div class="top top-container center horizontal layout">
-            <div><img src="images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
-          </div>
 					<span class="flex"></span>
-					
+          
+
 					<!-- Toolbar icons -->
           <hi9-login role="{{role}}" hidden$="{{!show_model}}" show_model="{{show_model}}" user="{{user}}"></hi9-login>
 
+					<!-- Application name -->
+					 <div class="middle middle-container center horizontal layout">
+            <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
+          </div>
+					
           <!-- Application sub title -->
          <template is="dom-if" if="{{!user}}">
-					  <div class="middle middle-container center horizontal layout">
-						  <div class="middle-title paper-font-subhead">
+					  <div class="bottom bottom-container center horizontal layout">
+						  <div class="bottom-title paper-font-subhead">
 								Digital Portal for All
 							</div>
 							<span class="flex"></span>
@@ -137,9 +137,7 @@
             </section>
 
             <section data-route="privacy">
-              <paper-material elevation="1">
                 <privacy-page></privacy-page>
-              </paper-material>
             </section>
             
             <section data-route="newaccount">
