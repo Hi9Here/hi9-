@@ -99,16 +99,11 @@
         <!-- Main Toolbar -->
         <paper-toolbar id="mainToolbar" class="tall">
           <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+					 <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
 					<span class="flex"></span>
           
-
 					<!-- Toolbar icons -->
           <hi9-login role="{{role}}" hidden$="{{!show_model}}" show_model="{{show_model}}" user="{{user}}"></hi9-login>
-
-					<!-- Application name -->
-					 <div class="middle middle-container center horizontal layout">
-            <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
-          </div>
 					
           <!-- Application sub title -->
          <template is="dom-if" if="{{!user}}">
@@ -131,9 +126,9 @@
 
             <section data-route="home">
               <site-list></site-list>
-              <paper-material elevation="1">
+              
                 <p class="paper-font-body2">Helping People Get Connected</p>
-              </paper-material>
+              
             </section>
 
             <section data-route="privacy">
@@ -141,10 +136,10 @@
             </section>
             
             <section data-route="newaccount">
-              <paper-material elevation="1">
+          
                 <newaccount-page></newaccount-page>
-              </paper-material>
-            </section>
+						</section>
+        
 
             <section data-route="account">
               <paper-material elevation="1">

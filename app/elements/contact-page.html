@@ -1,15 +1,19 @@
 <dom-module id="contact-page">
 
 <style>
-
+paper-material {
+	background-color: #FFF;
+	padding: 10px;
+	width: 35%;
+	margin: 10px;
+}
 
 </style>
 
-<template>
+<template class="layout horizontal">
   <!-- local DOM for your element -->
 	<h1>Contact Us</h1>
-	<div class="part">
-			<paper-material>
+	<paper-material elevation="1">
 				<h2>01736 732324</h2>
 				<h3>Opening Times</h3>
 				<h4>
@@ -19,10 +23,9 @@
 					Full Telephone Support for All You Enquiries Relating to the Laptop and your Mobile Internet Data 
 				</p>
 		</paper-material>
-	</div>
+
 	
-	<div class="part">
-			<paper-material style="padding: 10px; height: 250px;">
+	<paper-material elevation="1">
 				<h2>Facebook</h2>
 				<h3>
 					<a href="https://fb.com/hi9">fb.com/hi9</a>
@@ -32,8 +35,7 @@
 				<h3>
 					<a href="https://twitter.com/hi9">@hi9</a>
 				</h3>
-			</paper-material>
-	</div>
+	</paper-material>
 
 </template>
 </dom-module>
