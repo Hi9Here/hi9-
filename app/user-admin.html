@@ -1,0 +1,79 @@
+<dom-module id="user-admin">
+<style>
+  <template>
+  	:host {
+			display: block;
+			text-align: center;
+			background-color: #eeeee0;
+			font-family: Roboto, Helvetica, Arial, sans-serif;
+			font-weight: 300;
+			padding-top: 10px;
+		}
+		paper-button {
+			background: #fff;
+			min-width: 172px;
+			margin: 0px 2px 6px;
+			font-family: Roboto, Helvetica, sans-serif;
+		}
+		paper-material {
+			background: #fff;
+			margin: 16px, 16px;
+			height: 100px;
+			margin: 5px;
+			display: inline-block;
+		}
+		a:link {
+			color: #000;
+		}
+		a:visited {
+			color: #000;
+		}
+		h3 {
+			font-weight: 300;
+			margin-top: 10px;
+      margin-bottom: 10px;
+		}
+		paper-filter {
+			margin-top: 10px;
+		}
+		paper-ripple {
+			z-index: 1000;
+		}
+		.cardcontent {
+			padding: 0px 10px 0px 10px;
+		}
+</style>
+
+    <h1>Stastistics Page</h1>
+    
+    <firebase-collection location="https://hi9site.firebaseio.com/users" data="{{users}}">
+    </firebase-collection>
+
+    <template is="dom-repeat" filter="isOwner" observe="owner" items="{{users}}" id="users">
+      <paper-material elevation="1">
+        <div style="float:left;width:150px">
+              <h3>[[item.user.google.displayName]]</h3>
+              <span>[[item.num]]</span>
+              <span>[[item.email]]</span>
+            </div>
+            <iron-image sizing="contain" src="[[item.user.google.profileImageURL]]" style="float: right;width:100px; height:100px;"></iron-image>
+          </paper-material>
+    </template>
+  </template>
+</dom-module>
+<script type="text/javascript">
+  Polymer({
+    is: 'stats-page',
+    properties: {
+      user:{ 
+        type:Object
+      }
+    },
+    isOwner: function(item) {
+      return item.owner.toLowerCase() == "yarlington"; //TODO FIX
+    },
+    ready: function() {
+      
+    }
+  });
+</script>
