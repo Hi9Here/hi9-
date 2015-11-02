@@ -148,13 +148,13 @@
           
                 <newaccount-page></newaccount-page>
 						</section>
-        
-
+  
             <section data-route="account">
               <paper-material elevation="1">
                 <user-page user="{{user}}">
                   <p> fix edit-default="true" edit="true" </p>
-                  <user-badges edit-default="true" edit="true" location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+                  <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+                  <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
                   <hi9-login role="{{role}}" show_model="{{show_model}}" user="{{user}}" data="{{userData}}"></hi9-login>
                   <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
                 </user-page>
