@@ -17,7 +17,8 @@
     "google-analytics": "GoogleWebComponents/google-analytics#~1.0.2",
     "google-chart": "GoogleWebComponents/google-chart#~1.0.2",
     "sortable-list": "marcus7777/sortable-list",
-    "user-badges": "marcus7777/user-badges"
+    "user-badges": "marcus7777/user-badges",
+    "user-badges": "marcus7777/user-surveys"
   },
   "devDependencies": {
     "web-component-tester": "*",
