@@ -42,6 +42,7 @@
   <link rel="import" href="elements/elements.html">
   <!-- endreplace-->
   <link rel="import" href="elements/user-admin.html">
+  <link rel="import" href="bower_components/user-surveys/user-surveys.html">
   
   <!-- For shared styles, shared-styles.html import in elements.html -->
   <style is="custom-style" include="shared-styles"></style>
@@ -152,7 +153,6 @@
             <section data-route="account">
               <paper-material elevation="1">
                 <user-page user="{{user}}">
-                  <p> fix edit-default="true" edit="true" </p>
                   <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
                   <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
                   <hi9-login role="{{role}}" show_model="{{show_model}}" user="{{user}}" data="{{userData}}"></hi9-login>
