@@ -17,21 +17,21 @@
 </dom-module>
 
 <script>
-(function() {
-  'use strict';
-  Polymer({
-    is: 'user-page',
-    properties: {
-      user: {
-        notify:true
+  (function() {
+    'use strict';
+    Polymer({
+      is: 'user-page',
+      properties: {
+        user: {
+          notify:true
+        },
+        name: {
+          computed: "get(user.google.displayName)"
+        }
       },
-      name: {
-        computed: "get(user.google.displayName)"
+      get: function(val) {
+        return val
       }
-    },
-    get: function(val) {
-      return val
-    }
-  });
-})();
+    });
+  })();
 </script>
