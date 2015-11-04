@@ -162,7 +162,10 @@
             
             <section data-route="userAdmin">
               <paper-material elevation="1">
-                <user-admin></user-admin>
+                <user-admin user="{{user}}">
+                  <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+                  <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+                </user-admin>
               </paper-material>
             </section>
             
