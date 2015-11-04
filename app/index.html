@@ -13,9 +13,6 @@
   <!-- Web Application Manifest -->
   <link rel="manifest" href="manifest.json">
 
-  <!-- Tile color for Win8 -->
-  <meta name="msapplication-TileColor" content="#3372DF">
-
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="PSK">
@@ -108,27 +105,27 @@
         <!-- Main Toolbar -->
         <paper-toolbar id="mainToolbar" class="tall">
           <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-					 <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
-					<span class="flex"></span>
+           <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
+          <span class="flex"></span>
           
-					<!-- Toolbar icons -->
+          <!-- Toolbar icons -->
 
           <hi9-login admin="{{admin}}"  role="{{role}}" hidden$="{{!show_model}}" show_model="{{show_model}}" user="{{user}}"></hi9-login>
-					
+          
           <!-- Application sub title -->
          <template is="dom-if" if="{{!user}}">
-					  <div class="middle bottom-container center horizontal layout">
-						  <div class="bottom-title paper-font-subhead">
-								Digital Portal for All
-							</div>
-							<span class="flex"></span>
-							<div class="newaccount">
-								<a href="/#!/newaccount"><paper-button raised>NEW ACCOUNT</paper-button></a>
-							</div>	
-					 </div>
-					 
-					</template>
-				</paper-toolbar>
+            <div class="middle bottom-container center horizontal layout">
+              <div class="bottom-title paper-font-subhead">
+                Digital Portal for All
+              </div>
+              <span class="flex"></span>
+              <div class="newaccount">
+                <a href="/#!/newaccount"><paper-button raised>NEW ACCOUNT</paper-button></a>
+              </div>  
+           </div>
+           
+          </template>
+        </paper-toolbar>
 
         <!-- Main Content -->
         <div class="content">
@@ -147,7 +144,7 @@
             
             <section data-route="newaccount">
                 <newaccount-page></newaccount-page>
-						</section>
+            </section>
   
             <section data-route="account">
                 <user-page user="{{user}}">
