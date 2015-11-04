@@ -71,7 +71,7 @@
             <span>Privacy</span>
           </a>
           
-          <template is="dom-if" if="{{show_model}}">
+          <template is="dom-if" if="{{!user}}">
             <a data-route="newaccount" href="/newaccount" on-click="onDataRouteClick">
               <iron-icon icon="info"></iron-icon>
               <span>New Account</span>
@@ -110,7 +110,7 @@
           
           <!-- Toolbar icons -->
 
-          <hi9-login admin="{{admin}}"  role="{{role}}" hidden$="{{!show_model}}" show_model="{{show_model}}" user="{{user}}"></hi9-login>
+          <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
           
           <!-- Application sub title -->
          <template is="dom-if" if="{{!user}}">
@@ -150,7 +150,7 @@
               <user-page user="{{user}}">
                 <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
                 <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-                <hi9-login role="{{role}}" show_model="{{show_model}}" user="{{user}}" data="{{userData}}"></hi9-login>
+                <hi9-login admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
                 <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
               </user-page>
             </section>
