@@ -56,6 +56,11 @@
             <span>Privacy</span>
           </a>
           
+          <a data-route="stats" href="/stats" on-click="onDataRouteClick">
+            <iron-icon icon="info"></iron-icon>
+            <span>Stats</span>
+          </a>
+
           <template is="dom-if" if="{{!user}}">
           <a data-route="newaccount" href="/newaccount" on-click="onDataRouteClick">
             <iron-icon icon="info"></iron-icon>
@@ -75,10 +80,12 @@
             <span>Account</span>
           </a>
           </template>
+
           <a data-route="contact" href="/contact" on-click="onDataRouteClick">
             <iron-icon icon="mail"></iron-icon>
             <span>Contact</span>
           </a>
+
         </paper-menu>
       </paper-scroll-header-panel>
       <!-- Main Area -->
@@ -114,9 +121,15 @@
           <paper-material elevation="1">
             <p class="paper-font-body2">Helping People Get Connected</p>
           </paper-material>
-        </section>
+
+      </section>
         <section data-route="privacy">
         <privacy-page></privacy-page>
+      </section>
+
+      </section>
+        <section data-route="stats">
+        <stats-page></stats-page>
       </section>
       
       <section data-route="newaccount">
@@ -141,12 +154,14 @@
       </section>
       
       <section data-route="userAdmin">
-        <user-admin user="{{user}}">
-        badges
-        <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-        surveys
-        <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-        </user-admin>
+        <paper-material elevation="1">
+          <user-admin user="{{user}}">
+          badges
+          <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+          surveys
+          <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+          </user-admin>
+        </paper-material>
       </section>
       
       <section data-route="contact">
