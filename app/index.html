@@ -56,9 +56,9 @@
             <span>Privacy</span>
           </a>
           
-          <a data-route="stats" href="/stats" on-click="onDataRouteClick">
+          <a data-route="data" href="/data" on-click="onDataRouteClick">
             <iron-icon icon="info"></iron-icon>
-            <span>Stats</span>
+            <span>Data</span>
           </a>
 
           <template is="dom-if" if="{{!user}}">
@@ -115,12 +115,15 @@
       </paper-toolbar>
       <!-- Main Content -->
       <div class="content">
-        <iron-pages attr-for-selected="data-route" selected="{{route}}">
-        <section data-route="home">
+      <iron-pages attr-for-selected="data-route" selected="{{route}}">
+      <section data-route="home">
+
           <site-list></site-list>
+
           <paper-material elevation="1">
             <p class="paper-font-body2">Helping People Get Connected</p>
           </paper-material>
+      </section>
 
       </section>
         <section data-route="privacy">
@@ -128,8 +131,8 @@
       </section>
 
       </section>
-        <section data-route="stats">
-        <stats-page></stats-page>
+        <section data-route="data">
+        <data-page></data-page>
       </section>
       
       <section data-route="newaccount">

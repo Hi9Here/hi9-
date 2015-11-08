@@ -1,6 +1,6 @@
 <dom-module id="user-admin">
 <style>
-  <template>
+  
     :host {
       display: block;
       text-align: center;
@@ -44,6 +44,7 @@
     }
 </style>
 
+  <template>
     <h1>Stastistics Page</h1>
     
     <firebase-collection location="https://hi9site.firebaseio.com/users" data="{{users}}">
@@ -64,7 +65,7 @@
 </dom-module>
 <script type="text/javascript">
   Polymer({
-    is: 'stats-page',
+    is: 'users-admin',
     properties: {
       user:{ 
         type:Object
