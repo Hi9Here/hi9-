@@ -30,6 +30,7 @@
     <link rel="import" href="elements/elements.html">
     <!-- endreplace-->
     <link rel="import" href="elements/user-admin.html">
+    <link rel="import" href="elements/help-page.html">
     <link rel="import" href="bower_components/user-surveys/user-surveys.html">
     
     <!-- For shared styles, shared-styles.html import in elements.html -->
@@ -75,6 +76,10 @@
             <span>Account</span>
           </a>
           </template>
+          <a data-route="help" href="/help" on-click="onDataRouteClick">
+            <iron-icon icon="help"></iron-icon>
+            <span>help</span>
+          </a>
           <a data-route="contact" href="/contact" on-click="onDataRouteClick">
             <iron-icon icon="mail"></iron-icon>
             <span>Contact</span>
@@ -142,11 +147,18 @@
       
       <section data-route="userAdmin">
         <user-admin user="{{user}}">
-        badges
-        <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-        surveys
-        <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+          Badges
+          <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+          Surveys
+          <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+          <user-help edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
         </user-admin>
+      </section>
+      
+      <section data-route="help">
+        <help-page>
+          <user-help edit folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
+        </help-page>
       </section>
       
       <section data-route="contact">
