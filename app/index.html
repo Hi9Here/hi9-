@@ -44,8 +44,8 @@
       <!-- Drawer Scroll Header Panel -->
       <paper-scroll-header-panel drawer fixed  style="background-color: #512DA8;">
         <!-- Drawer Toolbar -->
-        <paper-toolbar id="drawerToolbar">
-          <span class="paper-font-title">Menu</span>
+        <paper-toolbar id="drawerToolbar" style="background-color: #512DA8" >
+          <span class="paper-font-title" style="color: #FFF">Menu</span>
         </paper-toolbar>
         <!-- Drawer Content -->
         <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
@@ -90,7 +90,7 @@
       <!-- Main Area -->
       <paper-scroll-header-panel main condenses keep-condensed-header>
         <!-- Main Toolbar -->
-        <paper-toolbar id="mainToolbar" class="tall">
+        <paper-toolbar id="mainToolbar" class="tall" style="background-color: #FFF" >
         <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
         <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
         <span class="flex"></span>
@@ -102,7 +102,9 @@
         <template is="dom-if" if="{{!user}}">
         <div class="middle bottom-container center horizontal layout">
           <div class="bottom-title paper-font-subhead">
-            Digital Portal for All
+						<h3>
+							 Digital Portal for All
+						</h3> 
           </div>
           <span class="flex"></span>
           <div class="newaccount">
