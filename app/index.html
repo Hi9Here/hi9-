@@ -148,10 +148,11 @@
       
       <section data-route="userAdmin">
         <user-admin user="{{user}}">
-          Badges
+          <h3>Badges:</h3>
           <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-          Surveys
+          <h3>Surveys:</h3>
           <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+          <h3>Help:</h3>
           <user-help edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
         </user-admin>
       </section>
