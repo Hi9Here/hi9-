@@ -38,7 +38,7 @@
   <body unresolved class="fullbleed layout vertical">
     <span id="browser-sync-binding"></span>
     <template is="dom-bind" id="app">
-    <paper-drawer-panel id="paperDrawerPanel">
+    <paper-drawer-panel id="paperDrawerPanel" >
       <!-- Drawer Scroll Header Panel -->
       <paper-scroll-header-panel drawer fixed  style="background-color: #512DA8;">
         <!-- Drawer Toolbar -->
@@ -56,11 +56,6 @@
             <span>Privacy</span>
           </a>
           
-          <a data-route="data" href="/data" on-click="onDataRouteClick">
-            <iron-icon icon="info"></iron-icon>
-            <span>Data</span>
-          </a>
-
           <template is="dom-if" if="{{!user}}">
           <a data-route="newaccount" href="/newaccount" on-click="onDataRouteClick">
             <iron-icon icon="info"></iron-icon>
@@ -80,12 +75,10 @@
             <span>Account</span>
           </a>
           </template>
-
           <a data-route="contact" href="/contact" on-click="onDataRouteClick">
             <iron-icon icon="mail"></iron-icon>
             <span>Contact</span>
           </a>
-
         </paper-menu>
       </paper-scroll-header-panel>
       <!-- Main Area -->
@@ -115,24 +108,15 @@
       </paper-toolbar>
       <!-- Main Content -->
       <div class="content">
-      <iron-pages attr-for-selected="data-route" selected="{{route}}">
-      <section data-route="home">
-
+        <iron-pages attr-for-selected="data-route" selected="{{route}}">
+        <section data-route="home">
           <site-list></site-list>
-
           <paper-material elevation="1">
             <p class="paper-font-body2">Helping People Get Connected</p>
           </paper-material>
-      </section>
-
-      </section>
+        </section>
         <section data-route="privacy">
         <privacy-page></privacy-page>
-      </section>
-
-      </section>
-        <section data-route="data">
-        <data-page></data-page>
       </section>
       
       <section data-route="newaccount">
@@ -157,14 +141,12 @@
       </section>
       
       <section data-route="userAdmin">
-        <paper-material elevation="1">
-          <user-admin user="{{user}}">
-          badges
-          <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-          surveys
-          <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-          </user-admin>
-        </paper-material>
+        <user-admin user="{{user}}">
+        badges
+        <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+        surveys
+        <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+        </user-admin>
       </section>
       
       <section data-route="contact">
