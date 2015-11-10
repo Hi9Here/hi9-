@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hi9 - Digital Portal to All</title>
     <!-- Chrome for Android theme color -->
-    <meta name="theme-color" content="#FFF">
+    <meta name="theme-color" content="#2E3AA1">
     <!-- Web Application Manifest -->
     <link rel="manifest" href="manifest.json">
     <!-- Add to homescreen for Chrome on Android -->
@@ -45,11 +45,11 @@
       <!-- Drawer Scroll Header Panel -->
       <paper-scroll-header-panel drawer fixed>
         <!-- Drawer Toolbar -->
-        <paper-toolbar id="drawerToolbar">
+        <paper-toolbar id="drawerToolbar" style="background-color: #512DA8" >
           <span class="paper-font-title" style="color: #FFF">Menu</span>
         </paper-toolbar>
         <!-- Drawer Content -->
-        <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]">
+        <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]" style="background-color: #512DA8">
           <a data-route="home" href="/" on-click="onDataRouteClick">
             <iron-icon icon="home"></iron-icon>
             <span>Home</span>
@@ -157,7 +157,6 @@
           <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
           <h3>Help:</h3>
           <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
-          <user-cards edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
         </user-admin>
       </section>
       
