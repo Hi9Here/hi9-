@@ -33,6 +33,7 @@
     <link rel="import" href="elements/help-page.html">
     <link rel="import" href="bower_components/user-surveys/user-surveys.html">
     <link rel="import" href="bower_components/user-help/user-help.html">
+    <link rel="import" href="bower_components/user-cards/user-cards.html">
     
     <!-- For shared styles, shared-styles.html import in elements.html -->
     <style is="custom-style" include="shared-styles"></style>
@@ -57,7 +58,6 @@
             <iron-icon icon="info"></iron-icon>
             <span>Privacy</span>
           </a>
-          
           <template is="dom-if" if="{{!user}}">
           <a data-route="newaccount" href="/newaccount" on-click="onDataRouteClick">
             <iron-icon icon="info"></iron-icon>
@@ -88,9 +88,9 @@
         </paper-menu>
       </paper-scroll-header-panel>
       <!-- Main Area -->
-      <paper-scroll-header-panel main condenses keep-condensed-header>
+      <paper-scroll-header-panel main condenses keep-condensed-header style="background-color: #FFF">
         <!-- Main Toolbar -->
-        <paper-toolbar id="mainToolbar" class="tall" style="background-color: #FFF" >
+        <paper-toolbar id="mainToolbar" class="tall">
         <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
         <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
         <span class="flex"></span>
@@ -100,22 +100,19 @@
         
         <!-- Application sub title -->
         <template is="dom-if" if="{{!user}}">
-        <div class="middle bottom-container center horizontal layout">
-          <div class="bottom-title paper-font-subhead">
-						<h3>
-							 Digital Portal for All
-						</h3> 
+          <div class="middle bottom-container center horizontal layout">
+            <div class="bottom-title paper-font-subhead">
+						  <h3>Digital Portal for All</h3> 
+            </div>
+            <span class="flex"></span>
+            <div class="newaccount">
+              <a href="/#!/newaccount"><paper-button raised>NEW ACCOUNT</paper-button></a>
+            </div>
           </div>
-          <span class="flex"></span>
-          <div class="newaccount">
-            <a href="/#!/newaccount"><paper-button raised>NEW ACCOUNT</paper-button></a>
-          </div>
-        </div>
-        
         </template>
       </paper-toolbar>
       <!-- Main Content -->
-      <div class="content">
+      <div class="content" style="background-color: #FFF">
         <iron-pages attr-for-selected="data-route" selected="{{route}}">
         <section data-route="home">
           <site-list></site-list>
@@ -156,6 +153,8 @@
           <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
           <h3>Help:</h3>
           <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
+          <h3>Cards:</h3>
+          <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
         </user-admin>
       </section>
       
