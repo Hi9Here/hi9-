@@ -55,7 +55,7 @@
             <span>Home</span>
           </a>
           <a data-route="privacy" href="/privacy" on-click="onDataRouteClick">
-            <iron-icon icon="info"></iron-icon>
+            <iron-icon icon="account-balance"></iron-icon>
             <span>Privacy</span>
           </a>
           <template is="dom-if" if="{{!user}}">
@@ -67,13 +67,13 @@
           
           <!--      <template is="dom-if" if="{{admin}}"> -->
           <a data-route="userAdmin" href="/useradmin" on-click="onDataRouteClick">
-            <iron-icon icon="info"></iron-icon>
+            <iron-icon icon="supervisor-account"></iron-icon>
             <span>User Admin</span>
           </a>
           <!-- </template> -->
           <template is="dom-if" if="{{user}}">
           <a data-route="account" href="/account" on-click="onDataRouteClick">
-            <iron-icon icon="info"></iron-icon>
+            <iron-icon icon="account-circle"></iron-icon>
             <span>Account</span>
           </a>
           </template>
