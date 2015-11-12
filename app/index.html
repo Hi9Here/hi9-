@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hi9 - Digital Portal to All</title>
+    <title>Hi9 - Digital Portal for All</title>
     <!-- Chrome for Android theme color -->
     <meta name="theme-color" content="#2E3AA1">
     <!-- Web Application Manifest -->
@@ -145,18 +145,79 @@
         </user-page>
       </section>
       
+<!--  
+    User Admin Page as an infinity pages
+    Where the button goto particular parts of the site
+-->
       <section data-route="userAdmin">
         <user-admin user="{{user}}">
-          <h1>Badges</h1>
-          <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-          <h1>Surveys</h1>
-          <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-          <h1>Help</h1>
+          
+          <h1>Your Administration Page</h1>
+
+          <nav id="adminmenu" horizontal layout wrap >
+            <paper-button raised>
+              <a href="#badges">Badges</a>
+            </paper-button>
+            <paper-button raised>
+              <a href="#survey">Surveys</a>
+            </paper-button>
+            <paper-button raised>
+              <a href="#help">Help</a>
+            </paper-button>
+            <paper-button raised>
+              <a href="#cards">Cards</a>
+            </paper-button>
+            
+          </nav>
+          
+<!--   Badges Section         -->
+          <div id="badges"><h2>Badges</h2>
+            
+            <h3>
+              Some Badge Information
+            </h3>      
+            
+            <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+            
+          </div>
+<!--   End of Badges Section         -->
+          
+<!--   Survey Section         -->
+          <div id="survey"><h2>Surveys</h2>
+          
+            <h3>
+              Some Survey Information
+            </h3>
+          
+            <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+            
+          </div>
+<!--   End of Survey Section  -->
+          
+<!--   Help Section         -->
+          <div id="help"><h2>Help</h2></div>
+          
+          <h3>
+            Some Help Information
+          </h3>
+          
           <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
-          <h1>Cards</h1>
+<!--   End of Help Section         -->
+          
+<!--   Card Section         -->
+          <div id="cards"><h2>Cards</h2></div>
+          
+          <h3>
+            Some Cards Information
+          </h3>
+          
           <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
+<!--   End of Card Section         -->
+          
         </user-admin>
       </section>
+<!-- End of User Admin Page  -->
+
       
       <section data-route="help">
         <help-page>
