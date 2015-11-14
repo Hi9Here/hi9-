@@ -38,7 +38,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // The appName is moved to top and shrunk on condensing. The bottom sub title
   // is shrunk to nothing on condensing.
   addEventListener('paper-header-transform', function(e) {
-    var appName = document.querySelector('#mainToolbar .app-name');
+//     var appName = document.querySelector('#mainToolbar .app-name');
 /*     var middleContainer = document.querySelector('#mainToolbar .middle-container'); */
     var bottomContainer = document.querySelector('#mainToolbar .bottom-container');
     var detail = e.detail;
