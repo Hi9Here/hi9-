@@ -32,6 +32,7 @@
     "polymer": "^1.1.0",
     "iron-icon": "master",
     "iron-icons": "master",
-    "platinum-sw": "^1.2.0"
+    "platinum-sw": "^1.2.0",
+    "paper-filter": "master"
   }
 }
