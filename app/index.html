@@ -118,7 +118,7 @@
           </paper-toolbar>
         </template>
         <template is="dom-if" if="{{user}}">
-          <paper-toolbar id="mainToolbar" class="tall">
+          <paper-toolbar id="mainToolbar">
             <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
             <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
             <span class="flex"></span>
@@ -198,13 +198,8 @@
 <!--   Survey Section         -->
           <div class="usersection"><h2>Surveys</h2>
           <a name="survey"></a>
-            
-            <h3>
-              Survey Questions for Your Users
-            </h3>
-          
+            <h3>Survey Questions for Your Users</h3>
             <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-            
           </div>
 <!--   End of Survey Section  -->
           
@@ -224,14 +219,9 @@
           
 <!--   Card Section         -->
           <div class="usersection"><h2>Cards</h2>
-          <a name="cards"></a>
-          
-            <h3>
-              Default Card List
-            </h3>
-
+            <a name="cards"></a>
+            <h3> Default Card List</h3>
             <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
-        
           </div>
 <!--   End of Card Section         -->
           
