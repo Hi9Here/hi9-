@@ -64,10 +64,10 @@
             <span>Privacy</span>
           </a>
           <template is="dom-if" if="{{!user}}">
-          <a data-route="newaccount" href="/newaccount" on-click="onDataRouteClick">
-            <iron-icon icon="info"></iron-icon>
-            <span>New Account</span>
-          </a>
+            <a data-route="newaccount" href="/newaccount" on-click="onDataRouteClick">
+              <iron-icon icon="info"></iron-icon>
+              <span>New Account</span>
+            </a>
           </template>
           
           <!--      <template is="dom-if" if="{{admin}}"> -->
@@ -95,27 +95,34 @@
       <!-- Main Area -->
       <paper-scroll-header-panel main condenses keep-condensed-header style="background-color: #FFF">
         <!-- Main Toolbar -->
-        <paper-toolbar id="mainToolbar" class="tall">
-        <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-        <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
-        <span class="flex"></span>
-        
-        <!-- Toolbar icons -->
-        <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
-        
-        <!-- Application sub title -->
         <template is="dom-if" if="{{!user}}">
-          <div class="middle bottom-container center horizontal layout">
-            <div class="bottom-title paper-font-subhead">
-						  <h3>Digital Portal for All</h3> 
-            </div>
+          <paper-toolbar id="mainToolbar" class="tall">
+            <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+            <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
             <span class="flex"></span>
-            <div class="newaccount">
-              <a href="/#!/newaccount"><paper-button raised>NEW ACCOUNT</paper-button></a>
+          
+            <!-- Toolbar icons -->
+            <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
+          
+          <!-- Application sub title -->
+          
+            <div class="middle bottom-container center horizontal layout">
+              <div class="bottom-title paper-font-subhead">
+    					  <h3>Digital Portal for All</h3> 
+              </div>
+              <span class="flex"></span>
+              <div class="newaccount">
+                <a href="/#!/newaccount"><paper-button raised>NEW ACCOUNT</paper-button></a>
+              </div>
             </div>
-          </div>
+          </paper-toolbar>
         </template>
-      </paper-toolbar>
+        <template is="dom-if" if="{{user}}">
+          <paper-toolbar id="mainToolbar" class="tall">
+            <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+            <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
+            <span class="flex"></span>
+        </template>
       <!-- Main Content -->
       <div class="content" style="background-color: #FFF">
         <iron-pages attr-for-selected="data-route" selected="{{route}}">
