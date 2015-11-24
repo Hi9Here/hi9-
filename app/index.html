@@ -239,6 +239,13 @@
       <section data-route="contact">
         <contact-page></contact-page>
       </section>
+
+      <section data-route="user-info">
+        <h2>user-info</h2>
+        
+        <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{params.uid}}"></user-badges>
+        <user-surveys edit folder="[[params.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+      </section>
       </iron-pages>
     </div>
   </paper-scroll-header-panel>
