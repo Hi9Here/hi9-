@@ -34,6 +34,7 @@
     <link rel="import" href="elements/help-page.html">
     <link rel="import" href="bower_components/user-surveys/user-surveys.html">
     <link rel="import" href="bower_components/user-help/user-help.html">
+    <link rel="import" href="bower_components/user-list/user-list.html">
     <link rel="import" href="bower_components/user-cards/user-cards.html">
     <!-- For shared styles, shared-styles.html import in elements.html -->
     <style is="custom-style" include="shared-styles">
@@ -236,7 +237,7 @@
           <div class="usersection">
             <a name="users"></a>
             <h2>Users</h2>
-            <user-list location="https://hi9site.firebaseio.com/users/"></user-list>
+            <user-list uid="{{user.uid}}"></user-list>
           </div>
 
          </user-admin>

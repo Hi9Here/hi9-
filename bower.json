@@ -22,6 +22,7 @@
     "paper-tabs": "PolymerElements/paper-tabs#~1.0.10",
     "iron-pages": "PolymerElements/iron-pages#~1.0.3",
     "user-help": "marcus7777/user-help",
+    "user-list": "HackITtoday/user-list",
     "user-cards": "marcus7777/user-cards"
   },
   "devDependencies": {
