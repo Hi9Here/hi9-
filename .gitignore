@@ -3,3 +3,4 @@ dist
 bower_components
 .tmp
 firebase.json
+firebase-debug.log
