@@ -82,12 +82,18 @@
                             <span>New Account</span>
                         </a>
                     </template>
-                    <!--      <template is="dom-if" if="{{admin}}"> -->
-                    <a data-route="userAdmin" href="/useradmin" on-click="onDataRouteClick">
+                    <template is="dom-if" if="{{userData.users}}"> 
+                      <a data-route="userAdmin" href="/useradmin" on-click="onDataRouteClick">
                         <iron-icon icon="supervisor-account"></iron-icon>
+<<<<<<< HEAD
                         <span>Admin</span>
                     </a>
                     <!-- </template> -->
+=======
+                        <span>User Admin</span>
+                      </a>
+                    </template>
+>>>>>>> origin/useradmin
                     <template is="dom-if" if="{{user}}">
                         <a data-route="account" href="/account" on-click="onDataRouteClick">
                             <iron-icon icon="account-circle"></iron-icon>
