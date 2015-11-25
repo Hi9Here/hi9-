@@ -178,7 +178,7 @@
             <a href="/admin/badges"><paper-button raised>
               Badges
             </paper-button></a>
-            <a href="/admin/survey"><paper-button raised>
+            <a href="/admin/surveys"><paper-button raised>
               Surveys
             </paper-button></a>
             <a href="/admin/help"><paper-button raised>
@@ -193,23 +193,23 @@
           </nav>
          </user-admin>
        </section>
-       <section data-route="admin/badges" class="usersection">
+       <section data-route="adminBadges" class="usersection">
          <h2>Badges</h2>
          <h3>Badges Showing Your Achievments</h3>
          <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-       </section>
 
-       <section data-route="admin/surveys" class="usersection">
+
+       <section data-route="adminSurveys" class="usersection">
          <h2>Surveys</h2>
          <h3>Survey Questions for Your Users</h3>
          <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
        </section>
-       <section data-route="admin/help" class="usersection">
+       <section data-route="adminHelp" class="usersection">
          <h2>Help</h2>
          <h3>Default List of Frequently Asked Questions</h3> 
          <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
        </section>
-       <section data-route="admin/cards" class="usersection">
+       <section data-route="adminCards" class="usersection">
          <div class="usersection">
            <h2>Cards</h2>
            <h3>Default Card List</h3>
@@ -221,8 +221,6 @@
          <user-list uid="{{user.uid}}"></user-list>
        </section>
       </section>
-<!-- End of User Admin Page  -->
-
       
       <section data-route="help">
         <help-page>
