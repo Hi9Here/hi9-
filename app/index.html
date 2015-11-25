@@ -83,7 +83,7 @@
                         </a>
                     </template>
                     <template is="dom-if" if="{{userData.users}}"> 
-                      <a data-route="userAdmin" href="/useradmin" on-click="onDataRouteClick">
+                      <a data-route="admin" href="/admin" on-click="onDataRouteClick">
                         <iron-icon icon="supervisor-account"></iron-icon>
                         <span>User Admin</span>
                       </a>
@@ -178,19 +178,19 @@
         <user-admin user="{{user}}">
           <h1>Your Administration Pages</h1>
           <nav id="adminmenu" horizontal layout wrap center >
-            <a href="/admin/badges"><paper-button raised>
+            <a data-route="adminBadge" href="/admin/badges"><paper-button raised>
               Badges
             </paper-button></a>
-            <a href="/admin/surveys"><paper-button raised>
+            <a data-route="adminSurveys" href="/admin/surveys"><paper-button raised>
               Surveys
             </paper-button></a>
-            <a href="/admin/help"><paper-button raised>
+            <a data-route="adminHelp" href="/admin/help"><paper-button raised>
               Help
             </paper-button></a>
-            <a href="/admin/cards"><paper-button raised>
+            <a data-route="adminCards" href="/admin/cards"><paper-button raised>
               Cards
             </paper-button></a>
-            <a href="/admin/users"><paper-button raised>
+            <a data-route="adminUsers" href="/admin/users"><paper-button raised>
               Users
             </paper-button></a>
           </nav>
