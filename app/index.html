@@ -201,8 +201,8 @@
               <section data-route="contact"><contact-page></contact-page></section>
               <section data-route="user-info">
                 <h2>user-info</h2>
-                <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{params.uid}}"></user-badges>
-                <user-surveys answered folder="[[params.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+                <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{user.uid}}/users/{{params.uid}}"></user-badges>
+                <user-surveys answered folder="{{user.uid}}/users/{{params.uid}}" location="https://hi9site.firebaseio.com/users/"></user-surveys>
               </section>
             </iron-pages>
           </div>
