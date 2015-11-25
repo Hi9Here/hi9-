@@ -53,6 +53,16 @@
     nav a {
         color: #FFF;
     }
+
+    .userpart paper-button {
+      color: #FFF;
+      margin: 0;
+      padding: 0;
+    }
+
+    .userpart {
+      margin: 40px 20px 20px 20px;
+    }
     </style>
 </head>
 
@@ -153,20 +163,24 @@
                         </section>
                         <section data-route="account">
                             <user-page user="{{user}}">
-                                <paper-material elevation="1">
-                                    <h2>Your Badges</h2>
+
+                            <div class="userpart">
+                              <h2>Your Badges</h2>
                                     <h3>To Show Your Level of Improvement</h3>
                                     <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-                                </paper-material>
-                                <paper-material elevation="1">
-                                    <h2>Survey Questions</h2>
+                            </div>
+
+                            <div class="userpart">
+                                <h2>Survey Questions</h2>
                                     <h3>Help Us, Help You</h3>
-                                    <p>We will use these answers to improve our service</p>
+                                    <p>Questions will appear here to help us understand your needs more</p>
                                     <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-                                </paper-material>
-                                <paper-material elevation="1">
+                                <div class="userpart">
+                                   <paper-button raised>
                                     <hi9-login admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
-                                </paper-material>
+                                </paper-button>
+                                </div>
+                            </div>
                                 <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
                             </user-page>
                         </section>
