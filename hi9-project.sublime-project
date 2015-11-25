@@ -5,19 +5,22 @@
 			"path": "."
 		},
 		{
-			"path": "D:\\dev\\Projects\\user-badges"
+			"path": "bower_components\\icon-pick"
 		},
 		{
-			"path": "D:\\dev\\Projects\\user-cards"
+			"path": "bower_components\\user-badges"
 		},
 		{
-			"path": "D:\\dev\\Projects\\user-help"
+			"path": "bower_components\\user-cards"
 		},
 		{
-			"path": "D:\\dev\\Projects\\user-surveys"
+			"path": "bower_components\\user-help"
 		},
 		{
-			"path": "D:\\dev\\Projects\\icon-pick"
+			"path": "bower_components\\user-list"
+		},
+		{
+			"path": "bower_components\\user-surveys"
 		}
 	]
 }
