@@ -200,8 +200,7 @@
          <h2>Badges</h2>
          <h3>Badges Showing Your Achievments</h3>
          <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-
-
+       </section>
        <section data-route="adminSurveys" class="usersection">
          <h2>Surveys</h2>
          <h3>Survey Questions for Your Users</h3>
@@ -213,16 +212,13 @@
          <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
        </section>
        <section data-route="adminCards" class="usersection">
-         <div class="usersection">
-           <h2>Cards</h2>
-           <h3>Default Card List</h3>
-           <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
-         </div>
+         <h2>Cards</h2>
+         <h3>Default Card List</h3>
+         <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
        </section>
-       <section data-route="admin/users" class="usersection">
+       <section data-route="adminUsers" class="usersection">
          <h2>Users</h2>
          <user-list uid="{{user.uid}}"></user-list>
-       </section>
       </section>
       
       <section data-route="help">
@@ -237,7 +233,6 @@
 
       <section data-route="user-info">
         <h2>user-info</h2>
-        
         <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{params.uid}}"></user-badges>
         <user-surveys edit folder="[[params.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
       </section>
