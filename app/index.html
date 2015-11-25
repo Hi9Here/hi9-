@@ -53,7 +53,6 @@
     nav a {
         color: #FFF;
     }
-
     </style>
 </head>
 
@@ -89,6 +88,7 @@
                         <span>User Admin</span>
                       </a>
                     </template>
+
                     <template is="dom-if" if="{{user}}">
                         <a data-route="account" href="/account" on-click="onDataRouteClick">
                             <iron-icon icon="account-circle"></iron-icon>
@@ -154,10 +154,13 @@
                             <user-page user="{{user}}">
                                 <paper-material elevation="1">
                                     <h2>Your Badges</h2>
+                                    <h3>To Show Your Level of Improvement</h3>
                                     <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
                                 </paper-material>
                                 <paper-material elevation="1">
                                     <h2>Survey Questions</h2>
+                                    <h3>Help Us, Help You</h3>
+                                    <p>We will use these answers to improve our service</p>
                                     <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
                                 </paper-material>
                                 <paper-material elevation="1">
