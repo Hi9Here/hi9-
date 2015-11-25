@@ -45,6 +45,11 @@
       app.scrollPageToTop();
     });
 
+    page('/users/:uid', function(data) {
+      app.route = 'user-info';
+      app.params = data.params;
+    });
+
     // add #! before urls
     page({
       hashbang: true
