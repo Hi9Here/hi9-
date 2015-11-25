@@ -109,7 +109,7 @@
             <paper-scroll-header-panel main condenses keep-condensed-header style="background-color: #FFF">
                 <!-- Main Toolbar -->
                 <template is="dom-if" if="{{!user}}">
-                    <paper-toolbar id="mainToolbar" class="tall">
+                    <paper-toolbar class="tall">
                         <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
                         <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
                         <span class="flex"></span>
@@ -130,10 +130,11 @@
                     </paper-toolbar>
                 </template>
                 <template is="dom-if" if="{{user}}">
-                    <paper-toolbar id="mainToolbar">
+                    <paper-toolbar>
                         <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
                         <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
                         <span class="flex"></span>
+                    </paper-toolbar>
                 </template>
                 <!-- Main Content -->
                 <div class="content" style="background-color: #FFF">
@@ -178,21 +179,11 @@
         <user-admin user="{{user}}">
           <h1>Your Administration Pages</h1>
           <nav id="adminmenu" horizontal layout wrap center >
-            <a href="/admin/badges"><paper-button raised>
-              Badges
-            </paper-button></a>
-            <a href="/admin/surveys"><paper-button raised>
-              Surveys
-            </paper-button></a>
-            <a href="/admin/help"><paper-button raised>
-              Help
-            </paper-button></a>
-            <a href="/admin/cards"><paper-button raised>
-              Cards
-            </paper-button></a>
-            <a href="/admin/users"><paper-button raised>
-              Users
-            </paper-button></a>
+            <a href="/admin/badges"><paper-button raised> Badges </paper-button></a>
+            <a href="/admin/surveys"><paper-button raised> Surveys </paper-button></a>
+            <a href="/admin/help"><paper-button raised> Help </paper-button></a>
+            <a href="/admin/cards"><paper-button raised> Cards </paper-button></a>
+            <a href="/admin/users"><paper-button raised> Users </paper-button></a>
           </nav>
          </user-admin>
        </section>
