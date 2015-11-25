@@ -34,6 +34,7 @@
     "iron-icon": "master",
     "iron-icons": "master",
     "platinum-sw": "^1.2.0",
-    "paper-filter": "master"
+    "paper-filter": "master",
+    "sortable-list": "master"
   }
 }
