@@ -20,8 +20,33 @@
       app.scrollPageToTop();
     });
     
-    page('/useradmin', function() {
-      app.route = 'userAdmin';
+    page('/admin', function() {
+      app.route = 'admin';
+      app.scrollPageToTop();
+    });
+
+    page('/admin/badges', function() {
+      app.route = 'adminBadge';
+      app.scrollPageToTop();
+    });
+
+    page('/admin/cards', function() {
+      app.route = 'adminCards';
+      app.scrollPageToTop();
+    });
+
+    page('/admin/help', function() {
+      app.route = 'adminHelp';
+      app.scrollPageToTop();
+    });
+
+    page('/admin/surveys', function() {
+      app.route = 'adminSurveys';
+      app.scrollPageToTop();
+    });
+
+    page('/admin/users', function() {
+      app.route = 'adminUsers';
       app.scrollPageToTop();
     });
 

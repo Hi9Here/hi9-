@@ -83,7 +83,7 @@
                         </a>
                     </template>
                     <template is="dom-if" if="{{userData.users}}"> 
-                      <a data-route="userAdmin" href="/useradmin" on-click="onDataRouteClick">
+                      <a data-route="userAdmin" href="/admin" on-click="onDataRouteClick">
                         <iron-icon icon="supervisor-account"></iron-icon>
                         <span>User Admin</span>
                       </a>
@@ -173,99 +173,80 @@
     User Admin Page as an infinity pages
     Where the button goto particular parts of the site
 -->
-                        <section data-route="userAdmin">
-                            <user-admin user="{{user}}">
-                                <h1>Your Administration Page</h1>
-                                <nav id="adminmenu" horizontal layout wrap center>
-                                    <a href="#badges">
-                                        <paper-button raised>
-                                            Badges
-                                        </paper-button>
-                                    </a>
-                                    <a href="#survey">
-                                        <paper-button raised>
-                                            Surveys
-                                        </paper-button>
-                                    </a>
-                                    <a href="#help">
-                                        <paper-button raised>
-                                            Help
-                                        </paper-button>
-                                    </a>
-                                    <a href="#cards">
-                                        <paper-button raised>
-                                            Cards
-                                        </paper-button>
-                                    </a>
-                                    <a href="#users">
-                                        <paper-button raised>
-                                            Users
-                                        </paper-button>
-                                    </a>
-                                </nav>
-                                <!--   Badges Section         -->
-                                <div class="usersection">
-                                    <h2>Badges</h2>
-                                    <a name="badges"></a>
-                                    <h3>
-                Badges Showing Your Achievments
-              </h3>
-                                    <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-                                </div>
-                                <!--   End of Badges Section         -->
-                                <!--   Survey Section         -->
-                                <div class="usersection">
-                                    <h2>Surveys</h2>
-                                    <a name="survey"></a>
-                                    <h3>Survey Questions for Your Users</h3>
-                                    <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-                                </div>
-                                <!--   End of Survey Section  -->
-                                <!--   Help Section         -->
-                                <div class="usersection">
-                                    <h2>Help</h2>
-                                    <a name="help"></a>
-                                    <h3>
-              Default List of Frequently Asked Questions
-            </h3>
-                                    <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
-                                </div>
-                                <!--   End of Help Section         -->
-                                <!--   Card Section         -->
-                                <div class="usersection">
-                                    <h2>Cards</h2>
-                                    <a name="cards"></a>
-                                    <h3> Default Card List</h3>
-                                    <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
-                                </div>
-                                <!--   End of Card Section         -->
-                                <div class="usersection">
-                                    <a name="users"></a>
-                                    <h2>Users</h2>
-                                    <user-list uid="{{user.uid}}"></user-list>
-                                </div>
-                            </user-admin>
-                        </section>
-                        <!-- End of User Admin Page  -->
-                        <section data-route="help">
-                            <help-page>
-                                <user-help folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
-                            </help-page>
-                        </section>
-                        <section data-route="contact">
-                            <contact-page></contact-page>
-                        </section>
-                        <section data-route="user-info">
-                            <h2>user-info</h2>
-                            <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{params.uid}}"></user-badges>
-                            <user-surveys edit folder="[[params.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-                        </section>
-                    </iron-pages>
-                </div>
-            </paper-scroll-header-panel>
-        </paper-drawer-panel>
-        <!-- Uncomment next block to enable Service Worker support (1/2) -->
-        <!--
+
+      <section data-route="admin">
+        <user-admin user="{{user}}">
+          <h1>Your Administration Pages</h1>
+          <nav id="adminmenu" horizontal layout wrap center >
+            <a href="/admin/badges"><paper-button raised>
+              Badges
+            </paper-button></a>
+            <a href="/admin/surveys"><paper-button raised>
+              Surveys
+            </paper-button></a>
+            <a href="/admin/help"><paper-button raised>
+              Help
+            </paper-button></a>
+            <a href="/admin/cards"><paper-button raised>
+              Cards
+            </paper-button></a>
+            <a href="/admin/users"><paper-button raised>
+              Users
+            </paper-button></a>
+          </nav>
+         </user-admin>
+       </section>
+       <section data-route="adminBadges" class="usersection">
+         <h2>Badges</h2>
+         <h3>Badges Showing Your Achievments</h3>
+         <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+
+
+       <section data-route="adminSurveys" class="usersection">
+         <h2>Surveys</h2>
+         <h3>Survey Questions for Your Users</h3>
+         <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+       </section>
+       <section data-route="adminHelp" class="usersection">
+         <h2>Help</h2>
+         <h3>Default List of Frequently Asked Questions</h3> 
+         <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
+       </section>
+       <section data-route="adminCards" class="usersection">
+         <div class="usersection">
+           <h2>Cards</h2>
+           <h3>Default Card List</h3>
+           <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
+         </div>
+       </section>
+       <section data-route="admin/users" class="usersection">
+         <h2>Users</h2>
+         <user-list uid="{{user.uid}}"></user-list>
+       </section>
+      </section>
+      
+      <section data-route="help">
+        <help-page>
+          <user-help folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
+        </help-page>
+      </section>
+      
+      <section data-route="contact">
+        <contact-page></contact-page>
+      </section>
+
+      <section data-route="user-info">
+        <h2>user-info</h2>
+        
+        <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{params.uid}}"></user-badges>
+        <user-surveys edit folder="[[params.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+      </section>
+      </iron-pages>
+    </div>
+  </paper-scroll-header-panel>
+</paper-drawer-panel>
+<!-- Uncomment next block to enable Service Worker support (1/2) -->
+<!--
 <paper-toast id="caching-complete"
   duration="6000"
   text="Caching complete! This app will work offline.">

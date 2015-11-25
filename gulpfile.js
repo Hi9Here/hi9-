@@ -266,7 +266,7 @@ gulp.task('default', ['clean'], function (cb) {
   runSequence(
     ['copy', 'styles'],
     'elements',
-    ['jshint', 'images', 'fonts', 'html'],
+    ['images', 'fonts', 'html'],
     'vulcanize','rename-index', // 'cache-config',
     cb);
 });
