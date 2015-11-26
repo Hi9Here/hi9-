@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,221 +35,180 @@
     <link rel="import" href="bower_components/user-help/user-help.html">
     <link rel="import" href="bower_components/user-list/user-list.html">
     <link rel="import" href="bower_components/user-cards/user-cards.html">
-    <!-- For shared styles, shared-styles.html import in elements.html -->
-    <style is="custom-style" include="shared-styles">
-    .usersection {
-        margin-top: 50px;
-    }
     
-    nav paper-button {
+    <style is="custom-style" include="shared-styles">
+      .usersection {
+        margin-top: 50px;
+      }
+      nav paper-button {
         background: #FF5722;
         min-width: 172px;
         margin: 0px 2px 6px;
         font-family: Roboto, Helvetica, sans-serif;
         color: #FFF;
-    }
-    
-    nav a {
+      }
+      nav a {
         color: #FFF;
-    }
-
-    .userpart paper-button {
-      color: #FFF;
-      margin: 0;
-      padding: 0;
-    }
-
-    .userpart {
-      margin: 40px 20px 20px 20px;
-    }
+      }
+      .userpart paper-button {
+        color: #FFF;
+        margin: 0;
+        padding: 0;
+      }
+      .userpart {
+        margin: 40px 20px 20px 20px;
+      }
     </style>
-</head>
-
-<body unresolved class="fullbleed layout vertical">
+  </head>
+  <body unresolved class="fullbleed layout vertical">
     <span id="browser-sync-binding"></span>
     <template is="dom-bind" id="app">
-        <paper-drawer-panel id="paperDrawerPanel">
-            <!-- Drawer Scroll Header Panel -->
-            <paper-scroll-header-panel drawer fixed>
-                <!-- Drawer Toolbar -->
-                <paper-toolbar id="drawerToolbar" style="background-color: #512DA8">
-                    <span class="paper-font-title" style="color: #FFF">Menu</span>
-                </paper-toolbar>
-                <!-- Drawer Content -->
-                <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]" style="background-color: #512DA8">
-                    <a data-route="home" href="/" on-click="onDataRouteClick">
-                        <iron-icon icon="home"></iron-icon>
-                        <span>Home</span>
-                    </a>
-                    <a data-route="privacy" href="/privacy" on-click="onDataRouteClick">
-                        <iron-icon icon="account-balance"></iron-icon>
-                        <span>Privacy</span>
-                    </a>
-                    <template is="dom-if" if="{{!user}}">
-                        <a data-route="newaccount" href="/newaccount" on-click="onDataRouteClick">
-                            <iron-icon icon="info"></iron-icon>
-                            <span>New Account</span>
-                        </a>
-                    </template>
-                    <template is="dom-if" if="{{userData.users}}"> 
-                      <a data-route="userAdmin" href="/admin" on-click="onDataRouteClick">
-                        <iron-icon icon="supervisor-account"></iron-icon>
-                        <span>User Admin</span>
-                      </a>
-                    </template>
+      <paper-drawer-panel id="paperDrawerPanel">
+        <paper-scroll-header-panel drawer fixed>
+          <paper-toolbar id="drawerToolbar" style="background-color: #512DA8">
+            <span class="paper-font-title" style="color: #FFF">Menu</span>
+          </paper-toolbar>
+          <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]" style="background-color: #512DA8">
+            <a data-route="home" href="/" on-click="onDataRouteClick">
+              <iron-icon icon="home"></iron-icon><span>Home</span>
+            </a>
+            <a data-route="privacy" href="/privacy" on-click="onDataRouteClick">
+              <iron-icon icon="account-balance"></iron-icon><span>Privacy</span>
+            </a>
+            <template is="dom-if" if="{{!user}}">
+              <a data-route="newaccount" href="/newaccount" on-click="onDataRouteClick">
+                <iron-icon icon="info"></iron-icon><span>New Account</span>
+              </a>
+            </template>
+            <template is="dom-if" if="{{userData.users}}"> 
+              <a data-route="userAdmin" href="/admin" on-click="onDataRouteClick">
+                <iron-icon icon="supervisor-account"></iron-icon><span>User Admin</span>
+              </a>
+            </template>
+            <template is="dom-if" if="{{user}}">
+              <a data-route="account" href="/account" on-click="onDataRouteClick">
+                <iron-icon icon="account-circle"></iron-icon><span>Account</span>
+              </a>
+            </template>
+            <a data-route="help" href="/help" on-click="onDataRouteClick">
+              <iron-icon icon="help"></iron-icon><span>Help</span>
+            </a>
+            <a data-route="contact" href="/contact" on-click="onDataRouteClick">
+              <iron-icon icon="mail"></iron-icon><span>Contact</span>
+            </a>
+          </paper-menu>
+        </paper-scroll-header-panel>
+        <!-- Main Area -->
+        <paper-scroll-header-panel main condenses keep-condensed-header style="background-color: #FFF">
+          <template is="dom-if" if="{{!user}}">
+            <paper-toolbar class="tall">
+              <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+              <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
+              <span class="flex"></span>
+              <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
+              <div class="middle bottom-container center horizontal layout">
+                <div class="bottom-title paper-font-subhead">
+                  <h3>Digital Portal for All</h3>
+                </div>
+                <span class="flex"></span>
+                <div class="newaccount">
+                  <a href="/#!/newaccount">
+                    <paper-button raised style="color: #FFF;">NEW ACCOUNT</paper-button>
+                  </a>
+                </div>
+              </div>
+            </paper-toolbar>
+          </template>
+          <template is="dom-if" if="{{user}}">
+            <paper-toolbar>
+              <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+              <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
+            </paper-toolbar>
+          </template>
+          <div class="content" style="background-color: #FFF">
+            <iron-pages attr-for-selected="data-route" selected="{{route}}">
+              <section data-route="home">
+                <user-cards folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
+                <paper-material elevation="1">
+                  <p class="paper-font-body2">Helping People Get Connected</p>
+                </paper-material>
+              </section>
+              <section data-route="privacy"><privacy-page></privacy-page></section>
+              <section data-route="newaccount"><newaccount-page></newaccount-page></section>
+              <section data-route="account">
+                <user-page user="{{user}}">
+                  <div class="userpart">
+                    <h2>Your Badges</h2>
+                    <h3>To Show Your Level of Improvement</h3>
+                    <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+                  </div>
+                  <div class="userpart">
+                    <h2>Survey Questions</h2>
+                    <h3>Help Us, Help You</h3>
+                    <p>Questions will appear here to help us understand your needs more</p>
+                    <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+                    <div class="userpart">
+                      <hi9-login raised admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
+                    </div>
+                  </div>
+                  <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
+                </user-page>
+              </section>
+              <section data-route="admin">
+                <user-admin user="{{user}}">
+                  <h2>Your Administration Pages</h2>
+                  <nav id="adminmenu" horizontal layout wrap center >
+                    <a href="/admin/badges"><paper-button raised> Badges </paper-button></a>
+                    <a href="/admin/surveys"><paper-button raised> Surveys </paper-button></a>
+                    <a href="/admin/help"><paper-button raised> Help </paper-button></a>
+                    <a href="/admin/cards"><paper-button raised> Cards </paper-button></a>
+                    <a href="/admin/users"><paper-button raised> Users </paper-button></a>
+                  </nav>
+                  <h3>Showing You Different Data Sets and Services That You can offer Your Users</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga possimus explicabo veniam nobis, est quibusdam quas, expedita pariatur illum rem necessitatibus fugit deleniti dolore, quasi quaerat minima itaque, aut cumque.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas laudantium assumenda, magnam natus voluptatum eligendi dolorum nobis enim veritatis impedit dignissimos, aut eveniet sunt ex! Fuga facere possimus voluptas repudiandae.</p>
+                </user-admin>
+              </section>
+              <section data-route="adminBadges" class="usersection">
+                <h2>Badges</h2>
+                <h3>Badges Showing Your Achievments</h3>
+                <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+              </section>
+              <section data-route="adminSurveys" class="usersection">
+                <h2>Surveys</h2>
+                <h3>Survey Questions for Your Users</h3>
+                <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+              </section>
+              <section data-route="adminHelp" class="usersection">
+                <h2>Help</h2>
+                <h3>Default List of Frequently Asked Questions</h3> 
+                <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
+              </section>
+              <section data-route="adminCards" class="usersection">
+                <h2>Cards</h2>
+                <h3>Default Card List</h3>
+                <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
+              </section>
+              <section data-route="adminUsers" class="usersection">
+                <h2>Users</h2>
+                <user-list uid="{{user.uid}}"></user-list>
+              </section>
+              <section data-route="help">
+                <help-page>
+                  <user-help folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
+                </help-page>
+              </section>
+              <section data-route="contact"><contact-page></contact-page></section>
+              <section data-route="user-info">
+                <h2>user-info</h2>
+                <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{user.uid}}/users/{{params.uid}}"></user-badges>
+                <user-surveys answered folder="{{user.uid}}/users/{{params.uid}}" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+              </section>
+            </iron-pages>
+          </div>
+        </paper-scroll-header-panel>
+      </paper-drawer-panel>
 
-                    <template is="dom-if" if="{{user}}">
-                        <a data-route="account" href="/account" on-click="onDataRouteClick">
-                            <iron-icon icon="account-circle"></iron-icon>
-                            <span>Account</span>
-                        </a>
-                    </template>
-                    <a data-route="help" href="/help" on-click="onDataRouteClick">
-                        <iron-icon icon="help"></iron-icon>
-                        <span>Help</span>
-                    </a>
-                    <a data-route="contact" href="/contact" on-click="onDataRouteClick">
-                        <iron-icon icon="mail"></iron-icon>
-                        <span>Contact</span>
-                    </a>
-                </paper-menu>
-            </paper-scroll-header-panel>
-            <!-- Main Area -->
-            <paper-scroll-header-panel main condenses keep-condensed-header style="background-color: #FFF">
-                <!-- Main Toolbar -->
-                <template is="dom-if" if="{{!user}}">
-                    <paper-toolbar class="tall">
-                        <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-                        <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
-                        <span class="flex"></span>
-                        <!-- Toolbar icons -->
-                        <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
-                        <!-- Application sub title -->
-                        <div class="middle bottom-container center horizontal layout">
-                            <div class="bottom-title paper-font-subhead">
-                                <h3>Digital Portal for All</h3>
-                            </div>
-                            <span class="flex"></span>
-                            <div class="newaccount">
-                                <a href="/#!/newaccount">
-                                    <paper-button raised style="color: #FFF;">NEW ACCOUNT</paper-button>
-                                </a>
-                            </div>
-                        </div>
-                    </paper-toolbar>
-                </template>
-                <template is="dom-if" if="{{user}}">
-                    <paper-toolbar>
-                        <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-                        <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
-                        <span class="flex"></span>
-                    </paper-toolbar>
-                </template>
-                <!-- Main Content -->
-                <div class="content" style="background-color: #FFF">
-                    <iron-pages attr-for-selected="data-route" selected="{{route}}">
-                        <section data-route="home">
-                            <user-cards folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
-                            <paper-material elevation="1">
-                                <p class="paper-font-body2">Helping People Get Connected</p>
-                            </paper-material>
-                        </section>
-                        <section data-route="privacy">
-                            <privacy-page></privacy-page>
-                        </section>
-                        <section data-route="newaccount">
-                            <newaccount-page></newaccount-page>
-                        </section>
-                        <section data-route="account">
-                            <user-page user="{{user}}">
-
-                            <div class="userpart">
-                              <h2>Your Badges</h2>
-                                    <h3>To Show Your Level of Improvement</h3>
-                                    <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-                            </div>
-
-                            <div class="userpart">
-                                <h2>Survey Questions</h2>
-                                    <h3>Help Us, Help You</h3>
-                                    <p>Questions will appear here to help us understand your needs more</p>
-                                    <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-                                <div class="userpart">
-                                   <paper-button raised>
-                                    <hi9-login admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
-                                </paper-button>
-                                </div>
-                            </div>
-                                <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
-                            </user-page>
-                        </section>
-                        <!--  
-    User Admin Page as an infinity pages
-    Where the button goto particular parts of the site
--->
-
-      <section data-route="admin">
-        <user-admin user="{{user}}">
-          <h2>Your Administration Pages</h2>
-          <nav id="adminmenu" horizontal layout wrap center >
-            <a href="/admin/badges"><paper-button raised> Badges </paper-button></a>
-            <a href="/admin/surveys"><paper-button raised> Surveys </paper-button></a>
-            <a href="/admin/help"><paper-button raised> Help </paper-button></a>
-            <a href="/admin/cards"><paper-button raised> Cards </paper-button></a>
-            <a href="/admin/users"><paper-button raised> Users </paper-button></a>
-          </nav>
-          <h3>
-            Showing You Different Data Sets and Services That You can offer Your Users
-          </h3>
-          <p>
-            We are developing new tools and solutions all the time. We would love to hear your feedback and what we can do better and what you would like to see built.
-          </p>
-         </user-admin>
-       </section>
-       <section data-route="adminBadges" class="usersection">
-         <h2>Badges</h2>
-         <h3>Badges Showing Your Achievments</h3>
-         <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-       </section>
-       <section data-route="adminSurveys" class="usersection">
-         <h2>Surveys</h2>
-         <h3>Survey Questions for Your Users</h3>
-         <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-       </section>
-       <section data-route="adminHelp" class="usersection">
-         <h2>Help</h2>
-         <h3>Default List of Frequently Asked Questions</h3> 
-         <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
-       </section>
-       <section data-route="adminCards" class="usersection">
-         <h2>Cards</h2>
-         <h3>Default Card List</h3>
-         <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
-       </section>
-       <section data-route="adminUsers" class="usersection">
-         <h2>Users</h2>
-         <user-list uid="{{user.uid}}"></user-list>
-      </section>
-      
-      <section data-route="help">
-        <help-page>
-          <user-help folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
-        </help-page>
-      </section>
-      
-      <section data-route="contact">
-        <contact-page></contact-page>
-      </section>
-
-      <section data-route="user-info">
-        <h2>user-info</h2>
-        <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{params.uid}}"></user-badges>
-        <user-surveys answered folder="[[params.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-      </section>
-      </iron-pages>
-    </div>
-  </paper-scroll-header-panel>
-</paper-drawer-panel>
 <!-- Uncomment next block to enable Service Worker support (1/2) -->
 <!--
 <paper-toast id="caching-complete"
@@ -270,6 +228,5 @@
     <!-- build:js scripts/app.js -->
     <script src="scripts/app.js"></script>
     <!-- endbuild-->
-</body>
-
+  </body>
 </html>
