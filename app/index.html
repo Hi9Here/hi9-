@@ -156,17 +156,6 @@
               </section>
               <section data-route="admin">
                 <user-admin user="{{user}}">
-                  <h2>Your Administration Pages</h2>
-                  <nav id="adminmenu" horizontal layout wrap center >
-                    <a href="/admin/badges"><paper-button raised> Badges </paper-button></a>
-                    <a href="/admin/surveys"><paper-button raised> Surveys </paper-button></a>
-                    <a href="/admin/help"><paper-button raised> Help </paper-button></a>
-                    <a href="/admin/cards"><paper-button raised> Cards </paper-button></a>
-                    <a href="/admin/users"><paper-button raised> Users </paper-button></a>
-                  </nav>
-                  <h3>Showing You Different Data Sets and Services That You can offer Your Users</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga possimus explicabo veniam nobis, est quibusdam quas, expedita pariatur illum rem necessitatibus fugit deleniti dolore, quasi quaerat minima itaque, aut cumque.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas laudantium assumenda, magnam natus voluptatum eligendi dolorum nobis enim veritatis impedit dignissimos, aut eveniet sunt ex! Fuga facere possimus voluptas repudiandae.</p>
                 </user-admin>
               </section>
               <section data-route="adminBadges" class="usersection">
@@ -200,7 +189,7 @@
               </section>
               <section data-route="contact"><contact-page></contact-page></section>
               <section data-route="user-info">
-                <h2>user-info</h2>
+                <h2>userData.users.user.google.displayName</h2>
                 <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{user.uid}}/users/{{params.uid}}"></user-badges>
                 <user-surveys answered folder="{{user.uid}}/users/{{params.uid}}" location="https://hi9site.firebaseio.com/users/"></user-surveys>
               </section>
