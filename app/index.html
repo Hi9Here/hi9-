@@ -30,8 +30,10 @@
     <link rel="import" href="elements/elements.html">
     <!-- endreplace-->
     <link rel="import" href="elements/user-admin.html">
+    <link rel="import" href="elements/user-page.html">
+    <link rel="import" href="elements/user-info.html">
+
     <link rel="import" href="elements/help-page.html">
-    <link rel="import" href="bower_components/user-surveys/user-surveys.html">
     <link rel="import" href="bower_components/user-help/user-help.html">
     <link rel="import" href="bower_components/user-list/user-list.html">
     <link rel="import" href="bower_components/user-cards/user-cards.html">
@@ -81,7 +83,7 @@
               </a>
             </template>
             <template is="dom-if" if="{{userData.users}}"> 
-              <a data-route="userAdmin" href="/admin" on-click="onDataRouteClick">
+              <a data-route="admin" href="/admin" on-click="onDataRouteClick">
                 <iron-icon icon="supervisor-account"></iron-icon><span>User Admin</span>
               </a>
             </template>
@@ -136,51 +138,27 @@
               <section data-route="privacy"><privacy-page></privacy-page></section>
               <section data-route="newaccount"><newaccount-page></newaccount-page></section>
               <section data-route="account">
-                <user-page user="{{user}}">
-                  <div class="userpart">
-                    <h2>Your Badges</h2>
-                    <h3>To Show Your Level of Improvement</h3>
-                    <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-                  </div>
-                  <div class="userpart">
-                    <h2>Survey Questions</h2>
-                    <h3>Help Us, Help You</h3>
-                    <p>Questions will appear here to help us understand your needs more</p>
-                    <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-                    <div class="userpart">
-                      <hi9-login raised admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
-                    </div>
-                  </div>
-                  <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
+                <user-page user="{{user}}" userData="{{userData}}">
                 </user-page>
               </section>
               <section data-route="admin">
-                <user-admin user="{{user}}">
-                </user-admin>
+                <h1>Administration</h1>
+                <user-admin user="{{user}}"> loading ... </user-admin>
               </section>
               <section data-route="adminBadges" class="usersection">
-                <h2>Badges</h2>
-                <h3>Badges Showing Your Achievments</h3>
                 <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
               </section>
               <section data-route="adminSurveys" class="usersection">
-                <h2>Surveys</h2>
-                <h3>Survey Questions for Your Users</h3>
                 <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
               </section>
               <section data-route="adminHelp" class="usersection">
-                <h2>Help</h2>
-                <h3>Default List of Frequently Asked Questions</h3> 
                 <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
               </section>
               <section data-route="adminCards" class="usersection">
-                <h2>Cards</h2>
-                <h3>Default Card List</h3>
                 <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
               </section>
               <section data-route="adminUsers" class="usersection">
-                <h2>Users</h2>
-                <user-list uid="{{user.uid}}"></user-list>
+                <user-list uid="{{user.uid}}">loading ...</user-list>
               </section>
               <section data-route="help">
                 <help-page>
@@ -189,15 +167,14 @@
               </section>
               <section data-route="contact"><contact-page></contact-page></section>
               <section data-route="user-info">
-                <h2>userData.users.user.google.displayName</h2>
-                <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{user.uid}}/users/{{params.uid}}"></user-badges>
-                <user-surveys answered folder="{{user.uid}}/users/{{params.uid}}" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+                <user-info name="{{userData.users.user.google.displayName}}" userUid="{{user.uid}}" paramsUid="{{paramsUid}}" ></user-info>
               </section>
             </iron-pages>
           </div>
         </paper-scroll-header-panel>
       </paper-drawer-panel>
 
+      <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
 <!-- Uncomment next block to enable Service Worker support (1/2) -->
 <!--
 <paper-toast id="caching-complete"

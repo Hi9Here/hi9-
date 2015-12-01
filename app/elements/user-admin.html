@@ -1,67 +1,12 @@
 <dom-module id="user-admin">
-<style>
-  
-    :host {
-      display: block;
-      text-align: center;
-      background-color: #eeeee0;
-      font-family: Roboto, Helvetica, Arial, sans-serif;
-      font-weight: 300;
-      padding-top: 10px;
-    }
-/*    paper-button {
-      background: #fff;
-      min-width: 172px;
-      margin: 0px 2px 6px;
-      font-family: Roboto, Helvetica, sans-serif;
-    }*/
-    paper-material {
-      background: #fff;
-      margin: 16px, 16px;
-      height: 100px;
-      margin: 5px;
-      display: inline-block;
-    }
-    h3 {
-      font-weight: 300;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-    paper-filter {
-      margin-top: 10px;
-    }
-    paper-ripple {
-      z-index: 1000;
-    }
-    .cardcontent {
-      padding: 0px 10px 0px 10px;
-    }
-</style>
-
   <template>
-    <h1>Stastistics Page</h1>
-    
-    <firebase-collection location="https://hi9site.firebaseio.com/users" data="{{users}}">
-    </firebase-collection>
-
-    <template is="dom-repeat" filter="isOwner" observe="owner" items="{{users}}" id="users">
-      <paper-material elevation="1">
-        <div style="float:left;width:150px">
-              <h3>[[item.user.google.displayName]]</h3>
-              <span>[[item.num]]</span>
-              <span>[[item.email]]</span>
-            </div>
-            <iron-image sizing="contain" src="[[item.user.google.profileImageURL]]" style="float: right;width:100px; height:100px;"></iron-image>
-          </paper-material>
-    </template>
-    <content></content>
     <h2>Your Administration Pages</h2>
     <nav id="adminmenu" horizontal layout wrap center >
-      <a href="/admin/badges"><paper-button raised> Badges </paper-button></a>
-      <a href="/admin/surveys"><paper-button raised> Surveys </paper-button></a>
-      <a href="/admin/help"><paper-button raised> Help </paper-button></a>
-      <a href="/admin/cards"><paper-button raised> Cards </paper-button></a>
-      <a href="/admin/users"><paper-button raised> Users </paper-button></a>
+      <a href="/admin/badges"><paper-button raised>Badges</paper-button></a>
+      <a href="/admin/surveys"><paper-button raised>Surveys</paper-button></a>
+      <a href="/admin/help"><paper-button raised>Help</paper-button></a>
+      <a href="/admin/cards"><paper-button raised>Cards</paper-button></a>
+      <a href="/admin/users"><paper-button raised>Users</paper-button></a>
     </nav>
     <h3>Showing You Different Data Sets and Services That You can offer Your Users</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga possimus explicabo veniam nobis, est quibusdam quas, expedita pariatur illum rem necessitatibus fugit deleniti dolore, quasi quaerat minima itaque, aut cumque.</p>
@@ -70,17 +15,14 @@
 </dom-module>
 <script type="text/javascript">
   Polymer({
-    is: 'users-admin',
+    is: 'user-admin',
     properties: {
-      user:{ 
+      user: { 
         type:Object
       }
     },
-    isOwner: function(item) {
-      return item.owner.toLowerCase() == "yarlington"; //TODO FIX
-    },
     ready: function() {
-      
+      alert('user admin loading')  
     }
-  });
+  })
 </script>
