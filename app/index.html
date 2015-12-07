@@ -34,7 +34,7 @@
     <link rel="import" href="bower_components/user-surveys/user-surveys.html">
     <link rel="import" href="bower_components/user-help/user-help.html">
     <link rel="import" href="bower_components/user-cards/user-cards.html">
-    
+
     <!-- For shared styles, shared-styles.html import in elements.html -->
     <style is="custom-style" include="shared-styles"></style>
   </head>
@@ -64,7 +64,7 @@
             <span>New Account</span>
           </a>
           </template>
-          
+
           <!--      <template is="dom-if" if="{{admin}}"> -->
           <a data-route="userAdmin" href="/useradmin" on-click="onDataRouteClick">
             <iron-icon icon="supervisor-account"></iron-icon>
@@ -94,15 +94,15 @@
         <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
         <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
         <span class="flex"></span>
-        
+
         <!-- Toolbar icons -->
         <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
-        
+
         <!-- Application sub title -->
         <template is="dom-if" if="{{!user}}">
           <div class="middle bottom-container center horizontal layout">
             <div class="bottom-title paper-font-subhead">
-						  <h3>Digital Portal for All</h3> 
+						  <h3>Digital Portal for All</h3>
             </div>
             <span class="flex"></span>
             <div class="newaccount">
@@ -123,11 +123,11 @@
         <section data-route="privacy">
         <privacy-page></privacy-page>
       </section>
-      
+
       <section data-route="newaccount">
         <newaccount-page></newaccount-page>
       </section>
-      
+
       <section data-route="account">
         <user-page user="{{user}}">
         <paper-material elevation="1">
@@ -144,7 +144,7 @@
         <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
         </user-page>
       </section>
-      
+
       <section data-route="userAdmin">
         <user-admin user="{{user}}">
           <h1>Badges</h1>
@@ -157,13 +157,13 @@
           <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
         </user-admin>
       </section>
-      
+
       <section data-route="help">
         <help-page>
           <user-help folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
         </help-page>
       </section>
-      
+
       <section data-route="contact">
         <contact-page></contact-page>
       </section>
