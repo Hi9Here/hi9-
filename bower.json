@@ -16,14 +16,14 @@
     "paper-progress": "PolymerElements/paper-progress#~1.0.1",
     "google-analytics": "GoogleWebComponents/google-analytics#~1.0.2",
     "google-chart": "GoogleWebComponents/google-chart#~1.0.4",
-    "sortable-list": "marcus7777/sortable-list",
-    "user-badges": "marcus7777/user-badges",
-    "user-surveys": "marcus7777/user-surveys",
+    "sortable-list": "marcus7777/sortable-list#master",
+    "user-badges": "marcus7777/user-badges#master",
+    "user-surveys": "marcus7777/user-surveys#master",
     "paper-tabs": "PolymerElements/paper-tabs#~1.0.10",
     "iron-pages": "PolymerElements/iron-pages#~1.0.3",
-    "user-help": "marcus7777/user-help",
-    "user-list": "HackITtoday/user-list",
-    "user-cards": "marcus7777/user-cards"
+    "user-help": "marcus7777/user-help#master",
+    "user-list": "HackITtoday/user-list#master",
+    "user-cards": "marcus7777/user-cards#master"
   },
   "devDependencies": {
     "web-component-tester": "*",
@@ -34,6 +34,7 @@
     "iron-icon": "master",
     "iron-icons": "master",
     "platinum-sw": "^1.2.0",
-    "paper-filter": "master"
+    "paper-filter": "master",
+    "sortable-list": "master"
   }
 }

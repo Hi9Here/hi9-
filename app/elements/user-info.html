@@ -1,0 +1,16 @@
+<link rel="import" href="../bower_components/user-badges/user-badges.html">
+<link rel="import" href="../bower_components/site-list/site-list.html">
+
+
+<dom-module id="user-info">
+  <template>
+    <h2>{{name}}</h2>
+    <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{userUid}}/users/{{paramsUid}}"></user-badges>
+    <user-surveys answered folder="{{userUid}}/users/{{paramsUid}}" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "user-info"
+  });
+</script>

@@ -20,33 +20,8 @@
       app.scrollPageToTop();
     });
     
-    page('/admin', function() {
-      app.route = 'admin';
-      app.scrollPageToTop();
-    });
-
-    page('/admin/badges', function() {
-      app.route = 'adminBadges';
-      app.scrollPageToTop();
-    });
-
-    page('/admin/cards', function() {
-      app.route = 'adminCards';
-      app.scrollPageToTop();
-    });
-
-    page('/admin/help', function() {
-      app.route = 'adminHelp';
-      app.scrollPageToTop();
-    });
-
-    page('/admin/surveys', function() {
-      app.route = 'adminSurveys';
-      app.scrollPageToTop();
-    });
-
-    page('/admin/users', function() {
-      app.route = 'adminUsers';
+    page('/useradmin', function() {
+      app.route = 'userAdmin';
       app.scrollPageToTop();
     });
 
@@ -68,11 +43,6 @@
     page('/account', function() {
       app.route = 'account';
       app.scrollPageToTop();
-    });
-
-    page('/user/:uid', function(data) {
-      app.route = 'user-info';
-      app.params = data.params;
     });
 
     // add #! before urls

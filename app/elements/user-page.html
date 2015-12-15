@@ -1,18 +1,24 @@
 <link rel="import" href="form-data.html">
+<link rel="import" href="/bower_components/user-surveys/user-surveys.html">
 
 <dom-module id="user-page">
   <template>
-
     <h1> Account Information for {{name}} </h1> 
-
-    <paper-material style="background-color: #FFF; padding: 10px; height: 100%" elevation="1" >
-
-      <content></content>
-
-      <form-data data="{{data}}"></form-data>
-
-    </paper-material>
-   
+    <div class="userpart">
+      <h2>Your Badges</h2>
+      <h3>To Show Your Level of Improvement</h3>
+      <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+    </div>
+    <div class="userpart">
+      <h2>Survey Questions</h2>
+      <h3>Help Us, Help You</h3>
+      <p>Questions will appear here to help us understand your needs more</p>
+      <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+      <div class="userpart">
+        <hi9-login raised admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
+      </div>
+    </div>
+    <form-data data="{{data}}"></form-data>
   </template>
 </dom-module>
 
@@ -22,6 +28,9 @@
     Polymer({
       is: 'user-page',
       properties: {
+        userData: {
+          notify:true
+        },
         user: {
           notify:true
         },
