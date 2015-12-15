@@ -1,34 +1,31 @@
 <link rel="import" href="form-data.html">
-
 <dom-module id="user-page">
   <template>
-
-    <h1>{{name}} Account </h1> 
-
-
-      <content></content>
-
-      <form-data data="{{data}}"></form-data>
-
+    <h1>{{name}} Account </h1>
+    <content></content>
+    <!-- Account Information such as email. address and name -->
+    <div id="personal" style="margin-top: 40px;">
+       <form-data data="{{data}}"></form-data>
+    </div>
+    <!-- End of Account Information  -->
   </template>
 </dom-module>
-
 <script>
-  (function() {
-    'use strict';
-    Polymer({
-      is: 'user-page',
-      properties: {
-        user: {
-          notify:true
-        },
-        name: {
-          computed: "get(user.google.displayName)"
-        }
+(function() {
+  'use strict';
+  Polymer({
+    is: 'user-page',
+    properties: {
+      user: {
+        notify: true
       },
-      get: function(val) {
-        return val
+      name: {
+        computed: "get(user.google.displayName)"
       }
-    });
-  })();
+    },
+    get: function(val) {
+      return val
+    }
+  });
+})();
 </script>
