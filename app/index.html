@@ -105,7 +105,7 @@
               <span class="flex"></span>
               <div class="newaccount">
                 <a href="/#!/newaccount">
-                  <paper-button id="newacc"raised>NEW ACCOUNT</paper-button>
+                  <paper-button id="newacc" raised>NEW ACCOUNT</paper-button>
                 </a>
               </div>
             </div>
@@ -116,7 +116,7 @@
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
             <section data-route="home">
               <user-cards folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
-                <p class="paper-font-body2">Helping People Get Connected</p>
+              <p class="paper-font-body2">Helping People Get Connected</p>
               </paper-material>
             </section>
             <section data-route="privacy">
@@ -127,17 +127,15 @@
             </section>
             <section data-route="account">
               <user-page user="{{user}}">
-
-                  <h2>Your Badges</h2>
-                  <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-
-                  <h2>Survey Questions</h2>
-                  <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-
-                  <hi9-login admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
-
+                <h2>Your Badges</h2>
+                <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+                <h2>Survey Questions</h2>
+                <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
                 <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
               </user-page>
+              <!-- Logout Button in the Account Page -->
+              <hi9-login admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
+              <!-- End of Logout Button in Account Page -->
             </section>
             <section data-route="userAdmin">
               <user-admin user="{{user}}">
