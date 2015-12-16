@@ -1,12 +1,11 @@
 <dom-module id="form-data">
   <template>
     <h2>Personal Account Information</h2>
-    <h3>Email</h3>
-    <paper-input value="{{data.email::input}}"></paper-input>
-    <h3>Tel</h3>
-    <paper-input value="{{data.num::input}}"></paper-input>
-    <h3>Name</h3>
-    <paper-input value="{{data.owner::input}}"></paper-input>
+    <div id="pers" style="margin-left: 50px;">
+      <paper-input label="Email" value="{{data.email::input}}"></paper-input>
+      <paper-input label="Telephone Number" value="{{data.num::input}}"></paper-input>
+      <!-- <paper-input label="Name" value="{{data.owner::input}}"></paper-input> -->
+    </div>
   </template>
 </dom-module>
 <script>

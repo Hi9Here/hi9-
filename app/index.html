@@ -126,15 +126,21 @@
               <newaccount-page></newaccount-page>
             </section>
             <section data-route="account">
-              <user-page user="{{user}}">
+              <user-page user="{{user}}" style="float:left;">
                 <h2>Your Badges</h2>
-                <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-                <h2>Survey Questions</h2>
-                <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-                <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
+                <div id="badg" style="margin-bottom: 50px; margin-left: 50px;">
+                  <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+                </div>
+                <div id="surv">
+                  <h2>Survey Questions</h2>
+                  <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+                  <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
+                </div>
               </user-page>
               <!-- Logout Button in the Account Page -->
-              <hi9-login admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
+              <div id="logout" style="float: right;">
+                <hi9-login admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
+              </div>
               <!-- End of Logout Button in Account Page -->
             </section>
             <section data-route="userAdmin">
