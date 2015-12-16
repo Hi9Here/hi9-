@@ -16,7 +16,8 @@
       folder: {computed:"getFolder(userUid, paramsUid)"},
     },
     getFolder: function(userUid, paramsUid) {
-      return userUid + "/users/" + paramsUid
+      return paramsUid
+      // todo return userUid + "/users/" + paramsUid
     }
   });
 </script>
