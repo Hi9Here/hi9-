@@ -11,7 +11,7 @@
     "paper-filter": "HackITtoday/paper-filter#v0.0.2",
     "firebase-element": "HackITtoday/firebase-element#~1.0.1",
     "hi9-login": "HackITtoday/hi9-login",
-    "google-sheets": "GoogleWebComponents/google-sheets#~1.0.4",
+    "google-sheets": "GoogleWebComponents/google-sheets#~1.0.5",
     "iron-list": "PolymerElements/iron-list#~1.0.1",
     "paper-progress": "PolymerElements/paper-progress#~1.0.1",
     "google-analytics": "GoogleWebComponents/google-analytics#~1.0.2",
