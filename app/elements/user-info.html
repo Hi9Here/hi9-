@@ -5,12 +5,18 @@
 <dom-module id="user-info">
   <template>
     <h2>{{name}}</h2>
-    <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{userUid}}/users/{{paramsUid}}"></user-badges>
-    <user-surveys answered folder="{{userUid}}/users/{{paramsUid}}" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+    <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{folder}}"></user-badges>
+    <user-surveys answered folder="{{folder}}" location="https://hi9site.firebaseio.com/users/"></user-surveys>
   </template>
 </dom-module>
 <script>
   Polymer({
-    is: "user-info"
+    is: "user-info",
+    properties:{
+      folder: {computed:"getFolder(userUid, paramsUid)"},
+    },
+    getFolder: function(userUid, paramsUid) {
+      return userUid + "/users/" + paramsUid
+    }
   });
 </script>
