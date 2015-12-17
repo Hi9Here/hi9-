@@ -17,13 +17,13 @@
       folder: {computed:"getFolder(userUid, paramsUid)"}
     },
     getFolder: function(userUid, paramsUid) {
-      return userUid + "/users/" + paramsUid
+      return paramsUid
+      // todo return userUid + "/users/" + paramsUid
     },
     getName: function(user, paramsUid) {
       if (user != null) {
         return user.users[paramsUid].user.google.displayName
       }
-    },
-
+    }
   });
 </script>
