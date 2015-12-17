@@ -102,31 +102,13 @@
         </paper-scroll-header-panel>
         <!-- Main Area -->
         <paper-scroll-header-panel main condenses keep-condensed-header style="background-color: #FFF">
-          <template is="dom-if" if="{{!user}}">
-            <paper-toolbar class="tall">
-              <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-              <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
-              <span class="flex"></span>
-              <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
-              <div class="middle bottom-container center horizontal layout">
-                <div class="bottom-title paper-font-subhead">
-                  <h3>Digital Portal for All</h3>
-                </div>
-                <span class="flex"></span>
-                <div class="newaccount">
-                  <a href="/#!/newaccount">
-                    <paper-button raised style="color: #FFF;">NEW ACCOUNT</paper-button>
-                  </a>
-                </div>
-              </div>
-            </paper-toolbar>
-          </template>
-          <template is="dom-if" if="{{user}}">
-            <paper-toolbar>
-              <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-              <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
-            </paper-toolbar>
-          </template>
+          <paper-toolbar>
+            <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+            <h3>Digital Portal for All</h3>
+            <span class="flex"></span>
+            <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
+            <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
+          </paper-toolbar>
           <div class="content" style="background-color: #FFF">
             <iron-pages attr-for-selected="data-route" selected="{{route}}">
               <section data-route="home">

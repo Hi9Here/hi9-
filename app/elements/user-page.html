@@ -3,22 +3,20 @@
 
 <dom-module id="user-page">
   <template>
-    <h1> Account Information for {{name}} </h1> 
-    <div class="userpart">
-      <h2>Your Badges</h2>
-      <h3>To Show Your Level of Improvement</h3>
+    <h1>Hi {{name}}</h1>
+    <h2>Your Badges</h2>
+    <div id="badg" style="margin-bottom: 50px; margin-left: 50px;">
       <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
     </div>
-    <div class="userpart">
+    <div id="surv">
       <h2>Survey Questions</h2>
-      <h3>Help Us, Help You</h3>
-      <p>Questions will appear here to help us understand your needs more</p>
       <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-      <div class="userpart">
-        <hi9-login raised admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
-      </div>
+      <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
     </div>
-    <form-data data="{{data}}"></form-data>
+    <content></content>
+    <div id="logout" style="clear:both;float:right;">
+      <hi9-login admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
+    </div>
   </template>
 </dom-module>
 
