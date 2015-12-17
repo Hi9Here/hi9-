@@ -12,11 +12,18 @@
 <script>
   Polymer({
     is: "user-info",
-    properties:{
-      folder: {computed:"getFolder(userUid, paramsUid)"},
+    properties: {
+      name: {computed:"getName(user, paramsUid)"},
+      folder: {computed:"getFolder(userUid, paramsUid)"}
     },
     getFolder: function(userUid, paramsUid) {
       return userUid + "/users/" + paramsUid
-    }
+    },
+    getName: function(user, paramsUid) {
+      if (user != null) {
+        return user.users[paramsUid].user.google.displayName
+      }
+    },
+
   });
 </script>
