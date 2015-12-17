@@ -1,5 +1,52 @@
 <dom-module id="user-admin">
   <template>
+    <style>
+      :host {
+        display: block;
+        text-align: center;
+        background-color: #eeeee0;
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        padding-top: 10px;
+      }
+      paper-material {
+        background: #fff;
+        margin: 16px, 16px;
+        height: 100px;
+        margin: 5px;
+        display: inline-block;
+      }
+      
+      a:link {
+        color: #000;
+      }
+      
+      a:visited {
+        color: #000;
+      }
+      
+      h3 {
+        font-weight: 300;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      
+      paper-filter {
+        margin-top: 10px;
+      }
+      
+      paper-ripple {
+        z-index: 1000;
+      }
+      
+      .cardcontent {
+        padding: 0px 10px 0px 10px;
+      }
+      
+      paper-input-container[disabled] {
+        opacity: 1;
+      }
+    </style>
     <h2>Your Administration Pages</h2>
     <nav id="adminmenu" horizontal layout wrap center >
       <a href="/admin/badges"><paper-button raised>Badges</paper-button></a>
@@ -8,18 +55,19 @@
       <a href="/admin/cards"><paper-button raised>Cards</paper-button></a>
       <a href="/admin/users"><paper-button raised>Users</paper-button></a>
     </nav>
-    <h3>Showing You Different Data Sets and Services That You can offer Your Users</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga possimus explicabo veniam nobis, est quibusdam quas, expedita pariatur illum rem necessitatibus fugit deleniti dolore, quasi quaerat minima itaque, aut cumque.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas laudantium assumenda, magnam natus voluptatum eligendi dolorum nobis enim veritatis impedit dignissimos, aut eveniet sunt ex! Fuga facere possimus voluptas repudiandae.</p>
+    <content></content>
   </template>
 </dom-module>
 <script type="text/javascript">
   Polymer({
-    is: 'user-admin',
+    is: 'users-admin',
     properties: {
-      user: { 
-        type:Object
+      user: {
+        type: Object
       }
-    }
-  })
+    },
+    isOwner: function(item) {
+      return item.owner.toLowerCase() == "yarlington"; //TODO FIX
+    },
+  });
 </script>

@@ -62,52 +62,66 @@
       }
     </style>
   </head>
+
   <body unresolved class="fullbleed layout vertical">
     <span id="browser-sync-binding"></span>
     <template is="dom-bind" id="app">
       <paper-drawer-panel id="paperDrawerPanel">
+        <!-- Drawer Scroll Header Panel -->
         <paper-scroll-header-panel drawer fixed>
+          <!-- Drawer Toolbar -->
           <paper-toolbar id="drawerToolbar" style="background-color: #512DA8">
             <span class="paper-font-title" style="color: #FFF">Menu</span>
           </paper-toolbar>
+          <!-- Drawer Content -->
           <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]" style="background-color: #512DA8">
             <a data-route="home" href="/" on-click="onDataRouteClick">
-              <iron-icon icon="home"></iron-icon><span>Home</span>
+              <iron-icon icon="home"></iron-icon>
+              <span>Home</span>
             </a>
             <a data-route="privacy" href="/privacy" on-click="onDataRouteClick">
-              <iron-icon icon="account-balance"></iron-icon><span>Privacy</span>
+              <iron-icon icon="account-balance"></iron-icon>
+              <span>Privacy</span>
             </a>
             <template is="dom-if" if="{{!user}}">
               <a data-route="newaccount" href="/newaccount" on-click="onDataRouteClick">
-                <iron-icon icon="info"></iron-icon><span>New Account</span>
+                <iron-icon icon="info"></iron-icon>
+                <span>New Account</span>
               </a>
             </template>
-            <template is="dom-if" if="{{userData.users}}"> 
-              <a data-route="admin" href="/admin" on-click="onDataRouteClick">
-                <iron-icon icon="supervisor-account"></iron-icon><span>User Admin</span>
-              </a>
-            </template>
+            <!--      <template is="dom-if" if="{{admin}}"> -->
+            <a data-route="userAdmin" href="/useradmin" on-click="onDataRouteClick">
+              <iron-icon icon="supervisor-account"></iron-icon>
+              <span>User Admin</span>
+            </a>
+            <!-- </template> -->
             <template is="dom-if" if="{{user}}">
               <a data-route="account" href="/account" on-click="onDataRouteClick">
-                <iron-icon icon="account-circle"></iron-icon><span>Account</span>
+                <iron-icon icon="account-circle"></iron-icon>
+                <span>Account</span>
               </a>
             </template>
             <a data-route="help" href="/help" on-click="onDataRouteClick">
-              <iron-icon icon="help"></iron-icon><span>Help</span>
+              <iron-icon icon="help"></iron-icon>
+              <span>Help</span>
             </a>
             <a data-route="contact" href="/contact" on-click="onDataRouteClick">
-              <iron-icon icon="mail"></iron-icon><span>Contact</span>
+              <iron-icon icon="mail"></iron-icon>
+              <span>Contact</span>
             </a>
           </paper-menu>
         </paper-scroll-header-panel>
         <!-- Main Area -->
         <paper-scroll-header-panel main condenses keep-condensed-header style="background-color: #FFF">
-          <template is="dom-if" if="{{!user}}">
-            <paper-toolbar class="tall">
-              <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-              <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
-              <span class="flex"></span>
-              <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
+          <!-- Main Toolbar -->
+          <paper-toolbar id="mainToolbar" class="tall">
+            <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+            <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
+            <span class="flex"></span>
+            <!-- Toolbar icons -->
+            <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
+            <!-- Application sub title -->
+            <template is="dom-if" if="{{!user}}">
               <div class="middle bottom-container center horizontal layout">
                 <div class="bottom-title paper-font-subhead">
                   <h3>Digital Portal for All</h3>
@@ -115,80 +129,77 @@
                 <span class="flex"></span>
                 <div class="newaccount">
                   <a href="/#!/newaccount">
-                    <paper-button raised style="color: #FFF;">NEW ACCOUNT</paper-button>
-                  </a>
-                </div>
+                    <paper-button id="newacc" raised>NEW ACCOUNT</paper-button>
+                </a>
               </div>
-            </paper-toolbar>
+            </div>
           </template>
-          <template is="dom-if" if="{{user}}">
-            <paper-toolbar>
-              <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-              <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
-            </paper-toolbar>
-          </template>
-          <div class="content" style="background-color: #FFF">
-            <iron-pages attr-for-selected="data-route" selected="{{route}}">
-              <section data-route="home">
-                <user-cards folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
-                <paper-material elevation="1">
-                  <p class="paper-font-body2">Helping People Get Connected</p>
-                </paper-material>
-              </section>
-              <section data-route="privacy"><privacy-page></privacy-page></section>
-              <section data-route="newaccount"><newaccount-page></newaccount-page></section>
-              <section data-route="account">
-                <user-page user="{{user}}" userData="{{userData}}">
-                </user-page>
-              </section>
-              <section data-route="admin">
-                <user-admin user="{{user}}"> loading ... </user-admin>
-              </section>
-              <section data-route="adminBadges" class="usersection">
+        </paper-toolbar>
+        <!-- Main Content -->
+        <div class="content" style="background-color: #FFF">
+          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+            <section data-route="home">
+              <user-cards folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
+              <p class="paper-font-body2">Helping People Get Connected</p>
+            </section>
+            <section data-route="privacy">
+              <privacy-page></privacy-page>
+            </section>
+            <section data-route="newaccount">
+              <newaccount-page></newaccount-page>
+            </section>
+            <section data-route="account">
+              <user-page user="{{user}}" style="float:left;">
+              </user-page>
+              <!-- Logout Button in the Account Page -->
+              <div id="logout" style="float: right;">
+                <hi9-login admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
+              </div>
+              <!-- End of Logout Button in Account Page -->
+            </section>
+            <section data-route="userAdmin">
+              <user-admin user="{{user}}">
+                <h1>Badges</h1>
                 <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-              </section>
-              <section data-route="adminSurveys" class="usersection">
+                <h1>Surveys</h1>
+                <h2>Questions</h2>
                 <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-              </section>
-              <section data-route="adminHelp" class="usersection">
+                <h2>Results</h2>
+                <user-results></user-results>
+                <h1>Help</h1>
                 <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
-              </section>
-              <section data-route="adminCards" class="usersection">
+                <h1>Cards</h1>
                 <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
-              </section>
-              <section data-route="adminUsers" class="usersection">
-                <user-list uid="{{user.uid}}">loading ...</user-list>
-              </section>
-              <section data-route="help">
-                <help-page>
-                  <user-help folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
-                </help-page>
-              </section>
-              <section data-route="contact"><contact-page></contact-page></section>
-              <section data-route="user-info">
-                <user-info user="{{userData}}" user-uid="{{user.uid}}" params-uid="{{params.uid}}"></user-info>
-              </section>
-            </iron-pages>
-          </div>
-        </paper-scroll-header-panel>
-      </paper-drawer-panel>
 
-      <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
-<!-- Uncomment next block to enable Service Worker support (1/2) -->
-<!--
-<paper-toast id="caching-complete"
-  duration="6000"
-  text="Caching complete! This app will work offline.">
-</paper-toast>
-<platinum-sw-register auto-register
-  clients-claim
-  skip-waiting
-  on-service-worker-installed="displayInstalledToast">
-  <platinum-sw-cache default-cache-strategy="fastest"
-    cache-config-file="cache-config.json">
-  </platinum-sw-cache>
-</platinum-sw-register>
--->
+              </user-admin>
+            </section>
+            <section data-route="help">
+              <help-page>
+                <user-help folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
+              </help-page>
+            </section>
+            <section data-route="contact">
+              <contact-page></contact-page>
+            </section>
+          </iron-pages>
+        </div>
+      </paper-scroll-header-panel>
+    </paper-drawer-panel>
+    <!-- Uncomment next block to enable Service Worker support (1/2) -->
+    <!--
+      <paper-toast id="caching-complete"
+        duration="6000"
+        text="Caching complete! This app will work offline.">
+      </paper-toast>
+      <platinum-sw-register auto-register
+        clients-claim
+        skip-waiting
+        on-service-worker-installed="displayInstalledToast">
+        <platinum-sw-cache default-cache-strategy="fastest"
+          cache-config-file="cache-config.json">
+        </platinum-sw-cache>
+      </platinum-sw-register>
+    -->
     </template>
     <!-- build:js scripts/app.js -->
     <script src="scripts/app.js"></script>

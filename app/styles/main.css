@@ -3,33 +3,22 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
 }
-
 h1 {
-	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-weight: 300;
-	color: #333;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #333;
+  font-size: 40px;
 }
-
 h2 {
-	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-weight: 300;
-	color: #333;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #333;
 }
-
 h3 {
-	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-weight: 300;
-	color: #333;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #333;
 }
-
 hi9-login {
-	color: #333;
-}
-
-/*paper-menu span {
-	color: #FFF;
-}*/
-
-a {
-  text-decoration: none;
+  color: #333;
 }

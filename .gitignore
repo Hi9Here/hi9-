@@ -6,3 +6,4 @@ firebase.json
 firebase-debug.log
 hi9-project.sublime-project
 *.sublime-project
+*.log

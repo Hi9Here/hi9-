@@ -1,0 +1,33 @@
+<dom-module id="user-results">
+  <style>
+  /* CSS rules for your element */
+  </style>
+
+
+  <template>
+    <!-- local DOM for your element -->
+    <!-- Example: published spreadsheet -->
+      <google-sheets id="sheet" key="1NK_bWgBDhtD5oyQL_LKfZswNgu_-fHm3gI_NM8sYzuU" tab-id="1"
+                     published rows="{{rows}}" tab="{{tab}}" open-in-google-docs-url="{{openInGoogleDocsUrl}}"></google-sheets>
+
+      <heading>
+        <h3>If you have access results you can view a Spreadsheet with this data and a chart here:
+          <a href="{{openInGoogleDocsUrl}}" target="_blank" title="Open in Google Docs &rarr;">
+            Yarlington Hi9 Survey Results Data.
+          </a>
+        </h3>
+      </heading>
+      <ul>
+        <template is="dom-repeat" items="[[rows]]">
+          <li>Survey Questions: <span>{{item.gsx$question.$t}}</span>yes: <span>{{item.gsx$yes.$t}}</span>, no: <span>{{item.gsx$no.$t}}</span></li>
+        </template>
+      </ul>
+  </template>
+</dom-module>
+
+<script>
+// element registration
+Polymer({
+  is: 'user-results',
+});
+</script>

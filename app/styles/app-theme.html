@@ -1,20 +1,19 @@
 <style is="custom-style">
 
 :root {
-/*  --dark-primary-color:       #512DA8; */
-/*  --default-primary-color:    #FFF; 
-    --light-primary-color:      #D1C4E9;
-    --text-primary-color:       #333;*/
-/*  --accent-color:             #FF5722; */
- /* --primary-background-color: #D1C4E9;
-    --primary-text-color:       #212121;
+    --accent-color: #E64A19;
 
-/*  --secondary-text-color:     #FFF; */
-/*  --disabled-text-color:      #BDBDBD;
-    --divider-color:            #B6B6B6;*/
   }
 
+
   /* General styles */
+
+  paper-button {
+    background-color: #FF5722;
+    color: #fff;
+  }
+
+
 
   #drawerToolbar {
     color: #333;
@@ -26,7 +25,7 @@
     height: 100%;
     background-color: #512DA8;
   }
-  
+
   paper-toolbar {
     background-color: #FFF;
   }
@@ -38,16 +37,20 @@
     width: calc(98.66% - 16px);
     margin: 16px auto;
     background-color: #FFF;
-	}
+  }
+
+
+/* Menu Styling */
 
   paper-menu iron-icon {
     margin-right: 33px;
-    opacity: 0.9;
   }
+
 
   .paper-menu > .iron-selected {
     color: #FF5722;
   }
+
 
   paper-menu a {
     text-decoration: none;
@@ -64,43 +67,25 @@
     font-family: 'Roboto', 'Noto', sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+<<<<<<< HEAD
     font-size: 16px;
     font-weight: 400;
     line-height:24px;
+=======
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+>>>>>>> wo-styling
     min-height: 48px;
     padding: 0 16px;
   }
-
-  paper-button {
-    background: #FF5722;
-  }
-  -
-  paper-button a {
-    color: #FFF;
-  }
-  
-  paper-button:hover {
-    background: #E64A19;
-  }
-  
-/*   #mainToolbar .middle-container  {
-    height: 100%;
-		width: 95%;
-		color: #333;
-		display: none;
-  } */
-
-/*   #mainToolbar:not(.tall) .middle {
-		    font-size: 18px;
-    padding-bottom: 0;
-  } */
 
   #mainToolbar .bottom {
     margin-left: 90px;
     /* Required for main area's paper-scroll-header-panel custom condensing transformation */
     -webkit-transform-origin: left center;
     transform-origin: left center;
-		width: 100%;
+  	width: 100%;
   }
 
   #mainToolbar .middle {
@@ -137,7 +122,7 @@
     #overlay {
       min-width: 360px;
     }
- 
+
     .bg {
       background: white;
     }
