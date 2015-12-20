@@ -1,9 +1,8 @@
-<link rel="import" href="../bower_components/firebase-element/firebase-document.html">
+<link rel="import" href="../bower_components/mediator-data/mediator-data.html">
 
 <dom-module id="firebase-data">
   <template>
-    <firebase-document data="{{data}}" location="{{userUrl}}">
-    </firebase-document>
+    <mediator-data data="{{data}}" location="{{userUrl}}" log log-to="https://open-elements.firebaseio.com/root/log"></mediator-data>
   </template>
 </dom-module>
 <script>
