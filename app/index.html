@@ -139,29 +139,31 @@
               </section>
               <section data-route="adminBadges" class="usersection">
                 <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-                <h1>Surveys</h1>
-                <h2>Questions</h2>
+              </section>
+              <section data-route="adminSurveys" class="usersection">
                 <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-                <h2>Results</h2>
-                <user-results></user-results>
-                <h1>Help</h1>
+              </section>
+              <section data-route="adminHelp" class="usersection">
                 <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
-                <h1>Cards</h1>
+              </section>
+              <section data-route="adminCards" class="usersection">
                 <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
-              </user-admin>
-            </section>
-            <section data-route="help">
-              <help-page>
-                <user-help folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
-              </help-page>
-            </section>
-            <section data-route="contact">
-              <contact-page></contact-page>
-            </section>
-          </iron-pages>
-        </div>
-      </paper-scroll-header-panel>
-    </paper-drawer-panel>
+              </section>
+              <section data-route="adminUsers" class="usersection">
+                <user-list uid="{{user.uid}}">loading ...</user-list>
+              </section>
+              <section data-route="help">
+                <help-page>
+                  <user-help folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
+                </help-page>
+              </section>
+              <section data-route="contact">
+                <contact-page></contact-page>
+              </section>
+            </iron-pages>
+          </div>
+        </paper-scroll-header-panel>
+      </paper-drawer-panel>
     <!-- Uncomment next block to enable Service Worker support (1/2) -->
     <!--
       <paper-toast id="caching-complete"
