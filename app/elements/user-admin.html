@@ -60,14 +60,11 @@
 </dom-module>
 <script type="text/javascript">
   Polymer({
-    is: 'users-admin',
+    is: 'user-admin',
     properties: {
       user: {
         type: Object
       }
-    },
-    isOwner: function(item) {
-      return item.owner.toLowerCase() == "yarlington"; //TODO FIX
     },
   });
 </script>
