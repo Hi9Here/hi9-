@@ -31,7 +31,11 @@
           this.data = {};
         } elseif (!log) {
           log = true
-          this.data.log.push({next:new Date})
+          if (!this.data.log) {
+            this.data.log.([{first:new Date}])
+          } else {
+            this.data.log.push({next:new Date})
+          }
         }
       }
     });
