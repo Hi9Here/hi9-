@@ -22,14 +22,15 @@
       getUserDataUrl: function(uid) {
         return "https://hi9site.firebaseio.com/users/" + uid;
       },
-      get(val){
+      get: function(val){
         return val
       },
       _dataChanged: function(data) {
         if (!data) {
           this.data = {};
         }
-      }
+      },
+      
     });
   })();
 </script>
