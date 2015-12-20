@@ -89,7 +89,7 @@
                 <span>New Account</span>
               </a>
             </template>
-            <template is="dom-if" if="{{userData.users.length}}">
+            <template is="dom-if" if="{{userData.users}}">
               <a data-route="admin" href="/admin" on-click="onDataRouteClick">
                 <iron-icon icon="supervisor-account"></iron-icon>
                 <span>User Admin</span>
