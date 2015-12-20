@@ -4,7 +4,6 @@
 <dom-module id="user-page">
   <template>
     <h1>{{name}} Account </h1>
-    <!-- Badges and Survey Questions -->
     <h2>Your Badges</h2>
     <div id="badg" style="margin-bottom: 50px; margin-left: 50px;">
       <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
@@ -15,13 +14,10 @@
       <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
     </div>
     <content></content>
-    <hi9-login raised admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
-    <!-- End of Badges and Survey Questions -->
-    <!-- Account Information such as email. address and name -->
     <div id="personal" style="margin-bottom: 40px; float: left;">
        <form-data data="{{data}}"></form-data>
     </div>
-    <!-- End of Account Information  -->
+      <hi9-login admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
   </template>
 </dom-module>
 <script>

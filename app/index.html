@@ -113,53 +113,31 @@
         </paper-scroll-header-panel>
         <!-- Main Area -->
         <paper-scroll-header-panel main condenses keep-condensed-header style="background-color: #FFF">
-          <!-- Main Toolbar -->
-          <paper-toolbar id="mainToolbar" class="tall">
+          <paper-toolbar>
             <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-            <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
+            <h3>Digital Portal for All</h3>
             <span class="flex"></span>
-            <!-- Toolbar icons -->
             <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
-            <!-- Application sub title -->
-            <template is="dom-if" if="{{!user}}">
-              <div class="middle bottom-container center horizontal layout">
-                <div class="bottom-title paper-font-subhead">
-                  <h3>Digital Portal for All</h3>
-                </div>
-                <span class="flex"></span>
-                <div class="newaccount">
-                  <a href="/#!/newaccount">
-                    <paper-button id="newacc" raised>NEW ACCOUNT</paper-button>
-                </a>
-              </div>
-            </div>
-          </template>
-        </paper-toolbar>
-        <!-- Main Content -->
-        <div class="content" style="background-color: #FFF">
-          <iron-pages attr-for-selected="data-route" selected="{{route}}">
-            <section data-route="home">
-              <user-cards folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
-              <p class="paper-font-body2">Helping People Get Connected</p>
-            </section>
-            <section data-route="privacy">
-              <privacy-page></privacy-page>
-            </section>
-            <section data-route="newaccount">
-              <newaccount-page></newaccount-page>
-            </section>
-            <section data-route="account">
-              <user-page user="{{user}}" style="float:left;">
-              </user-page>
-              <!-- Logout Button in the Account Page -->
-              <div id="logout" style="float: right;">
-                <hi9-login admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}"></hi9-login>
-              </div>
-              <!-- End of Logout Button in Account Page -->
-            </section>
-            <section data-route="userAdmin">
-              <user-admin user="{{user}}">
-                <h1>Badges</h1>
+            <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
+          </paper-toolbar>
+          <div class="content" style="background-color: #FFF">
+            <iron-pages attr-for-selected="data-route" selected="{{route}}">
+              <section data-route="home">
+                <user-cards folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
+                <paper-material elevation="1">
+                  <p class="paper-font-body2">Helping People Get Connected</p>
+                </paper-material>
+              </section>
+              <section data-route="privacy"><privacy-page></privacy-page></section>
+              <section data-route="newaccount"><newaccount-page></newaccount-page></section>
+              <section data-route="account">
+                <user-page user="{{user}}" userData="{{userData}}">
+                </user-page>
+              </section>
+              <section data-route="admin">
+                <user-admin user="{{user}}"> loading ... </user-admin>
+              </section>
+              <section data-route="adminBadges" class="usersection">
                 <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
                 <h1>Surveys</h1>
                 <h2>Questions</h2>
