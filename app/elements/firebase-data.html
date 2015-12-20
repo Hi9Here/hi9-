@@ -2,7 +2,7 @@
 
 <dom-module id="firebase-data">
   <template>
-    <mediator-data data="{{data}}" location="{{userUrl}}" log log-to="https://open-elements.firebaseio.com/root/log.json"></mediator-data>
+    <mediator-data data="{{data}}" location="{{userUrl}}" log log-to="{{logTo}}"></mediator-data>
   </template>
 </dom-module>
 <script>
@@ -17,7 +17,13 @@
         userUrl: {
           computed:"getUserDataUrl(uid)"
         },
-        uid: String
+        uid: String,
+        logTo: {
+          computed:"getLogTo(uid)"
+        }
+      },
+      getLogTo: function(uid) {
+        return "https://hi9site.firebaseio.com/users/" + uid + "/log.json";
       },
       getUserDataUrl: function(uid) {
         return "https://hi9site.firebaseio.com/users/" + uid;
