@@ -37,6 +37,8 @@
             this.data.log.push({next:new Date})
           }
           this.set("data.log",this.data.log,this)
+          
+          this.set("log",this.data.log,this.data)
         }
       }
     });
