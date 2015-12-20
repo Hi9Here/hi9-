@@ -32,7 +32,7 @@
         } elseif (!log) {
           log = true
           if (!this.data.log) {
-            this.data.log.([{first:new Date}])
+            this.data.log = [{first:new Date}]
           } else {
             this.data.log.push({next:new Date})
           }
