@@ -1,4 +1,4 @@
-![](https://cloud.githubusercontent.com/assets/110953/7877439/6a69d03e-0590-11e5-9fac-c614246606de.png)
+[![devDependency Status](https://david-dm.org/HackITtoday/hi9-/dev-status.svg)](https://david-dm.org/HackITtoday/hi9-#info=devDependencies)
 ## Polymer Starter Kit
 
 > A starting point for building web applications with Polymer 1.0
