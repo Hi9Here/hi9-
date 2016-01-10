@@ -1,4 +1,6 @@
 [![devDependency Status](https://david-dm.org/HackITtoday/hi9-/dev-status.svg)](https://david-dm.org/HackITtoday/hi9-#info=devDependencies)
+[![Dependency Status](https://gemnasium.com/HackITtoday/hi9-.svg)](https://gemnasium.com/HackITtoday/hi9-)
+
 ## Polymer Starter Kit
 
 > A starting point for building web applications with Polymer 1.0
