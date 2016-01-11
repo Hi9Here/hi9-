@@ -19,7 +19,7 @@
       app.route = 'data';
       app.scrollPageToTop();
     });
-    
+
     page('/admin', function() {
       app.route = 'admin';
       app.scrollPageToTop();
@@ -50,6 +50,11 @@
       app.scrollPageToTop();
     });
 
+    page('/admin/whitelist', function() {
+      app.route = 'whiteList';
+      app.scrollPageToTop();
+    });
+
     page('/help', function() {
       app.route = 'help';
       app.scrollPageToTop();
@@ -68,11 +73,6 @@
     page('/account', function() {
       app.route = 'account';
       app.scrollPageToTop();
-    });
-
-    page('/user/:uid', function(data) {
-      app.route = 'user-info';
-      app.params = data.params;
     });
 
     // add #! before urls
