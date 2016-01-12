@@ -14,16 +14,26 @@
     <div id="badg" style="margin-bottom: 50px; margin-left: 50px;">
       <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
     </div>
+    
     <h2>Survey Questions</h2>
     <div id="surv" style="margin-left: 50px;">
       <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-      <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
     </div>
+    
+    <h2>Usage of these site is anonymous send to hi9</h2>
+    <div id="whil" style="margin-left: 50px;">
+      <user-white-list folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+    </div>
+    
+    <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
+    
     <content></content>
     <div id="personal" style="margin-bottom: 40px; float: left; margin-top: 50px; clear: left;">
       <form-data data="{{data}}"></form-data>
     </div>
+    
     <hi9-login admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}" style="float: right; clear: left;"></hi9-login>
+    
   </template>
 </dom-module>
 <script>
