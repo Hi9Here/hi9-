@@ -1,5 +1,7 @@
 <link rel="import" href="form-data.html">
 <link rel="import" href="/bower_components/user-surveys/user-surveys.html">
+<link rel="import" href="/bower_components/user-white-list/user-white-list.html">
+
 <dom-module id="user-page">
   <template>
     <h1>Your Account </h1>
@@ -22,7 +24,7 @@
     
     <h2>Usage of these site is anonymous send to hi9</h2>
     <div id="whil" style="margin-left: 50px;">
-      <user-white-list folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+      <user-white-list folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-white-list>
     </div>
     
     <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
