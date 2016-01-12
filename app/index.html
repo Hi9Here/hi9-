@@ -163,7 +163,7 @@
               </section>
               <section data-route="whiteList" class="usersection">
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px;"><paper-button raised="1" >Back</paper-button></a>
-                <user-white-list uid="{{user.uid}}"></user-white-list>
+                <user-white-list edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-white-list>
               </section>
               <section data-route="help">
                 <help-page>
