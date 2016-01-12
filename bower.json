@@ -17,6 +17,7 @@
     "google-analytics": "GoogleWebComponents/google-analytics#~1.0.2",
     "google-chart": "GoogleWebComponents/google-chart#~1.0.4",
     "sortable-list": "marcus7777/sortable-list#master",
+    "user-white-list": "marcus7777/user-white-list#master",
     "user-badges": "marcus7777/user-badges#master",
     "user-surveys": "marcus7777/user-surveys#master",
     "paper-tabs": "PolymerElements/paper-tabs#~1.0.10",
