@@ -26,22 +26,18 @@
     <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js" async></script>
     <!-- endbuild -->
+
+    <!-- Get the First elements up fast -->
+    <link rel="import" href="../bower_components/user-cards/user-cards.html">
+    <!-- End first element -->
+
     <!-- will be replaced with elements/elements.vulcanized.html -->
     <link rel="import" href="elements/elements.html">
     <!-- endreplace-->
-    <link rel="import" href="elements/user-admin.html">
-    <link rel="import" href="elements/user-page.html">
-    <link rel="import" href="elements/user-info.html">
-
-    <link rel="import" href="elements/help-page.html">
-    <link rel="import" href="bower_components/user-help/user-help.html">
-    <link rel="import" href="bower_components/user-list/user-list.html">
-    <link rel="import" href="bower_components/user-cards/user-cards.html">
-    <link rel="import" href="bower_components/user-white-list/user-white-list.html">
-
-    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/nkbabmancickiacfoeoadibicncombep">
-
-    <style is="custom-style" include="shared-styles">
+    <!-- imports that will load after main page -->
+    <link rel="import" href="elements/elements-loadlater.html" async>
+    <!-- end of elements that load after the main page -->
+      <style is="custom-style" include="shared-styles">
       .usersection {
         margin-top: 50px;
       }
@@ -67,7 +63,7 @@
 
   </head>
 
-  <body unresolved class="fullbleed layout vertical">
+  <body class="fullbleed layout vertical">
     <span id="browser-sync-binding"></span>
     <template is="dom-bind" id="app">
       <paper-drawer-panel id="paperDrawerPanel">
@@ -128,9 +124,6 @@
             <iron-pages attr-for-selected="data-route" selected="{{route}}">
               <section data-route="home">
                 <user-cards folder="{{user.uid}}" location="https://hi9site.firebaseio.com/users/"></user-cards>
-                <paper-material elevation="1">
-                  <p class="paper-font-body2">Helping People Get Connected</p>
-                </paper-material>
               </section>
               <section data-route="privacy"><privacy-page></privacy-page></section>
               <section data-route="newaccount"><newaccount-page></newaccount-page></section>
