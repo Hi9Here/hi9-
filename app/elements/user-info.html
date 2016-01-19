@@ -6,10 +6,15 @@
     <h2>{{name}}</h2>
     <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{folder}}"></user-badges>
     <user-surveys answered folder="{{folder}}" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-    first used {{firstUsed}}
-    time on chome {{timeUsed}}
-    lastUsed {{lastUsed}}
-    {{listVisits}}
+    <div>
+      first used {{firstUsed}}
+      time on chrome {{timeUsed}}
+      last Used {{lastUsed}}
+      <template is="dom-repeat" items="{{listVisits}}">
+        site {{item.sites}} time {{item.time}}
+      </template>
+    </div>
+
   </template>
 </dom-module>
 <script>
@@ -34,22 +39,22 @@
     },
     getFirstUsed: function(user, paramsUid) {
       if (user != null) {
-        return first(user.users[paramsUid].user.log)
+        return first(user.users[paramsUid].log)
       }
     },
     getLastUsed: function(user, paramsUid) {
       if (user != null) {
-        return last(user.users[paramsUid].user.log)
+        return last(user.users[paramsUid].log)
       }
     },
     getTimeUsed: function(user, paramsUid) {
       if (user != null) {
-        return timeUsed(user.users[paramsUid].user.log)
+        return timeUsed(user.users[paramsUid].log)
       }
     },
     getListVisits: function(user, paramsUid) {
       if (user != null) {
-        return sitesLogged(user.users[paramsUid].user.log)
+        return sitesLogged(user.users[paramsUid].log)
       }
     }
   });
