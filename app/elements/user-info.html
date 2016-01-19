@@ -6,8 +6,8 @@
     <h2>{{name}}</h2>
     <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{folder}}"></user-badges>
     <user-surveys answered folder="{{folder}}" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-    {{firstUsed}}
-    {{timeUsed}}
+    first used {{firstUsed}}
+    time on chome {{timeUsed}}
     {{listVisits}}
   </template>
 </dom-module>
@@ -17,9 +17,10 @@
     properties: {
       name: {computed:"getName(user, paramsUid)"},
       folder: {computed:"getFolder(userUid, paramsUid)"},
-      firstUsed: {computed:"getFirstUsed(userUid, paramsUid)"},
-      timeUsed: {computed:"getTimeUsed(userUid, paramsUid)"},
-      listVisits {computed:"getListVisits(userUid, paramsUid)"},
+      firstUsed: {computed:"getFirstUsed(user, paramsUid)"},
+      timeUsed: {computed:"getTimeUsed(user, paramsUid)"},
+      lastUsed: {computed:"getLastUsed(user, paramsUid)"},
+      listVisits {computed:"getListVisits(user, paramsUid)"},
     },
     getFolder: function(userUid, paramsUid) {
       return paramsUid
@@ -35,9 +36,14 @@
         return first(user.users[paramsUid].user.log)
       }
     },
+    getLastUsed: function(user, paramsUid) {
+      if (user != null) {
+        return last(user.users[paramsUid].user.log)
+      }
+    },
     getTimeUsed: function(user, paramsUid) {
       if (user != null) {
-        return timeUsed(user.users[paramsUid].user.time)
+        return timeUsed(user.users[paramsUid].user.log)
       }
     },
     getListVisits: function(user, paramsUid) {
@@ -46,13 +52,16 @@
       }
     }
   });
+  function last(log) {
+    
+  }
+  function first(log) {
+    
+  }
+  function timeUsed(log) {
+    
+  }
   function sitesLogged(log) {
-    
-  }
-    function sitesLogged(log) {
-    
-  }
-    function sitesLogged(log) {
     
   }
 </script>
