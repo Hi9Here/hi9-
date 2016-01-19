@@ -6,6 +6,9 @@
     <h2>{{name}}</h2>
     <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{folder}}"></user-badges>
     <user-surveys answered folder="{{folder}}" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+    {{firstUsed}}
+    {{timeUsed}}
+    {{listVisits}}
   </template>
 </dom-module>
 <script>
@@ -13,7 +16,10 @@
     is: "user-info",
     properties: {
       name: {computed:"getName(user, paramsUid)"},
-      folder: {computed:"getFolder(userUid, paramsUid)"}
+      folder: {computed:"getFolder(userUid, paramsUid)"},
+      firstUsed: {computed:"getFirstUsed(userUid, paramsUid)"},
+      timeUsed: {computed:"getTimeUsed(userUid, paramsUid)"},
+      listVisits {computed:"getListVisits(userUid, paramsUid)"},
     },
     getFolder: function(userUid, paramsUid) {
       return paramsUid
@@ -23,6 +29,30 @@
       if (user != null) {
         return user.users[paramsUid].user.google.displayName
       }
+    },
+    getFirstUsed: function(user, paramsUid) {
+      if (user != null) {
+        return first(user.users[paramsUid].user.log)
+      }
+    },
+    getTimeUsed: function(user, paramsUid) {
+      if (user != null) {
+        return timeUsed(user.users[paramsUid].user.time)
+      }
+    },
+    getListVisits: function(user, paramsUid) {
+      if (user != null) {
+        return sitesLogged(user.users[paramsUid].user.log)
+      }
     }
   });
+  function sitesLogged(log) {
+    
+  }
+    function sitesLogged(log) {
+    
+  }
+    function sitesLogged(log) {
+    
+  }
 </script>
