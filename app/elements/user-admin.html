@@ -10,9 +10,11 @@
       paper-material {
         background: #fff;
         margin: 16px, 16px;
-        height: 100px;
+        height: 300px;
+        width: 250px;
         margin: 5px;
         display: inline-block;
+        float: left;
       }
       a:link {
         color: #000;
@@ -41,15 +43,26 @@
         background-color: #FF5722;
         color: #FFFFFF;
       }
+      #adminTitle {
+        height: 50px;
+        padding: 15px 0 10px 20px;
+      }
+      #adminText {
+        padding: 20px 20px 20px 20px;
+      }
+      #adminTitle h3 {
+        color: #FFF;
+      }
     </style>
     <h2>Your Administration Pages</h2>
     <p>The most important thing to remember about all these tools is that you, as an administrator can create, change or update all or any of them at any given time. Smart eh?</p>
-    <p>Each tool has been created to improve your understanding and knowledge about your end users, whether it’s as individuals or as a collective body</p>
-    <p>Some of the information extrapolated, like mobile data usage, will be broken down by name while other, like visits to various white listed sites (as determined by yourself) will be displayed anonymously</p>
+    <p>Each tool has been created to improve your understanding and knowledge about your end users, whether it’s as individuals or as a collective body
+    Some of the information extrapolated, like mobile data usage, will be broken down by name while other, like visits to various white listed sites (as determined by yourself) will be displayed anonymously</p>
     <p>We will be emailing you regularly with updates and additions to your tools! In the meanwhile, below is a brief outline of what’s currently available</p>
+  <div id="card-links" horizontal layout center>
     <a href="/admin/badges">
       <paper-material raised>
-        <div id="adminTitle">
+        <div id="adminTitle" style="background-color: orange;">
           <h3>Badges</h3>
         </div>
         <div id="adminText">
@@ -58,7 +71,7 @@
       </paper-material></a>
     <a href="/admin/surveys">
       <paper-material raised>
-        <div id="adminTitle">
+        <div id="adminTitle" style="background-color: blue;">
           <h3>Surveys</h3>
         </div>
         <div id="adminText">
@@ -67,7 +80,7 @@
       </paper-material></a>
     <a href="/admin/help">
       <paper-material raised>
-        <div id="adminTitle">
+        <div id="adminTitle" style="background-color: grey;">
           <h3>Help</h3>
         </div>
         <div id="adminText">
@@ -76,7 +89,7 @@
       </paper-material></a>
     <a href="/admin/cards">
       <paper-material raised>
-        <div id="adminTitle">
+        <div id="adminTitle" style="background-color: red;">
           <h3>Cards</h3>
         </div>
         <div id="adminText">
@@ -85,7 +98,7 @@
       </paper-material></a>
     <a href="/admin/users">
       <paper-material raised>
-        <div id="adminTitle">
+        <div id="adminTitle" style="background-color: purple;">
           <h3>Users</h3>
         </div>
         <div id="adminText">
@@ -94,13 +107,15 @@
       </paper-material></a>
     <a href="/admin/whitelist">
       <paper-material raised>
-        <div id="adminTitle">
+        <div id="adminTitle" style="background-color: green;">
           <h3>White List</h3>
         </div>
         <div id="adminText">
           <p>The Whitelist Section is where you add, edit or delete which sites you want to track next to the users</p>
         </div>
       </paper-material></a>
+  </div>
+
   </template>
 </dom-module>
 <script type="text/javascript">
