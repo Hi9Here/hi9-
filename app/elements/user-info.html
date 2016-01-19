@@ -53,7 +53,26 @@
     }
   });
   function last(log) {
-    
+    var last = 0
+    for(var index in log) { 
+      if (log.hasOwnProperty(index)) {
+        log[index]
+        if (log[index].time) {
+          if (last < (+log[index].time)) {
+            last = (+log[index].time)
+          }
+        } else if (log[index].end) {
+          if (last < (+log[index].end)) {
+            last = (+log[index].end)
+          }
+        } else if (log[index].first) {
+          if (last < (+log[index].first)) {
+            last = (+log[index].first)
+          }
+        }
+      }
+    }
+    return last
   }
   function first(log) {
     
