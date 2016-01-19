@@ -7,114 +7,147 @@
         font-weight: 300;
         padding-top: 10px;
       }
+
       paper-material {
         background: #fff;
         margin: 16px, 16px;
-        height: 300px;
+        height: 200px;
         width: 250px;
         margin: 5px;
         display: inline-block;
         float: left;
       }
+
       a:link {
         color: #000;
       }
+
       a:visited {
         color: #000;
       }
+
       h3 {
         font-weight: 300;
         margin-top: 10px;
         margin-bottom: 10px;
       }
+
       paper-filter {
         margin-top: 10px;
       }
+
       paper-ripple {
         z-index: 1000;
       }
+
       .cardcontent {
         padding: 0px 10px 0px 10px;
       }
+
       paper-input-container[disabled] {
         opacity: 1;
       }
+
       paper-button {
         background-color: #FF5722;
         color: #FFFFFF;
       }
+
       #adminTitle {
         height: 50px;
         padding: 15px 0 10px 20px;
       }
+
       #adminText {
         padding: 20px 20px 20px 20px;
       }
+
       #adminTitle h3 {
         color: #FFF;
       }
+      iron-icon {
+        color: #FFF;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        height: 32px;
+        width: 32px;
+      }
+
     </style>
     <h2>Your Administration Pages</h2>
-    <p>The most important thing to remember about all these tools is that you, as an administrator can create, change or update all or any of them at any given time. Smart eh?</p>
-    <p>Each tool has been created to improve your understanding and knowledge about your end users, whether it’s as individuals or as a collective body
-    Some of the information extrapolated, like mobile data usage, will be broken down by name while other, like visits to various white listed sites (as determined by yourself) will be displayed anonymously</p>
-    <p>We will be emailing you regularly with updates and additions to your tools! In the meanwhile, below is a brief outline of what’s currently available</p>
-  <div id="card-links" horizontal layout center>
-    <a href="/admin/badges">
-      <paper-material raised>
-        <div id="adminTitle" style="background-color: orange;">
-          <h3>Badges</h3>
-        </div>
-        <div id="adminText">
-          <br />Badges are awarded on the completion of a task which can be anything from sending an email, answering a set of survey questions, to enrolling and completing a course on an education platform like Khan Academy
-        </div>
-      </paper-material></a>
-    <a href="/admin/surveys">
-      <paper-material raised>
-        <div id="adminTitle" style="background-color: blue;">
-          <h3>Surveys</h3>
-        </div>
-        <div id="adminText">
-          <p>Surveys are another way to assess how users are doing, what’s working ie what’s being used and what’s not, plus where if any, are the sticking points
-        </div>
-      </paper-material></a>
-    <a href="/admin/help">
-      <paper-material raised>
-        <div id="adminTitle" style="background-color: grey;">
-          <h3>Help</h3>
-        </div>
-        <div id="adminText">
-          <p>Our help section is based around frequently asked questions and is obviously continually evolving. Additions and changes can be made by the administrator at any time</p>
-        </div>
-      </paper-material></a>
-    <a href="/admin/cards">
-      <paper-material raised>
-        <div id="adminTitle" style="background-color: red;">
-          <h3>Cards</h3>
-        </div>
-        <div id="adminText">
-          <p>Cards are what’s seen by the user on the front end of the site. Cards can be added, changed or deleted by an administrator t any time to create a bespoke package that’s best suited to its user's particular needs</p>
-        </div>
-      </paper-material></a>
-    <a href="/admin/users">
-      <paper-material raised>
-        <div id="adminTitle" style="background-color: purple;">
-          <h3>Users</h3>
-        </div>
-        <div id="adminText">
-          <p>The User section provides admin. with insight into individual profiles. It shows an array of information ranging from mobile data usage to answers from survey questions, badges earned to questions asked via the Help section</p>
-        </div>
-      </paper-material></a>
-    <a href="/admin/whitelist">
-      <paper-material raised>
-        <div id="adminTitle" style="background-color: green;">
-          <h3>White List</h3>
-        </div>
-        <div id="adminText">
-          <p>The Whitelist Section is where you add, edit or delete which sites you want to track next to the users</p>
-        </div>
-      </paper-material></a>
-  </div>
+    <p>As an administrator you, can create, change or update all or any of these tools anytime. Each has i there to improve your understanding and knowledge about users, whether it’s as individuals or as a collective body. Some of the info. extrapolated
+      eg. mobile data usage, will be broken down by name, others eg like visits to various white listed sites anonymously.</p>
+    <div id="card-links" horizontal layout center>
+      <a href="/admin/surveys">
+        <paper-material raised>
+          <div id="adminTitle" style="background-color: blue;">
+            <h3>Surveys</h3>
+            <iron-icon icon="assessment"></iron-icon>
+          </div>
+          <div id="adminText">
+            Discover what’s working & what’s not with your users
+          </div>
+        </paper-material>
+      </a>
+      <a href="/admin/badges">
+        <paper-material raised>
+          <div id="adminTitle" style="background-color: orange;">
+            <h3>Badges</h3>
+            <iron-icon icon="verified-user"></iron-icon>
+          </div>
+          <div id="adminText">
+            Badges are awarded to users on completion of a task chosen by you
+          </div>
+        </paper-material>
+      </a>
+      <a href="/admin/whitelist">
+        <paper-material raised>
+          <div id="adminTitle" style="background-color: green;">
+            <h3>White List</h3>
+            <iron-icon icon="assignment"></iron-icon>
+          </div>
+          <div id="adminText">
+            Created by you for you. Handpick which sites you want to track
+          </div>
+        </paper-material>
+      </a>
+
+      <a href="/admin/cards">
+        <paper-material raised>
+          <div id="adminTitle" style="background-color: red;">
+            <h3>Cards</h3>
+            <iron-icon icon="content-copy"></iron-icon>
+          </div>
+          <div id="adminText">
+            Seen by users when they login. Pick a pre-chosen selection or make it bespoke
+          </div>
+        </paper-material>
+      </a>
+      <a href="/admin/users">
+        <paper-material raised>
+          <div id="adminTitle" style="background-color: purple;">
+            <h3>Users</h3>
+            <iron-icon icon="account-circle"></iron-icon>
+          </div>
+          <div id="adminText">
+            Provides insight into individual profiles
+          </div>
+        </paper-material>
+      </a>
+
+      <a href="/admin/help">
+        <paper-material raised>
+          <div id="adminTitle" style="background-color: grey;">
+            <h3>Help</h3>
+            <iron-icon icon="help"></iron-icon>
+          </div>
+          <div id="adminText">
+            Simple FAQ’s. Make additions or changes anytime
+          </div>
+        </paper-material>
+      </a>
+    </div>
 
   </template>
 </dom-module>
