@@ -24,7 +24,8 @@
     "iron-pages": "PolymerElements/iron-pages#~1.0.3",
     "user-help": "marcus7777/user-help#master",
     "user-list": "HackITtoday/user-list#master",
-    "user-cards": "marcus7777/user-cards#master"
+    "user-cards": "marcus7777/user-cards#master",
+    "moment-js": "marcus7777/moment-js"
   },
   "devDependencies": {
     "web-component-tester": "*",
