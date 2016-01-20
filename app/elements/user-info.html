@@ -1,17 +1,18 @@
 <link rel="import" href="../bower_components/user-badges/user-badges.html">
 <link rel="import" href="../bower_components/user-surveys/user-surveys.html">
+<link rel="import" href="../bower_components/moment-js/moment-js.html">
 
 <dom-module id="user-info">
   <template>
     <h2>{{name}}</h2>
     <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{folder}}"></user-badges>
     <user-surveys answered folder="{{folder}}" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-    <div>
-      first used {{firstUsed}}
-      time on chrome {{timeUsed}}
-      last Used {{lastUsed}}
+    <div style="clear:both">
+      first used {{firstUsed}} <br />
+      time on chrome {{timeUsed}} <br />
+      last Used {{lastUsed}}<br />
       <template is="dom-repeat" items="{{listVisits}}">
-        site {{item.sites}} time {{item.time}}
+        site {{item.site}} time {{item.time}} <br />
       </template>
     </div>
 
@@ -41,52 +42,113 @@
       if (user != null) {
         return first(user.users[paramsUid].log)
       }
+      function first(log) {
+        var first = 10000 
+        for(var index in log) { 
+          if (log.hasOwnProperty(index)) {
+            if (log[index].start) {
+              if (first > (+log[index].start) || first === 10000) {
+                if (+log[index].start > 0) {
+                  first = (+log[index].start)
+                }
+              }
+            } else if (log[index].first) {
+              if (first > (+log[index].first) || first === 10000) {
+                if (+log[index].first > 0) {
+                  first = (+log[index].first)
+                  return moment(toDateTime(first/1000)).fromNow()
+                }
+              }
+            }
+          }
+        }
+        return moment(toDateTime(first)).fromNow() 
+      }
     },
     getLastUsed: function(user, paramsUid) {
       if (user != null) {
         return last(user.users[paramsUid].log)
+      }
+      function last(log) {
+        var last = 0
+        for(var index in log) { 
+          if (log.hasOwnProperty(index)) {
+            if (log[index].time) {
+              if (last < (+log[index].time)) {
+                last = (+log[index].time)
+              }
+            } else if (log[index].end) {
+              if (last < (+log[index].end)) {
+                last = (+log[index].end)
+              }
+            } else if (log[index].first) {
+              if (last < (+log[index].first)) {
+                last = (+log[index].first)
+              }
+            }
+          }
+        }
+        return moment( toDateTime(last/1000) ).fromNow()
       }
     },
     getTimeUsed: function(user, paramsUid) {
       if (user != null) {
         return timeUsed(user.users[paramsUid].log)
       }
+      function timeUsed(log) {
+        var time = 1 
+        for(var index in log) { 
+          if (log.hasOwnProperty(index)) {
+            if (log[index].start) {
+              if (log[index].time) {
+                time = time + (+log[index].time)
+              }
+            }
+          }
+        }
+        return time 
+      }
     },
     getListVisits: function(user, paramsUid) {
       if (user != null) {
         return sitesLogged(user.users[paramsUid].log)
       }
-    }
-  });
-  function last(log) {
-    var last = 0
-    for(var index in log) { 
-      if (log.hasOwnProperty(index)) {
-        log[index]
-        if (log[index].time) {
-          if (last < (+log[index].time)) {
-            last = (+log[index].time)
-          }
-        } else if (log[index].end) {
-          if (last < (+log[index].end)) {
-            last = (+log[index].end)
-          }
-        } else if (log[index].first) {
-          if (last < (+log[index].first)) {
-            last = (+log[index].first)
+      function sitesLogged(log) { 
+        var siteObj = {}
+        
+        for(var index in log) { 
+          if (log.hasOwnProperty(index)) {
+            if (log[index].start) {
+              if (log[index].sites) {
+                var siteList = Object.keys(log[index].sites)
+                for (var jndex in siteList) {
+                  if (!siteObj[siteList[jndex]]) {
+                    siteObj[siteList[jndex]] = 0
+                  }
+                  siteObj[siteList[jndex]] = siteObj[siteList[jndex]] + (+log[index].sites[siteList[jndex]])
+                }
+              }
+            }
           }
         }
+
+        var output = []
+        var keys = Object.keys(siteObj)
+        for (var kndex in keys) {
+          if (!isNaN(siteObj[keys[kndex]])) {
+            if (siteObj[keys[kndex]] === "%5Bobject%20Object%5D") {
+              siteObj[keys[kndex]] = '???'
+            }
+            output.push( {site: decodeURIComponent(keys[kndex]).replace(/http[s]?\:\/\//g, '').replace(/www\./,''), time: siteObj[keys[kndex]]} )  
+          }
+        }
+        return output
       }
     }
-    return last
-  }
-  function first(log) {
-    return 2
-  }
-  function timeUsed(log) {
-    return 3 
-  }
-  function sitesLogged(log) {
-    return 4
+  });
+  function toDateTime(secs) {
+    var t = new Date(1970,0,1)
+    t.setSeconds(secs)
+    return t
   }
 </script>
