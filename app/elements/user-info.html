@@ -23,15 +23,15 @@
     is: "user-info",
     properties: {
       name: {computed:"getName(user, paramsUid)"},
-      folder: {computed:"getFolder(userUid, paramsUid)"},
+      folder: {computed:"getFolder(user, paramsUid)"},
       firstUsed: {computed:"getFirstUsed(user, paramsUid)"},
       timeUsed: {computed:"getTimeUsed(user, paramsUid)"},
       lastUsed: {computed:"getLastUsed(user, paramsUid)"},
       listVisits: {computed:"getListVisits(user, paramsUid)"}
     },
-    getFolder: function(userUid, paramsUid) {
+    getFolder: function(user, paramsUid) {
       return paramsUid
-      // todo return userUid + "/users/" + paramsUid
+      // todo return user.uid + "/users/" + paramsUid
     },
     getName: function(user, paramsUid) {
       if (user != null) {
