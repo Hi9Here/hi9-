@@ -59,6 +59,14 @@
       .userpart {
         margin: 40px 20px 20px 20px;
       }
+      .backButton {
+        float:right;
+        text-decoration: none;
+        margin: 10px;
+        position: absolute;
+        right: 45px;
+        top: 80px;
+      }
 
     </style>
 
@@ -144,19 +152,19 @@
                 <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
               </section>
               <section data-route="adminHelp" class="usersection">
-                <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position: absolute; right: 45px; top: 80px;"><paper-button raised="1" >Back</paper-button></a>
+                <a data-route="admin" href="/admin" on-click="onDataRouteClick" class="backButton"><paper-button raised="1" >Back</paper-button></a>
                 <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
               </section>
               <section data-route="adminCards" class="usersection">
-                <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position: absolute; right: 45px; top: 80px;"><paper-button raised="1" >Back</paper-button></a>
+                <a data-route="admin" href="/admin" on-click="onDataRouteClick" class="backButton"><paper-button raised="1" >Back</paper-button></a>
                 <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
               </section>
               <section data-route="adminUsers" class="usersection">
-                <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float: right; text-decoration: none; margin: 10px; position: absolute; right: 45px; top: 80px;"><paper-button raised="1" >Back</paper-button></a>
+                <a data-route="admin" href="/admin" on-click="onDataRouteClick" class="backButton"><paper-button raised="1" >Back</paper-button></a>
                 <user-list uid="{{user.uid}}"></user-list>
               </section>
               <section data-route="whiteList" class="usersection">
-                <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position: absolute; right: 45px; top: 80px;"><paper-button raised="1" >Back</paper-button></a>
+                <a data-route="admin" href="/admin" on-click="onDataRouteClick" class="backButton"><paper-button raised="1" >Back</paper-button></a>
                 <user-white-list edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-white-list>
               </section>
               <section data-route="help">
@@ -170,7 +178,7 @@
               <section data-route="user-info">
                 <a data-route="adminUsers" href="/admin/users" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px;"><paper-button raised="1" >Back</paper-button></a>
                 <user-info user="{{userInfo}}" params-uid="{{params.uid}}"></user-info>
-                <mediator-data data="{{userInfo}}" location="https://hi9site.firebaseio.com/users/" folder="{{params.uid}}"></mediator-data>    
+                <mediator-data data="{{userInfo}}" location="https://hi9site.firebaseio.com/users/" folder="{{params.uid}}"></mediator-data>
               </section>
             </iron-pages>
           </div>
