@@ -116,7 +116,9 @@
         <paper-scroll-header-panel main condenses keep-condensed-header style="background-color: #FFF">
           <paper-toolbar>
             <paper-icon-button style="background-color: #2E3AA1; color: #FFF;" id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-            <h3>One Platform - Thousands of Possibilities</h3>
+            <div style="background: #FFF; width:100%">
+              <h3>One Platform - Thousands of Possibilities</h3>
+            </div>
             <span class="flex"></span>
             <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
             <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
@@ -157,7 +159,7 @@
               </section>
               <section data-route="whiteList" class="usersection">
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px;"><paper-button raised="1" >Back</paper-button></a>
-                <user-white-list edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-white-list>
+                <user-white-list edit-default folder="[[user.uid]]" p-user="{{user.uid}}" location="https://hi9site.firebaseio.com/users/"></user-white-list>
               </section>
               <section data-route="help">
                 <help-page>
