@@ -169,7 +169,8 @@
               </section>
               <section data-route="user-info">
                 <a data-route="adminUsers" href="/admin/users" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px;"><paper-button raised="1" >Back</paper-button></a>
-                <user-info user="{{userData}}" user-uid="{{user.uid}}" params-uid="{{params.uid}}"></user-info>
+                <user-info user="{{userInfo}}" params-uid="{{params.uid}}"></user-info>
+                <mediator-data data="{{userInfo}}" location="https://hi9site.firebaseio.com/users/" folder="{{params.uid}}"></mediator-data>    
               </section>
             </iron-pages>
           </div>
