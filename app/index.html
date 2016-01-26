@@ -116,12 +116,12 @@
         <paper-scroll-header-panel main condenses keep-condensed-header style="background-color: #FFF">
           <paper-toolbar>
             <paper-icon-button style="background-color: #2E3AA1; color: #FFF;" id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-            <div style="background: #FFF; width:100%">
-              <h3>One Platform - Thousands of Possibilities</h3>
+            <div style="background: #FFF; width:100%; height: 96px; ">
+              <h3 style="margin-top: 40px;">One Platform - Thousands of Possibilities</h3>
             </div>
             <span class="flex"></span>
             <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
-            <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo"></div>
+            <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo" style="background-color: #FFF;"></div>
           </paper-toolbar>
           <div class="content" style="background-color: #FFF">
             <iron-pages attr-for-selected="data-route" selected="{{route}}">
