@@ -5,7 +5,11 @@
 
 <dom-module id="user-page">
   <template>
-    <h1>Your Account </h1>
+    <div id="listofUserHeading" style="height: 50px; width: 100%; background-color: orange; padding: 2px 0 20px 20px; margin-bottom: 20px;">
+      <h2 style="color: #FFF; float:left;">Account</h2>
+      <iron-icon icon="account-circle" style="
+        color: #FFF; height: 40px; width: 40px; float: right; margin: 15px 20px 0px 0px;}"></iron-icon>
+    </div>
     <h2>{{name}}</h2>
     <div id="inlineinstall">
       <p>Here is all your account information. Inorder to access this information you need to have
@@ -17,17 +21,17 @@
     <div id="badg" style="margin-bottom: 50px; margin-left: 50px;">
       <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
     </div>
-    
+
     <h2>Survey Questions</h2>
     <div id="surv" style="margin-left: 50px;">
       <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
     </div>
-    
+
     <h2 style="clear:both">Usage of these sites is send to hi9</h2>
     <div id="whil" style="margin-left: 50px;">
       <user-white-list folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-white-list>
     </div>
-    
+
     <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
     
     <div id="card" style="margin-left: 50px;">
@@ -39,9 +43,8 @@
       <form-data data="{{data}}"></form-data>
     </div>
 
-    
     <hi9-login admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}" style="float: right; clear: left;"></hi9-login>
-    
+
   </template>
 </dom-module>
 <script>
