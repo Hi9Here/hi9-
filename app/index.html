@@ -88,10 +88,6 @@
               <iron-icon icon="home"></iron-icon>
               <span>Home</span>
             </a>
-            <a data-route="privacy" href="/privacy" on-click="onDataRouteClick">
-              <iron-icon icon="account-balance"></iron-icon>
-              <span>Privacy</span>
-            </a>
             <template is="dom-if" if="{{!user}}">
               <a data-route="newaccount" href="/newaccount" on-click="onDataRouteClick">
                 <iron-icon icon="info"></iron-icon>
@@ -113,6 +109,10 @@
             <a data-route="help" href="/help" on-click="onDataRouteClick">
               <iron-icon icon="help"></iron-icon>
               <span>Help</span>
+            </a>
+            <a data-route="privacy" href="/privacy" on-click="onDataRouteClick">
+              <iron-icon icon="visibility-off"></iron-icon>
+              <span>Privacy</span>
             </a>
             <a data-route="contact" href="/contact" on-click="onDataRouteClick">
               <iron-icon icon="mail"></iron-icon>

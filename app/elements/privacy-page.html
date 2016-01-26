@@ -1,45 +1,60 @@
-
 <dom-module id="privacy-page">
 
-<style>
-/* CSS rules for your element */
-  paper-material {
-    background-color: #FFF;
-    padding: 10px;
-    height: 100%;
-  } 
-  
-</style>
+  <style>
+    /* CSS rules for your element */
 
-<template>
-  <!-- local DOM for your element -->
-  <article> 
-    <h3>Surveys</h3>
-    <p>We're asking all participants in the pilot project to assist by completing simple, regular surveys so we can improve the service. The results of these surveys will be passed to the company that paid for these for you to show if this pilot is working.  </p>
-  </article>
-  <aricle>  
-    <h3>Hi9.uk</h3>
-    <p> Just like Facebook or any other app we'll be recording individual statistics when it comes to the Hi9 Homepage and its links. Like the surveys we will be asking you to take part in this is done simply to see what works and what doesn't.  </p>
-  </article>
-  <article>
-    <h3>Mobile Data</h3>
-    <p> We'll also be monitoring mobile data usage just like any mobile company such as Vodafone so we're able to send out reminders if and when needed; say you're running low or in need a top-up, any up and coming special offers and so on. That does not mean we know what sites you have been to just how much data you have used accessing the internet. That is all.  </p>
-  </article>
-  <article>
-    <h3>Chromebook Usage</h3>
-    <p> Like Google does we collect internet use which will be done anonymously and reference to any particular individual or their personal details will not be disclosed at anytime to anyone including ourselves. It will all be encrypted. There will be no individual identifiable data passed over to or access given to any third parties. No employees in HackIT will be able to view individual. Your anonymity will remain intact at all times in regards to this. To prove this we will be sharing the data we collect when the pilot is done. This data will track if people visit certain sites and not just all the sites the users in the pilot visit. We will share what those sites are openly. We have nothing to hide and I hope by doing it show our intent. We have only these interests.  </p>
-    <p> How much data individuals have used so we can better serve the demand of our customers.  How individuals use our website Hi9.uk so we can make it better Do people in general visit certain sites using the Chromebook </p>
-  </article>
-  <article>
-    <p> Please if you have any questions on this please contact me direct. I am the CEO and would be glad to answer on this issue. We take it very seriously. Your data is important to us.  </p>  
-  </article>
+    paper-material {
+      background-color: #FFF;
+      padding: 10px;
+      height: 100%;
+    }
+  </style>
 
-</template>
+  <template>
+    <!-- local DOM for your element -->
+    <div id="listofUserHeading" style="height: 50px; width: 100%; background-color: green; padding: 2px 0 20px 20px; margin-bottom: 20px;">
+      <h2 style="color: #FFF; float:left;">Privacy</h2>
+      <iron-icon icon="visibility-off" style="
+        color: #FFF; height: 40px; width: 40px; float: right; margin: 15px 20px 0px 0px;}"></iron-icon>
+    </div>
+    <article>
+      <h3>Surveys</h3>
+      <p>All participants are asked to assist by completing simple, regular surveys so we can improve the service. The results will only be shared with the organisation you’re a member of.</p>
+    </article>
+    <aricle>
+      <h3>Hi9.uk</h3>
+      <p>We’ll record individual statistics from the Hi9 Homepage like any other app. to see what works and what doesn't.
+      </p>
+      </article>
+      <article>
+        <h3>Mobile Data</h3>
+        <p>We’ll monitor mobile data usage in order to send out reminders eg if you're running low, need a top-up, or if there’s a special offer.
+        </p>
+      </article>
+      <article>
+        <h3>Chromebook Usage</h3>
+        <p>Like Google we collect internet usage anonymously. This data collection will track if people regularly visit certain sites outside of the Hi9 homepage.</p>
+        <ul>
+          <li>Reference to any particular individual or their personal details will not be disclosed at anytime to anyone including ourselves.</li>
+          <li>All info. will be encrypted. </li>
+          <li>No individual’s data will be identifiable, passed over to or access granted to any third parties.</li>
+        </ul>
+      </article>
+      <article>
+        <p>Why do we do this?</p>
+        <ul>
+          <li>To see how much data individuals have used so we can better serve demand </li>
+          <li>How individuals use Hi9.uk so we can make it better</li>
+          <li>Are certain sites more popular than others</li>
+        </ul>
+      </article>
+
+  </template>
 
 </dom-module>
 <script>
-// element registration
-Polymer({
-is: 'privacy-page',
-});
+  // element registration
+  Polymer({
+    is: 'privacy-page',
+  });
 </script>
