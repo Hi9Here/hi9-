@@ -13,9 +13,8 @@
     <div id="extension" style="float: left;">
       <h2>{{name}}</h2>
       <div id="inlineinstall">
-        <p>Here is all your account information. Inorder to access this information you need to have
-        installed a little program called an extension. This shows the people who got you this computer
-      and support that this is working. To install this piece of software please click the button below</p>
+        <p>Here is all your account information. Inorder to access this information you need to have installed a little program called an extension. This shows the people who got you this computer and support that this is working. To install this piece of
+          software please click the button below</p>
       </div>
       <paper-button raised onclick="chrome.webstore.install('https://chrome.google.com/webstore/detail/nkbabmancickiacfoeoadibicncombep')">Hi9 Extension</paper-button>
     </div>
@@ -25,24 +24,24 @@
         <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
       </div>
     </div>
-<div id="badgePart" style="float:left;">
-  <h2>Your Badges</h2>
-  <div id="badg" style="margin-bottom: 50px; margin-left: 50px;">
-    <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-  </div>
-</div>
-<div id="whiteListpart" style="float:left;">
-  <div id="whil" style="margin-left: 50px;">
-    <user-white-list folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-white-list>
-  </div>
-</div>
+    <div id="badgePart" style="float:left;">
+      <h2>Your Badges</h2>
+      <div id="badg" style="margin-bottom: 50px; margin-left: 50px;">
+        <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+      </div>
+    </div>
+    <div id="whiteListpart" style="float:left;">
+      <div id="whil" style="margin-left: 50px;">
+        <user-white-list folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-white-list>
+      </div>
+    </div>
 
     <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
-<div id="cardPart" style="float: left;">
-  <div id="card" style="margin-left: 50px; float: left; margin-top: 20px;">
-    <user-cards edit folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
-  </div>
-</div>
+    <div id="cardPart" style="float: left;">
+      <div id="card" style="margin-left: 50px; float: left; margin-top: 20px;">
+        <user-cards edit folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
+      </div>
+    </div>
 
 
     <content></content>
@@ -55,24 +54,24 @@
   </template>
 </dom-module>
 <script>
-(function() {
-  'use strict';
-  Polymer({
-    is: 'user-page',
-    properties: {
-      userData: {
-        notify: true
+  (function() {
+    'use strict';
+    Polymer({
+      is: 'user-page',
+      properties: {
+        userData: {
+          notify: true
+        },
+        user: {
+          notify: true
+        },
+        name: {
+          computed: "get(user.google.displayName)"
+        }
       },
-      user: {
-        notify: true
-      },
-      name: {
-        computed: "get(user.google.displayName)"
+      get: function(val) {
+        return val
       }
-    },
-    get: function(val) {
-      return val
-    }
-  });
-})();
+    });
+  })();
 </script>
