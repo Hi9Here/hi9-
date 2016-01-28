@@ -1,184 +1,208 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hi9 - One Platform Thousands of Possibilities</title>
-    <!-- Chrome for Android theme color -->
-    <meta name="theme-color" content="#2E3AA1">
-    <!-- Web Application Manifest -->
-    <link rel="manifest" href="manifest.json">
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="PSK">
-    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
-    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
-    <!-- Tile icon for Win8 (144x144) -->
-    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild-->
-    <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.js" async></script>
-    <!-- endbuild -->
 
-    <!-- Get the First elements up fast -->
-    <link rel="import" href="../bower_components/user-cards/user-cards.html">
-    <!-- End first element -->
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hi9 - One Platform Thousands of Possibilities</title>
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#2E3AA1">
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="PSK">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+  <!-- Tile icon for Win8 (144x144) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js" async></script>
+  <!-- endbuild -->
 
-    <!-- will be replaced with elements/elements.vulcanized.html -->
-    <link rel="import" href="elements/elements.html">
-    <!-- endreplace-->
-    <!-- imports that will load after main page -->
-    <link rel="import" href="elements/elements-loadlater.html" async>
-    <!-- end of elements that load after the main page -->
-      <style is="custom-style" include="shared-styles">
-      .usersection {
-        margin-top: 50px;
-      }
-      nav paper-button {
-        background: #FF5722;
-        min-width: 172px;
-        margin: 0px 2px 6px;
-        font-family: Roboto, Helvetica, sans-serif;
-        color: #FFF;
-      }
-      nav a {
-        color: #FFF;
-      }
-      .userpart paper-button {
-        color: #FFF;
-        margin: 0;
-        padding: 0;
-      }
-      .userpart {
-        margin: 40px 20px 20px 20px;
-      }
 
-    </style>
 
-  </head>
+  <!-- Get the First elements up fast -->
+  <link rel="import" href="../bower_components/user-cards/user-cards.html">
+  <!-- End first element -->
 
-  <body class="fullbleed layout vertical">
-    <span id="browser-sync-binding"></span>
-    <template is="dom-bind" id="app">
-      <paper-drawer-panel id="paperDrawerPanel">
-        <!-- Drawer Scroll Header Panel -->
-        <paper-scroll-header-panel drawer fixed>
-          <!-- Drawer Toolbar -->
-          <paper-toolbar id="drawerToolbar" style="background-color: #512DA8">
-            <span class="paper-font-title" style="color: #FFF">Menu</span>
-          </paper-toolbar>
-          <!-- Drawer Content -->
-          <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]" style="background-color: #512DA8">
-            <a data-route="home" href="/" on-click="onDataRouteClick">
-              <iron-icon icon="home"></iron-icon>
-              <span>Home</span>
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
+  <!-- imports that will load after main page -->
+  <link rel="import" href="elements/elements-loadlater.html" async>
+  <!-- end of elements that load after the main page -->
+  <style is="custom-style" include="shared-styles">
+    .usersection {
+      margin-top: 50px;
+    }
+
+    nav paper-button {
+      background: #FF5722;
+      min-width: 172px;
+      margin: 0px 2px 6px;
+      font-family: Roboto, Helvetica, sans-serif;
+      color: #FFF;
+    }
+
+    nav a {
+      color: #FFF;
+    }
+
+    .userpart paper-button {
+      color: #FFF;
+      margin: 0;
+      padding: 0;
+    }
+
+    .userpart {
+      margin: 40px 20px 20px 20px;
+    }
+  </style>
+
+</head>
+
+<body class="fullbleed layout vertical">
+  <span id="browser-sync-binding"></span>
+  <template is="dom-bind" id="app">
+    <paper-drawer-panel id="paperDrawerPanel">
+      <!-- Drawer Scroll Header Panel -->
+      <paper-scroll-header-panel drawer fixed>
+        <!-- Drawer Toolbar -->
+        <paper-toolbar id="drawerToolbar" style="background-color: #512DA8">
+          <span class="paper-font-title" style="color: #FFF">Menu</span>
+        </paper-toolbar>
+        <!-- Drawer Content -->
+        <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]" style="background-color: #512DA8">
+          <a data-route="home" href="/" on-click="onDataRouteClick">
+            <iron-icon icon="home"></iron-icon>
+            <span>Home</span>
+          </a>
+          <template is="dom-if" if="{{!user}}">
+            <a data-route="newaccount" href="/newaccount" on-click="onDataRouteClick">
+              <iron-icon icon="info"></iron-icon>
+              <span>New Account</span>
             </a>
-            <template is="dom-if" if="{{!user}}">
-              <a data-route="newaccount" href="/newaccount" on-click="onDataRouteClick">
-                <iron-icon icon="info"></iron-icon>
-                <span>New Account</span>
-              </a>
-            </template>
-            <template is="dom-if" if="{{user}}">
-              <a data-route="admin" href="/admin" on-click="onDataRouteClick">
-                <iron-icon icon="supervisor-account"></iron-icon>
-                <span>User Admin</span>
-              </a>
-            </template>
-            <template is="dom-if" if="{{user}}">
-              <a data-route="account" href="/account" on-click="onDataRouteClick">
-                <iron-icon icon="account-circle"></iron-icon>
-                <span>Account</span>
-              </a>
-            </template>
-            <a data-route="help" href="/help" on-click="onDataRouteClick">
-              <iron-icon icon="help"></iron-icon>
-              <span>Help</span>
+          </template>
+          <template is="dom-if" if="{{user}}">
+            <a data-route="admin" href="/admin" on-click="onDataRouteClick">
+              <iron-icon icon="supervisor-account"></iron-icon>
+              <span>User Admin</span>
             </a>
-            <a data-route="privacy" href="/privacy" on-click="onDataRouteClick">
-              <iron-icon icon="visibility-off"></iron-icon>
-              <span>Privacy</span>
+          </template>
+          <template is="dom-if" if="{{user}}">
+            <a data-route="account" href="/account" on-click="onDataRouteClick">
+              <iron-icon icon="account-circle"></iron-icon>
+              <span>Account</span>
             </a>
-            <a data-route="contact" href="/contact" on-click="onDataRouteClick">
-              <iron-icon icon="mail"></iron-icon>
-              <span>Contact</span>
-            </a>
-          </paper-menu>
-        </paper-scroll-header-panel>
-        <!-- Main Area -->
-        <paper-scroll-header-panel main condenses keep-condensed-header style="background-color: #FFF">
-          <paper-toolbar>
-            <paper-icon-button style="background-color: #2E3AA1; color: #FFF;" id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-            <div style="background: #FFF; width:100%; height: 96px; ">
-              <h3 style="margin-top: 40px;">One Platform - Thousands of Possibilities</h3>
-            </div>
-            <span class="flex"></span>
-            <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
-            <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo" style="background-color: #FFF;"></div>
-          </paper-toolbar>
-          <div class="content" style="background-color: #FFF">
-            <iron-pages attr-for-selected="data-route" selected="{{route}}">
-              <section data-route="home">
-                <user-cards folder="{{user.uid}}" location="https://hi9site.firebaseio.com/users/"></user-cards>
-              </section>
-              <section data-route="privacy"><privacy-page></privacy-page></section>
-              <section data-route="newaccount"><newaccount-page></newaccount-page></section>
-              <section data-route="account">
-                <user-page user="{{user}}" user-data="{{userData}}">
-                </user-page>
-              </section>
-              <section data-route="admin">
-                <user-admin user="{{user}}"> loading ... </user-admin>
-              </section>
-              <section data-route="adminBadges" class="usersection">
-                <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;"><paper-button raised="1" >Back</paper-button></a>
-                <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
-              </section>
-              <section data-route="adminSurveys" class="usersection">
-                <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;"><paper-button raised="1" >Back</paper-button></a>
-                <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-              </section>
-              <section data-route="adminHelp" class="usersection">
-                <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;"><paper-button raised="1" >Back</paper-button></a>
-                <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
-              </section>
-              <section data-route="adminCards" class="usersection">
-                <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;"><paper-button raised="1" >Back</paper-button></a>
-                <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
-              </section>
-              <section data-route="adminUsers" class="usersection">
-                <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float: right; text-decoration: none; margin: 10px; position: absolute; right: 50px; top: 80px;"><paper-button raised="1" >Back</paper-button></a>
-                <user-list uid="{{user.uid}}"></user-list>
-              </section>
-              <section data-route="whiteList" class="usersection">
-                <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px;"><paper-button raised="1" >Back</paper-button></a>
-                <user-white-list edit-default folder="[[user.uid]]" p-user="{{user.uid}}" location="https://hi9site.firebaseio.com/users/"></user-white-list>
-              </section>
-              <section data-route="help">
-                <help-page>
-                  <user-help folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
-                </help-page>
-              </section>
-              <section data-route="contact">
-                <contact-page></contact-page>
-              </section>
-              <section data-route="user-info">
-                <a data-route="adminUsers" href="/admin/users" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px;"><paper-button raised="1" >Back</paper-button></a>
-                <user-info user="{{userInfo}}" params-uid="{{params.uid}}"></user-info>
-                <mediator-data data="{{userInfo}}" location="https://hi9site.firebaseio.com/users/" folder="{{params.uid}}"></mediator-data>
-              </section>
-            </iron-pages>
+          </template>
+          <a data-route="help" href="/help" on-click="onDataRouteClick">
+            <iron-icon icon="help"></iron-icon>
+            <span>Help</span>
+          </a>
+          <a data-route="privacy" href="/privacy" on-click="onDataRouteClick">
+            <iron-icon icon="visibility-off"></iron-icon>
+            <span>Privacy</span>
+          </a>
+          <a data-route="contact" href="/contact" on-click="onDataRouteClick">
+            <iron-icon icon="mail"></iron-icon>
+            <span>Contact</span>
+          </a>
+        </paper-menu>
+      </paper-scroll-header-panel>
+      <!-- Main Area -->
+      <paper-scroll-header-panel main condenses keep-condensed-header style="background-color: #FFF">
+        <paper-toolbar>
+          <paper-icon-button style="background-color: #2E3AA1; color: #FFF;" id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+          <div style="background: #FFF; width:100%; height: 96px; ">
+            <h3 style="margin-top: 40px;">One Platform - Thousands of Possibilities</h3>
           </div>
-        </paper-scroll-header-panel>
-      </paper-drawer-panel>
-      <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
+          <span class="flex"></span>
+          <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
+          <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo" style="background-color: #FFF;"></div>
+        </paper-toolbar>
+        <div class="content" style="background-color: #FFF">
+          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+            <section data-route="home">
+              <user-cards folder="{{user.uid}}" location="https://hi9site.firebaseio.com/users/"></user-cards>
+            </section>
+            <section data-route="privacy">
+              <privacy-page></privacy-page>
+            </section>
+            <section data-route="newaccount">
+              <newaccount-page></newaccount-page>
+            </section>
+            <section data-route="account">
+              <user-page user="{{user}}" user-data="{{userData}}">
+              </user-page>
+            </section>
+            <section data-route="admin">
+              <user-admin user="{{user}}"> loading ... </user-admin>
+            </section>
+            <section data-route="adminBadges" class="usersection">
+              <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
+                <paper-button raised="1">Back</paper-button>
+              </a>
+              <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+            </section>
+            <section data-route="adminSurveys" class="usersection">
+              <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
+                <paper-button raised="1">Back</paper-button>
+              </a>
+              <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+            </section>
+            <section data-route="adminHelp" class="usersection">
+              <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
+                <paper-button raised="1">Back</paper-button>
+              </a>
+              <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
+            </section>
+            <section data-route="adminCards" class="usersection">
+              <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
+                <paper-button raised="1">Back</paper-button>
+              </a>
+              <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
+            </section>
+            <section data-route="adminUsers" class="usersection">
+              <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float: right; text-decoration: none; margin: 10px; position: absolute; right: 50px; top: 80px;">
+                <paper-button raised="1">Back</paper-button>
+              </a>
+              <user-list uid="{{user.uid}}"></user-list>
+            </section>
+            <section data-route="whiteList" class="usersection">
+              <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px;">
+                <paper-button raised="1">Back</paper-button>
+              </a>
+              <user-white-list edit-default folder="[[user.uid]]" p-user="{{user.uid}}" location="https://hi9site.firebaseio.com/users/"></user-white-list>
+            </section>
+            <section data-route="help">
+              <help-page>
+                <user-help folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
+              </help-page>
+            </section>
+            <section data-route="contact">
+              <contact-page></contact-page>
+            </section>
+            <section data-route="user-info">
+              <a data-route="adminUsers" href="/admin/users" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px;">
+                <paper-button raised="1">Back</paper-button>
+              </a>
+              <user-info user="{{userInfo}}" params-uid="{{params.uid}}"></user-info>
+              <mediator-data data="{{userInfo}}" location="https://hi9site.firebaseio.com/users/" folder="{{params.uid}}"></mediator-data>
+            </section>
+          </iron-pages>
+        </div>
+      </paper-scroll-header-panel>
+    </paper-drawer-panel>
+    <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
     <!-- Uncomment next block to enable Service Worker support (1/2) -->
     <!--
       <paper-toast id="caching-complete"
@@ -194,9 +218,12 @@
         </platinum-sw-cache>
       </platinum-sw-register>
     -->
-    </template>
-    <!-- build:js scripts/app.js -->
-    <script src="scripts/app.js"></script>
-    <!-- endbuild-->
-  </body>
+  </template>
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
+  <!-- Intercom Script -->
+  <!-- End of Intercom Script -->
+</body>
+
 </html>

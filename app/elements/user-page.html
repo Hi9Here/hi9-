@@ -10,33 +10,40 @@
       <iron-icon icon="account-circle" style="
         color: #FFF; height: 40px; width: 40px; float: right; margin: 15px 20px 0px 0px;}"></iron-icon>
     </div>
-    <h2>{{name}}</h2>
-    <div id="inlineinstall">
-      <p>Here is all your account information. Inorder to access this information you need to have
-      installed a little program called an extension. This shows the people who got you this computer
-    and support that this is working. To install this piece of software please click the button below</p>
+    <div id="extension" style="float: left;">
+      <h2>{{name}}</h2>
+      <div id="inlineinstall">
+        <p>Here is all your account information. Inorder to access this information you need to have
+        installed a little program called an extension. This shows the people who got you this computer
+      and support that this is working. To install this piece of software please click the button below</p>
+      </div>
+      <paper-button raised onclick="chrome.webstore.install('https://chrome.google.com/webstore/detail/nkbabmancickiacfoeoadibicncombep')">Hi9 Extension</paper-button>
     </div>
-    <paper-button raised onclick="chrome.webstore.install('https://chrome.google.com/webstore/detail/nkbabmancickiacfoeoadibicncombep')">Hi9 Extension</paper-button>
-    <h2>Your Badges</h2>
-    <div id="badg" style="margin-bottom: 50px; margin-left: 50px;">
-      <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+    <div id="surveyQuests" style="float: left;">
+      <h2>Survey Questions</h2>
+      <div id="surv" style="margin-left: 50px;">
+        <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+      </div>
     </div>
-
-    <h2>Survey Questions</h2>
-    <div id="surv" style="margin-left: 50px;">
-      <user-surveys answer folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
-    </div>
-
-    <h2 style="clear:both">Usage of these sites is send to hi9</h2>
-    <div id="whil" style="margin-left: 50px;">
-      <user-white-list folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-white-list>
-    </div>
+<div id="badgePart" style="float:left;">
+  <h2>Your Badges</h2>
+  <div id="badg" style="margin-bottom: 50px; margin-left: 50px;">
+    <user-badges location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+  </div>
+</div>
+<div id="whiteListpart" style="float:left;">
+  <div id="whil" style="margin-left: 50px;">
+    <user-white-list folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-white-list>
+  </div>
+</div>
 
     <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
+<div id="cardPart" style="float: left;">
+  <div id="card" style="margin-left: 50px; float: left; margin-top: 20px;">
+    <user-cards edit folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
+  </div>
+</div>
 
-    <div id="card" style="margin-left: 50px; float: left; margin-top: 20px;">
-      <user-cards edit folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
-    </div>
 
     <content></content>
     <div id="personal" style="margin-bottom: 40px; float: left; margin-top: 50px; clear: left;">
