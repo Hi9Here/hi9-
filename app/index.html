@@ -98,12 +98,12 @@
               <span>User Admin</span>
             </a>
           </template>
-          <template is="dom-if" if="{{user}}">
+          <!-- <template is="dom-if" if="{{user}}">
             <a data-route="account" href="/account" on-click="onDataRouteClick">
               <iron-icon icon="account-circle"></iron-icon>
               <span>Account</span>
             </a>
-          </template>
+          </template> -->
           <a data-route="help" href="/help" on-click="onDataRouteClick">
             <iron-icon icon="help"></iron-icon>
             <span>Help</span>
@@ -163,7 +163,7 @@
               <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
                 <paper-button raised="1">Back</paper-button>
               </a>
-              <user-help edit edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-help>
+              <user-help edit edit-default folder="default" location="https://hi9site.firebaseio.com/users/"></user-help>
             </section>
             <section data-route="adminCards" class="usersection">
               <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
