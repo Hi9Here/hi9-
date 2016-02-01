@@ -38,6 +38,7 @@
     "iron-icons": "master",
     "platinum-sw": "^1.2.0",
     "paper-filter": "master",
-    "sortable-list": "master"
+    "sortable-list": "master",
+    "mediator-data": "master"
   }
 }
