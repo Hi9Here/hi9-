@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="description" content="Digital Organisor">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hi9 - One Platform Thousands of Possibilities</title>
+  <title>Hi9 - Organise Everything</title>
   <!-- Chrome for Android theme color -->
   <meta name="theme-color" content="#2E3AA1">
   <!-- Web Application Manifest -->
@@ -21,14 +21,9 @@
   <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
   <!-- Tile icon for Win8 (144x144) -->
   <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-  <!-- build:css styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild-->
   <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <!-- endbuild -->
-
-
 
   <!-- Get the First elements up fast -->
   <link rel="import" href="../bower_components/user-cards/user-cards.html">
@@ -37,9 +32,13 @@
   <!-- will be replaced with elements/elements.vulcanized.html -->
   <link rel="import" href="elements/elements.html">
   <!-- endreplace-->
-  <!-- imports that will load after main page -->
-  <link rel="import" href="elements/elements-loadlater.html" async>
-  <!-- end of elements that load after the main page -->
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="import" href="styles/shared-styles.html">
+
+  <!-- endbuild-->
+
+
   <!--Start of Zopim Live Chat Script-->
   <script type="text/javascript">
   window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
@@ -134,7 +133,7 @@
         <paper-toolbar>
           <paper-icon-button style="background-color: #2E3AA1; color: #FFF;" id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
           <div style="background: #FFF; width:100%; height: 96px; ">
-            <h3 style="margin-top: 40px;">One Platform - Thousands of Possibilities</h3>
+            <h3 style="margin-top: 40px;">Organise Everything with Ease</h3>
           </div>
           <span class="flex"></span>
           <hi9-login admin="{{admin}}" role="{{role}}" hidden$="{{user}}" user="{{user}}"></hi9-login>
@@ -233,8 +232,6 @@
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
-  <!-- Intercom Script -->
-  <!-- End of Intercom Script -->
 </body>
 
 </html>
