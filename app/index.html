@@ -143,22 +143,23 @@ window.Intercom("boot", {
                 <privacy-page></privacy-page>
               </section>
             </template>
-            <template data-route="newaccount" is="dom-if" restamp>
+            <template data-route="newaccount" is="dom-if" _restamp>
               <section>
                 <newaccount-page></newaccount-page>
               </section>
             </template>
-            <template data-route="account" is="dom-if" restamp>
+            <template data-route="account" is="dom-if" _restamp>
               <section>
+                <hi9-header color="orange" label="account" icon="account-circle"></hi9-header>
                 <user-page user="{{user}}" user-data="{{userData}}"> </user-page>
               </section>
             </template>
-            <template data-route="admin" is="dom-if" restamp>
+            <template data-route="admin" is="dom-if" _restamp>
               <section>
                 <user-admin user="{{user}}"> loading ... </user-admin>
               </section>
             </template>
-            <template data-route="adminBadges" class="usersection" is="dom-if" restamp>
+            <template data-route="adminBadges" class="usersection" is="dom-if" _restamp>
               <section>
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
                   <paper-button raised="1">Back</paper-button>
@@ -166,7 +167,7 @@ window.Intercom("boot", {
                 <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
               </section>
             </template>
-            <template data-route="adminSurveys" class="usersection" is="dom-if" restamp>
+            <template data-route="adminSurveys" class="usersection" is="dom-if" _restamp>
               <section>
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
                   <paper-button raised="1">Back</paper-button>
@@ -174,7 +175,7 @@ window.Intercom("boot", {
                 <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
               </section>
             </template>
-            <template data-route="adminHelp" class="usersection" is="dom-if" restamp>
+            <template data-route="adminHelp" class="usersection" is="dom-if" _restamp>
               <section>
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
                   <paper-button raised="1">Back</paper-button>
@@ -182,7 +183,7 @@ window.Intercom("boot", {
                 <user-help edit edit-default folder="default" location="https://hi9site.firebaseio.com/users/"></user-help>
               </section>
             </template>
-            <template data-route="adminCards" class="usersection" is="dom-if" restamp>
+            <template data-route="adminCards" class="usersection" is="dom-if" _restamp>
               <section>
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
                   <paper-button raised="1">Back</paper-button>
@@ -190,7 +191,7 @@ window.Intercom("boot", {
                 <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
               </section>
             </template>
-            <template data-route="adminUsers" class="usersection" is="dom-if" restamp>
+            <template data-route="adminUsers" class="usersection" is="dom-if" _restamp>
               <section>
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float: right; text-decoration: none; margin: 10px; position: absolute; right: 50px; top: 80px;">
                   <paper-button raised="1">Back</paper-button>
@@ -198,7 +199,7 @@ window.Intercom("boot", {
                 <user-list uid="{{user.uid}}"></user-list>
               </section>
             </template>
-            <template data-route="whiteList" class="usersection" is="dom-if" restamp>
+            <template data-route="whiteList" class="usersection" is="dom-if" _restamp>
               <section>
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position: absolute; right: 50px; top: 80px">
                   <paper-button raised="1">Back</paper-button>
@@ -206,18 +207,18 @@ window.Intercom("boot", {
                 <user-white-list edit-default folder="[[user.uid]]" p-user="{{user.uid}}" location="https://hi9site.firebaseio.com/users/"></user-white-list>
               </section>
             </template>
-            <template data-route="help" is="dom-if" restamp>
+            <template data-route="help" is="dom-if" _restamp>
               <section>
                 <help-page><user-help folder="default" location="https://hi9site.firebaseio.com/users/"></user-help></help-page>
               </section>
             </template>
-            <template data-route="contact" is="dom-if" restamp>
+            <template data-route="contact" is="dom-if" _restamp>
               <link rel="import" href="elements/contact-page.html">
               <section>
                 <contact-page></contact-page>
               </section>
             </template>
-            <template data-route="user-info" is="dom-if" restamp>
+            <template data-route="user-info" is="dom-if" _restamp>
               <section>
                 <a data-route="adminUsers" href="/admin/users" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px;">
                   <paper-button raised="1">Back</paper-button>
