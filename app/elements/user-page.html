@@ -1,4 +1,3 @@
-<link rel="import" href="form-data.html">
 <link rel="import" href="/bower_components/user-surveys/user-surveys.html">
 <link rel="import" href="/bower_components/user-cards/user-cards.html">
 <link rel="import" href="/bower_components/user-white-list/user-white-list.html">
@@ -36,7 +35,6 @@
       </div>
     </div> -->
 
-    <firebase-data data="{{userData}}" uid="[[user.uid]]"></firebase-data>
     <div id="cardPart" style="float: left;">
       <div id="card" style="margin-left: 50px; float: left; margin-top: 20px;">
         <user-cards edit folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
@@ -45,9 +43,6 @@
 
 
     <content></content>
-    <div id="personal" style="margin-bottom: 40px; float: left; margin-top: 50px; clear: left;">
-      <form-data data="{{data}}"></form-data>
-    </div>
 
     <hi9-login admin="{{admin}}" role="{{role}}" user="{{user}}" data="{{userData}}" style="float: right; clear: left;"></hi9-login>
 

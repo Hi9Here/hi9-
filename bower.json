@@ -26,7 +26,8 @@
     "user-list": "HackITtoday/user-list#master",
     "user-cards": "marcus7777/user-cards#master",
     "iron-collapse": "PolymerElements/iron-collapse#~1.0.5",
-    "moment-js": "marcus7777/moment-js"
+    "moment-js": "marcus7777/moment-js",
+    "lazy-pages": "marcus7777/lazy-pages#master"
   },
   "devDependencies": {
     "web-component-tester": "*",
