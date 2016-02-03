@@ -163,7 +163,7 @@ window.Intercom("boot", {
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
                   <paper-button raised="1">Back</paper-button>
                 </a>
-                <hi9-header color="orange" label="Account" icon="account-circle"></hi9-header>
+                <hi9-header color="LightGrey" label="Admin Badges" icon="verified-user"></hi9-header>
                 <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
               </section>
             </template>
@@ -172,7 +172,7 @@ window.Intercom("boot", {
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
                   <paper-button raised="1">Back</paper-button>
                 </a>
-                <hi9-header color="LightGrey" label="Surveys" icon="account-circle"></hi9-header>
+                <hi9-header color="LightGrey" label="Surveys" icon="assessment"></hi9-header>
                 <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
               </section>
             </template>
@@ -181,7 +181,7 @@ window.Intercom("boot", {
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
                   <paper-button raised="1">Back</paper-button>
                 </a>
-                <hi9-header color="LightGrey" label="Account" icon="help"></hi9-header>
+                <hi9-header color="LightGrey" label="Help" icon="help"></hi9-header>
                 <user-help edit edit-default folder="default" location="https://hi9site.firebaseio.com/users/"></user-help>
               </section>
             </template>
@@ -190,7 +190,7 @@ window.Intercom("boot", {
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
                   <paper-button raised="1">Back</paper-button>
                 </a>
-                <hi9-header color="LightGrey" label="Account" icon="account-circle"></hi9-header>
+                <hi9-header color="LightGrey" label="Cards" icon="content-copy"></hi9-header>
                 <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
               </section>
             </template>
@@ -199,7 +199,7 @@ window.Intercom("boot", {
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float: right; text-decoration: none; margin: 10px; position: absolute; right: 50px; top: 80px;">
                   <paper-button raised="1">Back</paper-button>
                 </a>
-                <hi9-header color="LightGrey" label="Account" icon="account-circle"></hi9-header>
+                <hi9-header color="LightGrey" label="Users" icon="account-circle"></hi9-header>
                 <user-list uid="{{user.uid}}"></user-list>
               </section>
             </template>
@@ -208,8 +208,8 @@ window.Intercom("boot", {
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position: absolute; right: 50px; top: 80px">
                   <paper-button raised="1">Back</paper-button>
                 </a>
-                <hi9-header color="LightGrey" label="Account" icon="account-circle"></hi9-header>
-                <user-white-list edit-default folder="[[user.uid]]" p-user="{{user.uid}}" location="https://hi9site.firebaseio.com/users/"></user-white-list>
+                <hi9-header color="LightGrey" label="White List" icon="assignment"></hi9-header>
+                <user-white-list edit-default edit folder="[[user.uid]]" p-user="{{user.uid}}" location="https://hi9site.firebaseio.com/users/"></user-white-list>
               </section>
             </template>
             <template data-route="help" is="dom-if" _restamp>
@@ -258,6 +258,17 @@ window.Intercom("boot", {
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
+
+<!--Start of Zopim Live Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+$.src="//v2.zopim.com/?3YXr72LvTFdPKXAjBq6DSjJC2kjJQjuO";z.t=+new Date;$.
+type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+</script>
+<!--End of Zopim Live Chat Script-->
+
 </body>
 
 </html>
