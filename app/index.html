@@ -155,7 +155,7 @@ window.Intercom("boot", {
             <template data-route="admin" is="dom-if" _restamp>
               <section>
                 <hi9-header color="gray" label="User Administration" icon="supervisor-account"></hi9-header>
-                <user-admin user="{{user}}"> loading ... </user-admin>
+                <user-admin user="{{user.users}}"> loading ... </user-admin>
               </section>
             </template>
             <template data-route="adminBadges" class="usersection" is="dom-if" _restamp>
