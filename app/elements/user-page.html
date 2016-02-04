@@ -10,7 +10,9 @@
         <p>Here is all your account information. Inorder to access this information you need to have installed a little program called an extension. This shows the people who got you this computer and support that this is working. To install this piece of
           software please click the button below</p>
       </div>
-      {{installed}}
+      <template is="dom-if" if="{{installed}}">
+        Thank you for installing the
+      </template>
       <paper-button raised on-tap="install">Hi9 Extension</paper-button>
     </div>
     <div id="surveyQuests" style="float: left; clear:right;">
