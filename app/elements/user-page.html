@@ -66,7 +66,12 @@
       },
       install: function(e) {
         that = this
-        chrome.webstore.install("https://chrome.google.com/webstore/detail/nkbabmancickiacfoeoadibicncombep",function() {that.installed = true},function() {that.installed = false})
+        chrome.webstore.install("https://chrome.google.com/webstore/detail/nkbabmancickiacfoeoadibicncombep",function(e) {
+          that.installed = true
+        },function(e) {
+          alert(e)
+          that.installed = false
+        })
       }
     });
   })();
