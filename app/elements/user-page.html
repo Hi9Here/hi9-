@@ -10,7 +10,10 @@
         <p>Here is all your account information. Inorder to access this information you need to have installed a little program called an extension. This shows the people who got you this computer and support that this is working. To install this piece of
           software please click the button below</p>
       </div>
-      <paper-button raised onclick="chrome.webstore.install('https://chrome.google.com/webstore/detail/nkbabmancickiacfoeoadibicncombep')">Hi9 Extension</paper-button>
+      <template is="dom-if" if="{{installed}}">
+        Thank you for installing the
+      </template>
+      <paper-button raised on-tap="install">Hi9 Extension</paper-button>
     </div>
     <div id="surveyQuests" style="float: left; clear:right;">
       <h2>Survey Questions</h2>
@@ -46,6 +49,7 @@
 <script>
   (function() {
     'use strict';
+    var that 
     Polymer({
       is: 'user-page',
       properties: {
@@ -61,6 +65,15 @@
       },
       get: function(val) {
         return val
+      },
+      install: function(e) {
+        that = this
+        chrome.webstore.install("https://chrome.google.com/webstore/detail/nkbabmancickiacfoeoadibicncombep",function(e) {
+          that.installed = true
+        },function(e) {
+          alert(e)
+          that.installed = false
+        })
       }
     });
   })();
