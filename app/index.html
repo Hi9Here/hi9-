@@ -90,7 +90,7 @@ window.Intercom("boot", {
               <span>New Account</span>
             </a>
           </template>
-          <template is="dom-if" if="{{user.users}}">
+          <template is="dom-if" if="{{userData.users}}">
             <a data-route="admin" href="/admin" on-click="onDataRouteClick">
               <iron-icon icon="supervisor-account"></iron-icon>
               <span>User Admin</span>
@@ -124,7 +124,7 @@ window.Intercom("boot", {
             <h3 style="margin-top: 40px;">One Platform - Thousands of Possibilities</h3>
           </div>
           <span class="flex"></span>
-          <hi9-login admin="{{admin}}" role="{{role}}" hidden user="{{user}}"></hi9-login>
+          <hi9-login admin="{{admin}}" role="{{role}}" hidden user="{{user}}" user-data="{{userData}}"></hi9-login>
           <div><img src="/images/hi9-logo/hi9.png" alt="Hi9 Logo" style="background-color: #FFF;"></div>
         </paper-toolbar>
         <div class="content" style="background-color: #FFF">
