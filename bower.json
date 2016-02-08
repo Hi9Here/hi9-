@@ -27,6 +27,7 @@
     "user-cards": "marcus7777/user-cards#master",
     "iron-collapse": "PolymerElements/iron-collapse#~1.0.5",
     "moment-js": "marcus7777/moment-js",
+    "hi9-header": "HackITtoday/hi9-header",
     "lazy-pages": "marcus7777/lazy-pages#master"
   },
   "devDependencies": {
@@ -37,8 +38,6 @@
     "polymer": "^1.1.0",
     "iron-icon": "master",
     "iron-icons": "master",
-    "platinum-sw": "^1.2.0",
-    "paper-filter": "master",
     "sortable-list": "master",
     "mediator-data": "master"
   }
