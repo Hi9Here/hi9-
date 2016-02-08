@@ -90,7 +90,7 @@ window.Intercom("boot", {
               <span>New Account</span>
             </a>
           </template>
-          <template is="dom-if" if="{{user}}">
+          <template is="dom-if" if="{{user.users}}">
             <a data-route="admin" href="/admin" on-click="onDataRouteClick">
               <iron-icon icon="supervisor-account"></iron-icon>
               <span>User Admin</span>
