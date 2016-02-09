@@ -129,7 +129,7 @@ window.Intercom("boot", {
         </paper-toolbar>
         <div class="content" style="background-color: #FFF">
           <lazy-pages attr-for-selected="data-route" selected="{{route}}">
-            <template data-route="home" is="dom-if">
+            <template data-route="home" is="dom-if" restamp>
               <section>
                 <user-cards folder="{{user.uid}}" location="https://hi9site.firebaseio.com/users/"></user-cards>
                 <center hidden$="{{user}}">
