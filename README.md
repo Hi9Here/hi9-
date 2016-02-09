@@ -1,9 +1,9 @@
 [![devDependency Status](https://david-dm.org/HackITtoday/hi9-/dev-status.svg)](https://david-dm.org/HackITtoday/hi9-#info=devDependencies)
 [![Dependency Status](https://gemnasium.com/HackITtoday/hi9-.svg)](https://gemnasium.com/HackITtoday/hi9-)
 
-## Polymer Starter Kit
+## Hi9 - Organise Everything
 
-> A starting point for building web applications with Polymer 1.0
+> This web app is based on Polymer Web Components and deployed on Firebase. These are some of the tools which are being used
 
 ### Included out of the box:
 
@@ -13,10 +13,11 @@
 * Unit testing with [Web Component Tester](https://github.com/Polymer/web-component-tester)
 * Optional offline setup through [Platinum](https://elements.polymer-project.org/browse?package=platinum-elements) Service Worker elements
 * End-to-end Build Tooling (including [Vulcanize](https://github.com/Polymer/vulcanize))
+* Deployment Via Firebase (including [Firebase](https://https://www.firebase.com))
 
 ## Getting Started
 
-To take advantage of Polymer Starter Kit you need to:
+To take advantage of how Polymer works take the following steps
 
 1. Get a copy of the code.
 2. Install the dependencies if you don't already have them.
@@ -107,6 +108,23 @@ gulp
 ```
 
 Build and optimize the current project, ready for deployment. This includes linting as well as vulcanization, image, script, stylesheet and HTML optimization and minification.
+
+## Deployment to Testing and Production service-worker
+
+We have three Firebase servers deploying this app for the testing server this is
+
+### Testing
+Testing is done locally of course at first but to go through QA it has to go to the Testing server. This will be undertaken by @woisme.
+
+https://hi9-testing.firebaseio.com/
+
+### Dev Server for UX Testing
+After testing is complete it is then put upto the Dev server where UX is tested
+https://hi9-dev.firebaseio.com/
+
+### Production Server
+Then deployed to
+https://hi9site.firebaseio.com/
 
 ## Application Theming & Styling
 
@@ -250,9 +268,6 @@ If for any reason you need to disable Service Worker support after previously en
 3. Remove 'precache' from the list in the 'default' gulp task ([gulpfile.js](https://github.com/PolymerElements/polymer-starter-kit/blob/master/gulpfile.js))
 4. Navigate to `chrome://serviceworker-internals` and unregister any Service Workers registered by Polymer Starter Kit for your app just in case there's a copy of it cached.
 
-## Yeoman support
-
-[generator-polymer](https://github.com/yeoman/generator-polymer/releases) now includes support for Polymer Starter Kit out of the box.
 
 ## Frequently Asked Questions
 
@@ -276,32 +291,6 @@ at some point switch back to a declarative router when our hook requirements are
 said, it should be trivial to switch to `<more-routing>` or another declarative router in your
 own local setup.
 
-### Where can I find the application layouts from your Google I/O 2015 talk?
-
-App layouts live in a separate repository called [app-layout-templates](https://github.com/PolymerElements/app-layout-templates).
-You can select a template and copy over the relevant parts you would like to reuse to Polymer Starter Kit.
-
-You will probably need to change paths to where your Iron and Paper dependencies can be found to get everything working.
-This can be done by adding them to the [`elements.html`](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/elements/elements.html) import.
-
-### Something has failed during installation. How do I fix this?
-
-Our most commonly reported issue is around system permissions for installing Node.js dependencies.
-We recommend following the [fixing npm permissions](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md)
-guide to address any messages around administrator permissions being required. If you use `sudo`
-to work around these issues, this guide may also be useful for avoiding that.
-
-If you run into an exception that mentions five optional dependencies failing (or an `EEXIST` error), you
-may have run into an npm [bug](https://github.com/npm/npm/issues/6309). We recommend updating to npm 2.11.0+
-to work around this. You can do this by opening a Command Prompt/terminal and running `npm install npm@2.11.0 -g`. If you are on Windows,
-Node.js (and npm) may have been installed into `C:\Program Files\`. Updating npm by running `npm install npm@2.11.0 -g` will install npm
-into `%AppData%\npm`, but your system will still use the npm version. You can avoid this by deleting your older npm from `C:\Program Files\nodejs`
-as described [here](https://github.com/npm/npm/issues/6309#issuecomment-67549380).
-
-If the issue is to do with a failure somewhere else, you might find that due to a network issue
-a dependency failed to correctly install. We recommend running `npm cache clean` and deleting the `node_modules` directory followed by
-`npm install` to see if this corrects the problem. If not, please check the [issue tracker](https://github.com/PolymerElements/polymer-starter-kit/issues) in case
-there is a workaround or fix already posted.
 
 ### I'm having trouble getting Vulcanize to fully build my project on Windows. Help?
 
@@ -335,11 +324,6 @@ during a build.
 
 If you are not using the build-blocks, but still wish for additional files (e.g scripts or stylesheets) to be included in the final `dist` directory, you will need to either copy these files as part of the gulpfile.js build process (see the `copy` task for how to automate this) or manually copy the files.
 
-### I'm finding the installation/tooling here overwhelming. What should I do?
-
-Don't worry! We've got your covered. Polymer Starter Kit tries to offer everything you need to build and optimize your apps for production, which is why we include the tooling we do. We realise however that our tooling setup may not be for everyone.
-
-If you find that you just want the simplest setup possible, we recommend using Polymer Starter Kit light, which is available from the [Releases](https://github.com/PolymerElements/polymer-starter-kit/releases) page. This takes next to no time to setup.
 
 ### If you require more granular configuration of Vulcanize than polybuild provides you an option by:
 
@@ -360,7 +344,3 @@ gulp.task('vulcanize', function () {
     .pipe($.size({title: 'vulcanize'}));
 });
 ```
-
-## Contributing
-
-Polymer Starter Kit is a new project and is an ongoing effort by the Web Component community. We welcome your bug reports, PRs for improvements, docs and anything you think would improve the experience for other Polymer developers.
