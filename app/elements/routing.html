@@ -6,66 +6,68 @@
     // client-side router inspired by the Express router
     // More info: https://visionmedia.github.io/page.js/
     page('/', function() {
-      app.route = 'home';
+      app.route = 'home'
     })
 
     page('/privacy', function() {
-      app.route = 'privacy';
+      app.route = 'privacy'
     })
 
     page('/data', function() {
-      app.route = 'data';
+      app.route = 'data'
     })
 
     page('/admin', function() {
-      app.route = 'admin';
+      app.route = 'admin'
     })
 
     page('/admin/badges', function() {
-      app.route = 'adminBadges';
+      app.route = 'adminBadges'
     })
 
     page('/admin/cards', function() {
-      app.route = 'adminCards';
+      app.route = 'adminCards'
     })
 
     page('/admin/help', function() {
-      app.route = 'adminHelp';
+      app.route = 'adminHelp'
     })
 
     page('/admin/surveys', function() {
-      app.route = 'adminSurveys';
+      app.route = 'adminSurveys'
     })
 
     page('/admin/users', function() {
-      app.route = 'adminUsers';
+      app.route = 'adminUsers'
     })
 
     page('/admin/whitelist', function() {
-      app.route = 'whiteList';
+      app.route = 'whiteList'
     })
 
     page('/help', function() {
-      app.route = 'help';
+      app.route = 'help'
     })
 
     page('/contact', function() {
-      app.route = 'contact';
+      app.route = 'contact'
     })
 
     page('/newaccount', function() {
-      app.route = 'newaccount';
+      app.route = 'newaccount'
     })
 
     page('/account', function() {
-      app.route = 'account';
+      app.route = 'account'
     })
     
     page('/user/:uid', function(data) {
-      app.route = 'user-info';
-      app.params = data.params;
+      app.route = 'user-info'
+      app.params = data.params
     })
-
+    page('*', function() {
+      app.route = 'home'
+    }))
     // add #! before urls
     page({
       hashbang: true
