@@ -65,10 +65,12 @@
       app.route = 'user-info'
       app.params = data.params
     })
-    page('*', function() {
-      app.route = 'home'
-      setTimeout(function(){window.location.href = "/"}, 500);
-    })
+    
+    //page('*', function() {
+    //  app.route = 'home'
+    //  setTimeout(function(){window.location.href = "/"}, 500);
+    //})
+    
     // add #! before urls
     page({
       hashbang: true
