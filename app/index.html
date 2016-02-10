@@ -64,12 +64,15 @@
       margin: 40px 20px 20px 20px;
     }
   </style>
+<<<<<<< HEAD
   <!-- <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/t1li3nii';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
 <script>
 window.Intercom("boot", {
   app_id: "t1li3nii"
 });
 </script> -->
+=======
+>>>>>>> master
 </head>
 
 <body class="fullbleed layout vertical">
@@ -88,12 +91,14 @@ window.Intercom("boot", {
             <iron-icon icon="home"></iron-icon>
             <span>Home</span>
           </a>
+          <!--
           <template is="dom-if" if="{{!user}}">
             <a data-route="newaccount" href="/newaccount" on-click="onDataRouteClick">
               <iron-icon icon="info"></iron-icon>
               <span>New Account</span>
             </a>
           </template>
+          -->
           <template is="dom-if" if="{{userData.users}}">
             <a data-route="admin" href="/admin" on-click="onDataRouteClick">
               <iron-icon icon="supervisor-account"></iron-icon>
@@ -106,14 +111,16 @@ window.Intercom("boot", {
               <span>Account</span>
             </a>
           </template>
-          <a data-route="help" href="/help" on-click="onDataRouteClick">
-            <iron-icon icon="help"></iron-icon>
-            <span>Help</span>
-          </a>
-          <a data-route="privacy" href="/privacy" on-click="onDataRouteClick">
-            <iron-icon icon="visibility-off"></iron-icon>
-            <span>Privacy</span>
-          </a>
+          <template is="dom-if" if="{{user}}">
+            <a data-route="help" href="/help" on-click="onDataRouteClick">
+              <iron-icon icon="help"></iron-icon>
+              <span>Help</span>
+            </a>
+            <a data-route="privacy" href="/privacy" on-click="onDataRouteClick">
+              <iron-icon icon="visibility-off"></iron-icon>
+              <span>Privacy</span>
+            </a>
+          </template>
           <a data-route="contact" href="/contact" on-click="onDataRouteClick">
             <iron-icon icon="mail"></iron-icon>
             <span>Contact</span>
@@ -133,7 +140,7 @@ window.Intercom("boot", {
         </paper-toolbar>
         <div class="content" style="background-color: #FFF">
           <lazy-pages attr-for-selected="data-route" selected="{{route}}">
-            <template data-route="home" is="dom-if">
+            <template data-route="home" is="dom-if" restamp>
               <section>
                 <user-cards folder="{{user.uid}}" location="https://hi9site.firebaseio.com/users/"></user-cards>
                 <center hidden$="{{user}}">
