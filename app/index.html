@@ -78,12 +78,14 @@
             <iron-icon icon="home"></iron-icon>
             <span>Home</span>
           </a>
+          <!--
           <template is="dom-if" if="{{!user}}">
             <a data-route="newaccount" href="/newaccount" on-click="onDataRouteClick">
               <iron-icon icon="info"></iron-icon>
               <span>New Account</span>
             </a>
           </template>
+          -->
           <template is="dom-if" if="{{userData.users}}">
             <a data-route="admin" href="/admin" on-click="onDataRouteClick">
               <iron-icon icon="supervisor-account"></iron-icon>
@@ -96,14 +98,16 @@
               <span>Account</span>
             </a>
           </template>
-          <a data-route="help" href="/help" on-click="onDataRouteClick">
-            <iron-icon icon="help"></iron-icon>
-            <span>Help</span>
-          </a>
-          <a data-route="privacy" href="/privacy" on-click="onDataRouteClick">
-            <iron-icon icon="visibility-off"></iron-icon>
-            <span>Privacy</span>
-          </a>
+          <template is="dom-if" if="{{user}}">
+            <a data-route="help" href="/help" on-click="onDataRouteClick">
+              <iron-icon icon="help"></iron-icon>
+              <span>Help</span>
+            </a>
+            <a data-route="privacy" href="/privacy" on-click="onDataRouteClick">
+              <iron-icon icon="visibility-off"></iron-icon>
+              <span>Privacy</span>
+            </a>
+          </template>
           <a data-route="contact" href="/contact" on-click="onDataRouteClick">
             <iron-icon icon="mail"></iron-icon>
             <span>Contact</span>
