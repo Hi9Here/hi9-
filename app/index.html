@@ -31,7 +31,7 @@
   <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/nkbabmancickiacfoeoadibicncombep">
 
   <!-- Get the First elements up fast -->
-                <link rel="import" href="bower_components/user-cards/user-cards.html">
+  <link rel="import" href="bower_components/user-cards/user-cards.html">
   <!-- End first element -->
 
   <!-- will be replaced with elements/elements.vulcanized.html -->
@@ -41,6 +41,7 @@
     section {
       margin: 30px;
     }
+
     nav paper-button {
       background: #FF5722;
       min-width: 172px;
@@ -48,19 +49,22 @@
       font-family: Roboto, Helvetica, sans-serif;
       color: #FFF;
     }
+
     nav a {
       color: #FFF;
     }
+
     .userpart paper-button {
       color: #FFF;
       margin: 0;
       padding: 0;
     }
+
     .userpart {
       margin: 40px 20px 20px 20px;
     }
   </style>
-<!-- <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/t1li3nii';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+  <!-- <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/t1li3nii';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
 <script>
 window.Intercom("boot", {
   app_id: "t1li3nii"
@@ -121,7 +125,7 @@ window.Intercom("boot", {
         <paper-toolbar>
           <paper-icon-button style="background-color: #2E3AA1; color: #FFF;" id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
           <div style="background: #FFF; width:100%; height: 96px; ">
-            <h3 style="margin-top: 40px;">One Platform - Thousands of Possibilities</h3>
+            <h3 style="margin-top: 40px;">Your Organiser</h3>
           </div>
           <span class="flex"></span>
           <hi9-login admin="{{admin}}" role="{{role}}" hidden user="{{user}}" user-data="{{userData}}"></hi9-login>
@@ -133,10 +137,9 @@ window.Intercom("boot", {
               <section>
                 <user-cards folder="{{user.uid}}" location="https://hi9site.firebaseio.com/users/"></user-cards>
                 <center hidden$="{{user}}">
-		  <h1>Welcome to Hi9 online</h1>
+                  <h1>Welcome to Hi9 online</h1>
                   <h1>Organising what you want,</h1>
                   <h1>when you want it</h1>
-                  <h1>all in one place</h1>
                   <hi9-login hidden$="{{user}}" login-text="Get Started"></hi9-login>
                 </center>
               </section>
@@ -266,15 +269,31 @@ window.Intercom("boot", {
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
 
-<!--Start of Zopim Live Chat Script-->
-<script type="text/javascript">
-window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-$.src="//v2.zopim.com/?3YXr72LvTFdPKXAjBq6DSjJC2kjJQjuO";z.t=+new Date;$.
-type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-</script>
-<!--End of Zopim Live Chat Script-->
+  <!--Start of Zopim Live Chat Script-->
+  <script type="text/javascript">
+    window.$zopim || (function(d, s) {
+      var z = $zopim = function(c) {
+          z._.push(c)
+        },
+        $ = z.s =
+        d.createElement(s),
+        e = d.getElementsByTagName(s)[0];
+      z.set = function(o) {
+        z.set.
+        _.push(o)
+      };
+      z._ = [];
+      z.set._ = [];
+      $.async = !0;
+      $.setAttribute("charset", "utf-8");
+      $.src = "//v2.zopim.com/?3YXr72LvTFdPKXAjBq6DSjJC2kjJQjuO";
+      z.t = +new Date;
+      $.
+      type = "text/javascript";
+      e.parentNode.insertBefore($, e)
+    })(document, "script");
+  </script>
+  <!--End of Zopim Live Chat Script-->
 
 </body>
 
