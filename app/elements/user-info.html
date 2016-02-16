@@ -35,7 +35,7 @@
     },
     getName: function(user, paramsUid) {
       if (user != null) {
-        return user.user.google.displayName
+        return user.users[paramsUid].user.google.displayName
       }
     },
     getFirstUsed: function(user, paramsUid) {
