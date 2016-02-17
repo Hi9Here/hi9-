@@ -1,12 +1,12 @@
-<link rel="import" href="../bower_components/user-badges/user-badges.html">
-<link rel="import" href="../bower_components/user-surveys/user-surveys.html">
-<link rel="import" href="../bower_components/moment-js/moment-js.html">
+<link rel="import" href="/bower_components/moment-js/moment-js.html">
 
 <dom-module id="user-info">
   <template>
     <h2>{{name}}</h2>
-    <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{folder}}"></user-badges>
-    <user-surveys answered folder="{{folder}}" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+    <link rel="import" href="/bower_components/user-badges/user-badges.html">
+    <user-badges edit location="https://hi9site.firebaseio.com/users/" folder="{{paramsUid}}"></user-badges>
+    <link rel="import" href="/bower_components/user-surveys/user-surveys.html">
+    <user-surveys answered folder="{{paramsUid}}" location="https://hi9site.firebaseio.com/users/"></user-surveys>
     <div style="clear:both">
       first used {{firstUsed}} <br />
       time on chrome {{timeUsed}} <br />
@@ -23,15 +23,10 @@
     is: "user-info",
     properties: {
       name: {computed:"getName(user, paramsUid)"},
-      folder: {computed:"getFolder(user, paramsUid)"},
       firstUsed: {computed:"getFirstUsed(user, paramsUid)"},
       timeUsed: {computed:"getTimeUsed(user, paramsUid)"},
       lastUsed: {computed:"getLastUsed(user, paramsUid)"},
       listVisits: {computed:"getListVisits(user, paramsUid)"}
-    },
-    getFolder: function(user, paramsUid) {
-      return paramsUid
-      // todo return user.uid + "/users/" + paramsUid
     },
     getName: function(user, paramsUid) {
       if (user != null) {

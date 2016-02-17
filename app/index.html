@@ -240,8 +240,9 @@
                   <paper-button raised="1">Back</paper-button>
                 </a>
                 <hi9-header color="orange" label="Account" icon="account-circle"></hi9-header>
+
                 <user-info user="{{userInfo}}" params-uid="{{params.uid}}"></user-info>
-                <mediator-data data="{{userInfo}}" location="https://hi9site.firebaseio.com/users/" folder="{{uid}}"></mediator-data>
+                <mediator-data data="{{userInfo}}" location="https://hi9site.firebaseio.com/users/" folder="{{user.uid}}"></mediator-data>
               </section>
             </template>
           </lazy-pages>
