@@ -149,25 +149,25 @@
                 <privacy-page></privacy-page>
               </section>
             </template>
-            <template data-route="newaccount" is="dom-if" _restamp>
+            <template data-route="newaccount" is="dom-if">
               <section>
                 <hi9-header color="orange" label="Account" icon="account-circle"></hi9-header>
                 <newaccount-page></newaccount-page>
               </section>
             </template>
-            <template data-route="account" is="dom-if" _restamp>
+            <template data-route="account" is="dom-if">
               <section>
                 <hi9-header color="orange" label="Account" icon="account-circle"></hi9-header>
                 <user-page user="{{user}}" user-data="{{userData}}"> </user-page>
               </section>
             </template>
-            <template data-route="admin" is="dom-if" _restamp>
+            <template data-route="admin" is="dom-if">
               <section>
                 <hi9-header color="gray" label="User Administration" icon="supervisor-account"></hi9-header>
                 <user-admin user="{{user.users}}"> loading ... </user-admin>
               </section>
             </template>
-            <template data-route="adminBadges" class="usersection" is="dom-if" _restamp>
+            <template data-route="adminBadges" class="usersection" is="dom-if">
               <section>
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
                   <paper-button raised="1">Back</paper-button>
@@ -176,7 +176,7 @@
                 <user-badges edit-default location="https://hi9site.firebaseio.com/admin/" folder="[[user.uid]]"></user-badges>
               </section>
             </template>
-            <template data-route="adminSurveys" class="usersection" is="dom-if" _restamp>
+            <template data-route="adminSurveys" class="usersection" is="dom-if">
               <section>
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
                   <paper-button raised="1">Back</paper-button>
@@ -185,7 +185,7 @@
                 <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/admin/"></user-surveys>
               </section>
             </template>
-            <template data-route="adminHelp" class="usersection" is="dom-if" _restamp>
+            <template data-route="adminHelp" class="usersection" is="dom-if">
               <section>
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
                   <paper-button raised="1">Back</paper-button>
@@ -194,7 +194,7 @@
                 <user-help edit edit-default folder="default" location="https://hi9site.firebaseio.com/admin/"></user-help>
               </section>
             </template>
-            <template data-route="adminCards" class="usersection" is="dom-if" _restamp>
+            <template data-route="adminCards" class="usersection" is="dom-if">
               <section>
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position:absolute; top: 80px; right: 50px;">
                   <paper-button raised="1">Back</paper-button>
@@ -203,7 +203,7 @@
                 <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/admin/"></user-cards>
               </section>
             </template>
-            <template data-route="adminUsers" class="usersection" is="dom-if" _restamp>
+            <template data-route="adminUsers" class="usersection" is="dom-if">
               <section>
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float: right; text-decoration: none; margin: 10px; position: absolute; right: 50px; top: 80px;">
                   <paper-button raised="1">Back</paper-button>
@@ -212,29 +212,29 @@
                 <user-list uid="{{user.uid}}"></user-list>
               </section>
             </template>
-            <template data-route="whiteList" class="usersection" is="dom-if" _restamp>
+            <template data-route="whiteList" class="usersection" is="dom-if">
               <section>
                 <a data-route="admin" href="/admin" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px; position: absolute; right: 50px; top: 80px">
                   <paper-button raised="1">Back</paper-button>
                 </a>
                 <hi9-header color="LightGrey" label="White List" icon="assignment"></hi9-header>
-                <user-white-list edit-default edit folder="[[user.uid]]" p-user="{{user.uid}}" location="https://hi9site.firebaseio.com/admin/"></user-white-list>
+                <user-white-list edit-default edit folder="{{user.uid}}" p-user="{{user.uid}}" location="https://hi9site.firebaseio.com/admin/"></user-white-list>
               </section>
             </template>
-            <template data-route="help" is="dom-if" _restamp>
+            <template data-route="help" is="dom-if">
               <section>
                 <hi9-header color="blue" label="Help" icon="help"></hi9-header>
                 <user-help folder="default" location="https://hi9site.firebaseio.com/users/"></user-help>
               </section>
             </template>
-            <template data-route="contact" is="dom-if" _restamp>
+            <template data-route="contact" is="dom-if">
               <link rel="import" href="elements/contact-page.html">
               <section>
                 <hi9-header color="red" label="Contact Us" icon="mail"></hi9-header>
                 <contact-page></contact-page>
               </section>
             </template>
-            <template data-route="user-info" is="dom-if" _restamp>
+            <template data-route="user-info" is="dom-if">
               <section>
                 <a data-route="adminUsers" href="/admin/users" on-click="onDataRouteClick" style="float:right; text-decoration: none; margin: 10px;">
                   <paper-button raised="1">Back</paper-button>
