@@ -78,7 +78,7 @@
           <span class="paper-font-title" style="color: #FFF">Menu</span>
         </paper-toolbar>
         <!-- Drawer Content -->
-        <paper-menu class="list" attr-for-selected="data-route" selected="[[route]]" style="background-color: #512DA8">
+        <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" style="background-color: #512DA8">
           <a data-route="home" href="/" on-click="onDataRouteClick">
             <iron-icon icon="home"></iron-icon>
             <span>Home</span>
@@ -91,7 +91,8 @@
             </a>
           </template>
           -->
-          <template is="dom-if" if="{{userData.users}}">
+          <mediator-data data="{{userIP}}" location="https://hi9site.firebaseio.com/admin/" folder="{{user.uid}}"></mediator-data>
+          <template is="dom-if" if="{{userIP.users}}">
             <a data-route="admin" href="/admin" on-click="onDataRouteClick">
               <iron-icon icon="supervisor-account"></iron-icon>
               <span>User Admin</span>
@@ -134,13 +135,13 @@
           <lazy-pages attr-for-selected="data-route" selected="{{route}}">
             <template data-route="home" is="dom-if" restamp>
               <section>
-                <user-cards folder="{{user.uid}}" location="https://hi9site.firebaseio.com/users/"></user-cards>
                 <center hidden$="{{user}}">
                   <h1>Welcome to Hi9 online</h1>
                   <h1>Organising what you want,</h1>
                   <h1>when you want it</h1>
                   <hi9-login hidden$="{{user}}" login-text="Get Started"></hi9-login>
                 </center>
+                <user-cards folder="{{user.uid}}" location="https://hi9site.firebaseio.com/users/"></user-cards>
               </section>
             </template>
             <template data-route="privacy" is="dom-if">
@@ -173,7 +174,7 @@
                   <paper-button raised="1">Back</paper-button>
                 </a>
                 <hi9-header color="LightGrey" label="Admin Badges" icon="verified-user"></hi9-header>
-                <user-badges edit-default location="https://hi9site.firebaseio.com/admin/" folder="[[user.uid]]"></user-badges>
+                <user-badges edit-default location="https://hi9site.firebaseio.com/admin/" folder="{{user.uid}}"></user-badges>
               </section>
             </template>
             <template data-route="adminSurveys" class="usersection" is="dom-if">
@@ -182,7 +183,7 @@
                   <paper-button raised="1">Back</paper-button>
                 </a>
                 <hi9-header color="LightGrey" label="Surveys" icon="assessment"></hi9-header>
-                <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/admin/"></user-surveys>
+                <user-surveys surveys-data="{{userIP}}" edit-default folder="{{user.uid}}" location="https://hi9site.firebaseio.com/admin/"></user-surveys>
               </section>
             </template>
             <template data-route="adminHelp" class="usersection" is="dom-if">
@@ -200,7 +201,7 @@
                   <paper-button raised="1">Back</paper-button>
                 </a>
                 <hi9-header color="LightGrey" label="Cards" icon="content-copy"></hi9-header>
-                <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/admin/"></user-cards>
+                <user-cards edit-default folder="{{user.uid}}" location="https://hi9site.firebaseio.com/admin/"></user-cards>
               </section>
             </template>
             <template data-route="adminUsers" class="usersection" is="dom-if">
@@ -241,7 +242,7 @@
                 </a>
                 <hi9-header color="orange" label="Account" icon="account-circle"></hi9-header>
                 <user-info user="{{userIP}}" params-uid="{{params.uid}}"></user-info>
-                <mediator-data data="{{userIP}}" location="https://hi9site.firebaseio.com/admin/" folder="{{user.uid}}"></mediator-data>
+          <mediator-data data="{{userIP}}" location="https://hi9site.firebaseio.com/admin/" folder="{{user.uid}}"></mediator-data>
               </section>
             </template>
           </lazy-pages>
