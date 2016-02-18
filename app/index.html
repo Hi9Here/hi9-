@@ -183,7 +183,7 @@
                   <paper-button raised="1">Back</paper-button>
                 </a>
                 <hi9-header color="LightGrey" label="Surveys" icon="assessment"></hi9-header>
-                <user-surveys surveys-data="{{userIP}}" edit-default folder="{{user.uid}}" location="https://hi9site.firebaseio.com/admin/"></user-surveys>
+                <user-surveys surveys-data="{{userIP.users}}" edit-default folder="{{user.uid}}" location="https://hi9site.firebaseio.com/admin/"></user-surveys>
               </section>
             </template>
             <template data-route="adminHelp" class="usersection" is="dom-if">
