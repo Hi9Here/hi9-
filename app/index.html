@@ -173,7 +173,7 @@
                   <paper-button raised="1">Back</paper-button>
                 </a>
                 <hi9-header color="LightGrey" label="Admin Badges" icon="verified-user"></hi9-header>
-                <user-badges edit-default location="https://hi9site.firebaseio.com/users/" folder="[[user.uid]]"></user-badges>
+                <user-badges edit-default location="https://hi9site.firebaseio.com/admin/" folder="[[user.uid]]"></user-badges>
               </section>
             </template>
             <template data-route="adminSurveys" class="usersection" is="dom-if" _restamp>
@@ -182,7 +182,7 @@
                   <paper-button raised="1">Back</paper-button>
                 </a>
                 <hi9-header color="LightGrey" label="Surveys" icon="assessment"></hi9-header>
-                <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-surveys>
+                <user-surveys edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/admin/"></user-surveys>
               </section>
             </template>
             <template data-route="adminHelp" class="usersection" is="dom-if" _restamp>
@@ -191,7 +191,7 @@
                   <paper-button raised="1">Back</paper-button>
                 </a>
                 <hi9-header color="LightGrey" label="Help" icon="help"></hi9-header>
-                <user-help edit edit-default folder="default" location="https://hi9site.firebaseio.com/users/"></user-help>
+                <user-help edit edit-default folder="default" location="https://hi9site.firebaseio.com/admin/"></user-help>
               </section>
             </template>
             <template data-route="adminCards" class="usersection" is="dom-if" _restamp>
@@ -200,7 +200,7 @@
                   <paper-button raised="1">Back</paper-button>
                 </a>
                 <hi9-header color="LightGrey" label="Cards" icon="content-copy"></hi9-header>
-                <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-cards>
+                <user-cards edit-default folder="[[user.uid]]" location="https://hi9site.firebaseio.com/admin/"></user-cards>
               </section>
             </template>
             <template data-route="adminUsers" class="usersection" is="dom-if" _restamp>
@@ -218,7 +218,7 @@
                   <paper-button raised="1">Back</paper-button>
                 </a>
                 <hi9-header color="LightGrey" label="White List" icon="assignment"></hi9-header>
-                <user-white-list edit-default edit folder="[[user.uid]]" p-user="{{user.uid}}" location="https://hi9site.firebaseio.com/users/"></user-white-list>
+                <user-white-list edit-default edit folder="[[user.uid]]" p-user="{{user.uid}}" location="https://hi9site.firebaseio.com/admin/"></user-white-list>
               </section>
             </template>
             <template data-route="help" is="dom-if" _restamp>
@@ -240,9 +240,8 @@
                   <paper-button raised="1">Back</paper-button>
                 </a>
                 <hi9-header color="orange" label="Account" icon="account-circle"></hi9-header>
-
-                <user-info user="{{userInfo}}" params-uid="{{params.uid}}"></user-info>
-                <mediator-data data="{{userInfo}}" location="https://hi9site.firebaseio.com/users/" folder="{{user.uid}}"></mediator-data>
+                <user-info user="{{userIP}}" params-uid="{{params.uid}}"></user-info>
+                <mediator-data data="{{userIP}}" location="https://hi9site.firebaseio.com/admin/" folder="{{user.uid}}"></mediator-data>
               </section>
             </template>
           </lazy-pages>
