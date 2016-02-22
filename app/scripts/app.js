@@ -7,8 +7,12 @@
   var app = document.querySelector('#app');
   app.properties = {userUrl: {computed:"getUserUrl(user.uid)"}}
   app.getUserUrl = function(uid) {
+    var url
     if (uid) {
+      url = "https://hi9site.firebaseio.com/users/"+uid
       return "https://hi9site.firebaseio.com/users/"+uid
+    } else if (url) {
+      return url
     }
   }
   
