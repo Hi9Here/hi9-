@@ -93,7 +93,6 @@
           </template>
           -->
           <mediator-data data="{{userIP}}" location="https://hi9site.firebaseio.com/admin/" folder="{{user.uid}}"></mediator-data>
-          <iron-ajax id="setUser" method="PUT"></iron-ajax>
           <template is="dom-if" if="{{userIP.users}}">
             <a data-route="admin" href="/admin" on-click="onDataRouteClick">
               <iron-icon icon="supervisor-account"></iron-icon>
@@ -252,6 +251,7 @@
         </div>
       </paper-scroll-header-panel>
     </paper-drawer-panel>
+    <iron-ajax id="setuser" method="PUT"></iron-ajax>
     <!-- Uncomment next block to enable Service Worker support (1/2) -->
     <!--
       <paper-toast id="caching-complete"
