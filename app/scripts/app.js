@@ -7,7 +7,9 @@
   var app = document.querySelector('#app');
   app.properties = {userUrl: {computed:"getUserUrl(user.uid)"}}
   app.getUserUrl = function(uid) {
-    return "https://hi9site.firebaseio.com/users/"+uid
+    if (uid) {
+      return "https://hi9site.firebaseio.com/users/"+uid
+    }
   }
   
   app.displayInstalledToast = function() {
