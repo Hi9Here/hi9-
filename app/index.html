@@ -92,6 +92,7 @@
           </template>
           -->
           <mediator-data data="{{userIP}}" location="https://hi9site.firebaseio.com/admin/" folder="{{user.uid}}"></mediator-data>
+          <mediator-data data="{{user}}" location="{{userLoction}}" folder="user"></mediator-data>
           <template is="dom-if" if="{{userIP.users}}">
             <a data-route="admin" href="/admin" on-click="onDataRouteClick">
               <iron-icon icon="supervisor-account"></iron-icon>
