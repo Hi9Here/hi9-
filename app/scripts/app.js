@@ -5,7 +5,7 @@
   // and give it some initial binding values
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
-  app.properties = {userUrl: {computed:"getUserUrl(user.uid)"}
+  app.properties = {userUrl: {computed:"getUserUrl(user.uid)"}}
   app.getUserUrl = function(uid) {
     return "https://hi9site.firebaseio.com/users/"+uid
   }
