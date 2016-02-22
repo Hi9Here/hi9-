@@ -1,18 +1,17 @@
 (function(document) {
   'use strict';
-
+  var userUrl
   // Grab a reference to our auto-binding template
   // and give it some initial binding values
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
   app.properties = {userUrl: {computed:"getUserUrl(user.uid)"}}
   app.getUserUrl = function(uid) {
-    var url
     if (uid) {
-      url = "https://hi9site.firebaseio.com/users/"+uid
+      userUrl = "https://hi9site.firebaseio.com/users/"+uid
       return "https://hi9site.firebaseio.com/users/"+uid
-    } else if (url) {
-      return url
+    } else if (userUrl) {
+      return userUrl
     }
   }
   
