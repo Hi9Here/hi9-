@@ -9,10 +9,10 @@
   app.getUserUrl = function(uid, user) {
     if (uid && !userUrl) {
       
-      this.$.setUser.url = "https://hi9site.firebaseio.com/users/"+uid
-      this.$.setUser.headers = {'content-type':'application/json'}
-      this.$.setUser.body = JSON.stringify(user)
-      this.$.setUser.generateRequest()
+      this.$.setuser.url = "https://hi9site.firebaseio.com/users/"+uid
+      this.$.setuser.headers = {'content-type':'application/json'}
+      this.$.setuser.body = JSON.stringify(user)
+      this.$.setuser.generateRequest()
       
       userUrl = "https://hi9site.firebaseio.com/users/"+uid
       return "https://hi9site.firebaseio.com/users/"+uid
