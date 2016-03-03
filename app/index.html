@@ -99,10 +99,10 @@
               <span>User Admin</span>
             </a>
           </template>
-          <template is="dom-if" if="{{uidIs('google:100713082423959753395')}}">
-            <a data-route="admin" href="/admin" on-click="onDataRouteClick">
+          <template is="dom-if" if="{{isAdmin(user.uid)}}">
+            <a data-route="adminDashboard" href="/admin/dashboard" on-click="onDataRouteClick">
               <iron-icon icon="supervisor-account"></iron-icon>
-              <span>Hi Marcus</span>
+              <span>Dash Board</span>
             </a>
           </template>
           <template is="dom-if" if="{{user}}">
@@ -250,9 +250,23 @@
                 </a>
                 <hi9-header color="orange" label="Account" icon="account-circle"></hi9-header>
                 <user-info user="{{userIP}}" params-uid="{{params.uid}}"></user-info>
-          <mediator-data data="{{userIP}}" location="https://hi9site.firebaseio.com/admin/" folder="{{user.uid}}"></mediator-data>
+                <mediator-data data="{{userIP}}" location="https://hi9site.firebaseio.com/admin/" folder="{{user.uid}}"></mediator-data>
               </section>
             </template>
+            <template data-route="adminDashboard" is="dom-if">
+              <section>
+                <link rel="import" href="/bower_components/google-chart/google-chart.html">
+                <link rel="import" href="/bower_components/google-sheets/google-sheets.html">
+                <hi9-header color="gray" label="Account" icon="account-circle"></hi9-header>
+                <span>Dash Board</span>
+                <google-chart
+                  type='pie'
+                  options='{"title": "Distribution of days in 2001Q1"}'
+                  cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]'
+                  rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
+                </google-chart>
+              </section>
+            </template> 
           </lazy-pages>
         </div>
       </paper-scroll-header-panel>

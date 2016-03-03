@@ -71,10 +71,13 @@
       drawerPanel.closeDrawer();
     }
   };
-  
+  app.isAdmin = function(uid) {
+    return uid === 'google:100713082423959753395' || uid === 'google:100409610707223082187' || uid === 'google:106104524153779723520'
+  }
   // Scroll page to top and expand header
   app.scrollPageToTop = function() {
     document.getElementById('mainContainer').scrollTop = 0;
   };
-
+  
+  
 })(document);

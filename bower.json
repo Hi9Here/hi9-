@@ -11,11 +11,11 @@
     "paper-filter": "HackITtoday/paper-filter#master",
     "firebase-element": "HackITtoday/firebase-element#~1.0.1",
     "hi9-login": "HackITtoday/hi9-login",
-    "google-sheets": "GoogleWebComponents/google-sheets#~1.0.5",
+    "google-sheets": "GoogleWebComponents/google-sheets#8c8eb83b74",
     "iron-list": "PolymerElements/iron-list#~1.0.1",
     "paper-progress": "PolymerElements/paper-progress#~1.0.1",
     "google-analytics": "GoogleWebComponents/google-analytics#~1.0.2",
-    "google-chart": "GoogleWebComponents/google-chart#~1.0.4",
+    "google-chart": "GoogleWebComponents/google-chart#eaaaf380c6",
     "sortable-list": "marcus7777/sortable-list#master",
     "user-white-list": "marcus7777/user-white-list#master",
     "user-badges": "marcus7777/user-badges#master",
@@ -39,6 +39,7 @@
     "iron-icon": "master",
     "iron-icons": "master",
     "sortable-list": "master",
-    "mediator-data": "master"
+    "mediator-data": "master",
+    "google-chart": "eaaaf380c6"
   }
 }
