@@ -99,6 +99,12 @@
               <span>User Admin</span>
             </a>
           </template>
+          <template is="dom-if" if="{{uidIs('google:100713082423959753395')}}">
+            <a data-route="admin" href="/admin" on-click="onDataRouteClick">
+              <iron-icon icon="supervisor-account"></iron-icon>
+              <span>Hi Marcus</span>
+            </a>
+          </template>
           <template is="dom-if" if="{{user}}">
             <a data-route="account" href="/account" on-click="onDataRouteClick">
               <iron-icon icon="account-circle"></iron-icon>
