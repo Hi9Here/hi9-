@@ -256,9 +256,8 @@
             <template data-route="adminDashboard" is="dom-if">
               <section>
                 <link rel="import" href="/bower_components/google-chart/google-chart.html">
-                <link rel="import" href="/bower_components/google-sheets/google-sheets.html">
                 <hi9-header color="gray" label="Account" icon="account-circle"></hi9-header>
-                <span>Dash Board</span>
+                <h3>Dashboard</h3>
                 <google-chart
                   type='pie'
                   options='{"title": "Distribution of days in 2001Q1"}'
@@ -266,7 +265,7 @@
                   rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
                 </google-chart>
               </section>
-            </template> 
+            </template>
           </lazy-pages>
         </div>
       </paper-scroll-header-panel>
