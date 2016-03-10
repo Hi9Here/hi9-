@@ -1,0 +1,90 @@
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/google-chart/google-chart.html">
+
+
+<dom-module id="yarlington-dashboard">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+      paper-material {
+        width: 30%;
+        margin: 10px;
+        float: left;
+      }
+
+    </style>
+
+    <h3>Dashboard</h3>
+<div id="board">
+    <paper-material elevation="1">
+      <google-chart
+        type='pie'
+        options='{"title": "Reasons"}'
+        cols='[{"label":"Reasons", "type":"string"}, {"label":"Number", "type":"number"}]'
+        rows='[["Skills", 6],["Employment", 3],["Health & Social Inclusion", 3],["Business Startup", 2],["Financial Services", 7],["Education", 3]]'>
+      </google-chart>
+    </paper-material>
+    <paper-material elevation="1">
+      <google-chart
+        type='pie'
+        options='{"title": "Connections"}'
+        cols='[{"label":"Connection", "type":"string"}, {"label":"Number", "type":"number"}]'
+        rows='[["MIFI", 10],["Landline", 3],["Switching to Landline", 5]]'>
+      </google-chart>
+    </paper-material>
+    <paper-material elevation="1">
+      <google-chart
+        type='pie'
+        options='{"title": "Surveys Answered"}'
+        cols='[{"label":"Surveys Answered", "type":"string"}, {"label":"Number", "type":"number"}]'
+        rows='[["Answered", 13],["Not Answered", 0]]'>
+      </google-chart>
+    </paper-material>
+    <paper-material elevation="1">
+      <google-chart
+        type='pie'
+        options='{"title": "Badges"}'
+        cols='[{"label":"Badges Earned", "type":"string"}, {"label":"Number", "type":"number"}]'
+        rows='[["Email", 11],["Login", 13]]'>
+      </google-chart>
+    </paper-material>
+    <paper-material elevation="1">
+      <google-chart
+        type='pie'
+        options='{"title": "Want to Continue"}'
+        cols='[{"label":"Continue", "type":"string"}, {"label":"Number", "type":"number"}]'
+        rows='[["Continue", 13],["Not Continue", 0]]'>
+      </google-chart>
+    </paper-material>
+    <paper-material elevation="1">
+      <google-chart
+        type='pie'
+        options='{"title": "Multi Users in Household"}'
+        cols='[{"label":"Users", "type":"string"}, {"label":"Number", "type":"number"}]'
+        rows='[["Multi", 4],["Not", 9]]'>
+      </google-chart>
+    </paper-material>
+    <paper-material elevation="1" style="padding: 10px;">
+      <h4>Total Users in 13 Households: 22</h2>
+    </paper-material>
+  </div>
+
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'yarlington-dashboard',
+
+      });
+    })();
+  </script>
+
+</dom-module>
