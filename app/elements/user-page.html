@@ -8,8 +8,7 @@
     <div id="extension" style="float: left;">
       <h2>{{name}}</h2>
       <div id="inlineinstall">
-        <p>Here is all your account information. Inorder to access this information you need to have installed a little program called an extension. This shows the people who got you this computer and support that this is working. To install this piece of
-          software please click the button below</p>
+        <p>Here is all your account information. In order to access this you to have installed a little program called an extension. This shows the providers of your computer and customer support that it's working plus how things are progressing. To install this piece of software please click the button below.</p>
       </div>
       <template is="dom-if" if="{{installed}}">
         Thank you for installing the
@@ -32,7 +31,7 @@
       <div id="whil" style="margin-left: 50px;">
         <user-white-list folder="[[user.uid]]" location="https://hi9site.firebaseio.com/users/"></user-white-list>
       </div>
-    </div> 
+    </div>
 
     <div id="cardPart" style="float: left;">
       <div id="card" style="margin-left: 50px; float: left; margin-top: 20px;">
@@ -50,7 +49,7 @@
 <script>
   (function() {
     'use strict';
-    var that 
+    var that
     Polymer({
       is: 'user-page',
       properties: {
