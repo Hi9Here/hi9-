@@ -79,5 +79,6 @@
     document.getElementById('mainContainer').scrollTop = 0;
   };
   
+  app.lazyRegister = true
   
 })(document);
